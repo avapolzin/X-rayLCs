@@ -1,2 +1,2 @@
 # X-rayDLPS
-Data from Polzin et al. 2021
+Data from X-ray DLPS paper
