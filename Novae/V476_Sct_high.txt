@@ -1,0 +1,2 @@
+Day	logLum(cgs)
+135	32.99
