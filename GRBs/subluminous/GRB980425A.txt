@@ -1,0 +1,3 @@
+time(days)	ertime	instrument	flux(1d-15erg/s/cm2)	erflux 
+1281.	0.	Chandra-ACIS	8.0	2.
+1464	0.	XMM	7.	2.
