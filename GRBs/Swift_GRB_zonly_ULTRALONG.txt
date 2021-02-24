@@ -1,0 +1,3 @@
+name	z	dl_UCLA(Mpc)	t90	lc_wget	TriggerTime(MET)
+GRB170714A	0.793	5027.8	1000.	http://www.swift.ac.uk/xrt_curves/00762535/flux.qdp	521727952.0
+GRB101225A	0.847	5454.3	1088.0	http://www.swift.ac.uk/xrt_curves/00441015/flux.qdp	314995072.0
