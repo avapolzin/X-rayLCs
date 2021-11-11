@@ -1,0 +1,8 @@
+Ref= Pooley 2002 IAUC 8024
+Spec Model= MEKAL or power law with high NH (1d22). Hard spectrum with Gamma=0.6. 
+Comments: the large NH is consistent with the strong evidence for dust in the IR
+
+
+time(days)			ertime			instrument     	       flux(1d-15 erg/s/cm2)		erflux 
+-420.				0.			        Chandra-ACIS-S3   0.63					       -5
+25.				        0.                             Chandra-ACIS-S3   105.                                          -9.

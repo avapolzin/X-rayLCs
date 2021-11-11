@@ -1,0 +1,8 @@
+Ref= IAUC 8390
+SpecModel= MEKAL with best fitting kT=7 keV, NH=6.6d20 cm-2
+Comments= There is an additional XMM-Newton obs  performed on 12 Sept 2004; additional Chandra
+obs planned for  Aug 20, Oct 1 (2004); Jan 15 (2005) 
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+30.				        0				Chandra-ACIS-S3    122.				                -9

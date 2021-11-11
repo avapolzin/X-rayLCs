@@ -1,0 +1,8 @@
+Ref= Immler 2009 ATel #1918;
+SpecModel= thermal plasma spec with assumed kT=10 keV, Gal absorption=5.56d20
+Comments: it is a 3.1-sigma detection; however the authors are able to claim fading
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+21.5					17.5                        Swift-XRT                 19.			                        6.0
+
+

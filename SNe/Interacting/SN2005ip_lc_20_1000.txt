@@ -1,0 +1,9 @@
+Ref= Immler 2007 Atel#1004
+SpecModel= thermal plasma spec with assume dkT=1 keV and galactic NH=3.7d20
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+456.				0.4304572		Swift-XRT                150			                       30.
+1213.1420898                 262.0863037          Swift-XRT-PROVV     7.0000002160668373e+02  5.0000004e+01
+
+
+

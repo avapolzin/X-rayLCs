@@ -1,0 +1,11 @@
+Ref= Misra 2007 MNRAS 381 280
+SpecModel= Absorbed MEKAL (with kT evolving from 20 to 2.8 keV) or Power-law (with Gamma evolving from 1.3 to 1.9). 
+Comments: evidence for spectral softening with time. The unc on the fluxes account 
+for the range spanned by the fluxes calculated assuming the two different models.
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+30.2				        0.				Chandra		   	83.			                        9.0	   			
+45.0			        	0.				Chandra			48.						17.0
+72.5			        	0.				Chandra			56.5						8.5
+
+

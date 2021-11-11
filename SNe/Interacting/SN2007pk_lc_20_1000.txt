@@ -1,0 +1,13 @@
+Ref= Immler 2007 ATel #1284
+SpecModel= Thermal plasma spec with assumed kT=10 keV, galactic abs=4.7d20
+Comments= The flux listed is likely contaminated by the nucleus of the host galaxy (which is a known radio emitter). XRT is not bale to resolve the two possible sources of X-rays. So the detection of this NS in the X-ray is questionable and the flux reported are likely upper limits to the real fux from the SN
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+4.5				        2.				Swift-XRT	        290.			                        50.
+55.9843750      3.9570312   Swift-XRT-PROVV     8.0700004473328590e+02  8.0000000e+01
+    236.3710938      0.3671875   Swift-XRT-PROVV     2.1035000681877136e+02  5.0000004e+01
+    745.6679688      0.2695312   Swift-XRT-PROVV     3.2254999969154596e+02  6.0000008e+01
+    852.6621094      0.2363281   Swift-XRT-PROVV     1.7010000301524994e+02  8.5000000e+01
+   ##1360.5625000      0.0078125   Swift-XRT-PROVV     8.3950003609061230e+02  2.2000000e+02
+
+

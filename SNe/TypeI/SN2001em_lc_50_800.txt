@@ -1,0 +1,6 @@
+Ref= IAUC 8323, D. Pooley and W. H. G. Lewin, 2004
+SpecModel=Hard spectrum. Absorbed  MEKAL (kT=80 keV) or Power-law (index=1.) with NH=1.6d21
+Comments: this event is possibly associated to a GRB seen off-axis (paper by Granot)
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+933.				        0.		                Chandra-ACIS-S3    130.29071			        -9.

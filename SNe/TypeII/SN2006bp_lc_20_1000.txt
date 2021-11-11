@@ -1,0 +1,8 @@
+Ref= Immler  2007 ApJ 664 435
+Spec Model= thermal plasma spectrum with assumed kT=10keV, with Galactic absorption=1.6d20
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+3.				        2.		                Swift-XRT	        69.4			                        15.8
+9					3.				Swift-XRT		65.8						15.2
+21					0.				XMM-NewtonEPICpn  14.					3.    
+22					9				Swift-XRT	           40.				        -5.

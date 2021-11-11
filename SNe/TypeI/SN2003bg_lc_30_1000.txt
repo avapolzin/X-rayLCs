@@ -1,0 +1,8 @@
+Ref= Soderberg 2006 ApJ 651 1005
+SpecModel= Absorbed power-law or thermal bremmstralung. The statistics is too low to decide.
+Comments= the uncertainties of the flux quoted cover the range of fluxes coming from the 
+different spectral model used.
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+31.					0.				Chandra	                84			                        34
+120.					0.				Chandra			12.						4.

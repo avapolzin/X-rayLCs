@@ -1,0 +1,10 @@
+Ref= Pooley 2007 Atel#1023
+SpecModel=  very hard power-law with index ~0.14 and Galactic NH. 
+Comments: this events reaches a lum of 1d41: one of the highest. XMM observations were announced in Atel#1023
+to be perfomed on March 2007 under id=410581101. I've found no trace of those obs. in the literature. The error provided
+accounts for the diff. flux obtained with different models. The flux listed is the mid value of the max and min values
+obtained assuming different spec models.
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+477.					0.		                Chandra-ACIS-S3    495.7			                50.1

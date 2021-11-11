@@ -1,0 +1,6 @@
+Ref=Immler 2010 ATel #2478
+Sepc Model= thermal plasma model with kT=10 keV and Galactic abs=4.7d20
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+12				        1.                             Swift-XRT	        55.		                                19.

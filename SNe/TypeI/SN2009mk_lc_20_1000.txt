@@ -1,0 +1,6 @@
+Ref= Russel&Immler 2010 ATel #2389
+SpecModel= thermal plasma spec with assumed kT=10 keV and Galactic NH=1.7d20. 
+Comments= the authors claim the presence of fading
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+15.5				        13.5                         Swift-XRT                48.			                        13.

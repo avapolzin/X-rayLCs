@@ -1,0 +1,13 @@
+Ref= Soria A&A 413, 107–119 (2004)
+SpecModel= Optically thin thermal plasma (Raymond-Smith model unser XSPEC). The 
+statistics is too low to allow a proper spectral fitting and the uncertanty mainly arises
+from the NH.
+Comments: the uncertainty quoted takes into account different assumptions on the NH
+(see their Table 2) and spans the entire range of values obtained accounting for the
+statistical uncertany on every flux. The contamitating source which appears on 
+Chandra images has been subtracted. There are XMM obs taken on 7 January 2003
+where the SN is no longer detected. No upper limit on the flux is quoted.
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+4					0.                             XMM-Newton          17.0				                11.8

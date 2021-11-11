@@ -1,0 +1,6 @@
+Ref= Schlegel 2001 556 L25
+SpecModel= Flux calibration insensitive to the spec model. Assumed model= 1 keV thermal bremsstrahlung
+Comments: error on the flux obtained through direct propagatio of the reported error on the count rate (Table 2)
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+46.				        13.				Chandra		   	1.1			                        0.13

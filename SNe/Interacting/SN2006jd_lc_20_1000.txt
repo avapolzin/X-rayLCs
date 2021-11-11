@@ -1,0 +1,8 @@
+Ref= Immler 2007 Atel#1290
+SoecModel= thermal plasma spec with assumed kT=10 keV and Galactic abs=4.5d20
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+400.				         0.				Swift-XRT                340.			                        110.
+1200.7727051    411.7231445   Swift-XRT-PROVV     2.8295000083744526e+02  2.9000000e+01
+1610.4080811      2.0877488   Swift-XRT-PROVV     2.7534998953342438e+02  4.4500000e+01

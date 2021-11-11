@@ -1,0 +1,6 @@
+Ref= Roming  MNRAS 704, L118, 2009
+SpecModel= Thermal plasma spec with assumed kT=10keV and Galactic abs=1.78d20
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+12.2					10.5                        Swift-XRT		   		30.	                                9.0	

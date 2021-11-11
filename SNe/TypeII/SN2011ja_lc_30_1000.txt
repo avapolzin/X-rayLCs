@@ -1,0 +1,3 @@
+time(days)	flux(1d-15erg/s/cm2)
+29	9.8
+113	40.8

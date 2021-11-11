@@ -1,0 +1,4 @@
+ref= riduzione dati provvisoria mia
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+2500.7602539      0.0397859   Swift-XRT-PROVV     3.0749998986721039e+02 -5.0000000e+00

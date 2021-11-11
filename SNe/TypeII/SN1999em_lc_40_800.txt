@@ -1,0 +1,13 @@
+Ref=  Pooley 2002 ApJ 572, 932
+Spec Model= MEKAL or thermal bremmst.
+Comments: ABSORBED flux listed. NH=6.1d20 cm-2. The Fluxes listed are model independent since they are obtained
+from manual inegration of the counts. This energy band is generated summing up the fluxes in the 0.4-2 keV + 2-8 keV bands
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+4				      0.		          Chandra-ACIS-S3	   	25.			                   6.80661
+16				      0.		          Chandra-ACIS-S3		9.05000				  2.57148	   
+49				      0.		          Chandra-ACIS-S3		4.44000				  1.39284
+102				      0.		          Chandra-ACIS-S3		5.58000				  0.948472
+368				      0.		          Chandra-ACIS-S3		1.54000				  0.524976
+495				      0.		          Chandra-ACIS-S3		1.0				          0.36
+630				      0.		          Chandra-ACIS-S3		0.47					  0.23

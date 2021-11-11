@@ -1,0 +1,5 @@
+Ref= Immler 2009 ATel #2111
+SpecModel= thermal plasma spec with assumed kT=10 keV and Gal NH=1.6d20
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+9.				       4.                              Swift-XRT                60			                        18.                                         

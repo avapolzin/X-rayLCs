@@ -1,0 +1,6 @@
+Ref=Pooley 2003 Atel #116
+SpecModel= Only a rough estimate is provided.
+Comments= Total number of counts detected=2. It cannot be excluded that they entirely or partially come from the possibly active nucleus of the faint host galaxy.  ABSORBED luminosity listed.
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+50.				        0				Chandra-ACIS-S3	 193.			                0.

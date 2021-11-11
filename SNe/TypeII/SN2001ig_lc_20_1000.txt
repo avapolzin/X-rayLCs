@@ -1,0 +1,9 @@
+Ref= IAUC 7913 Schlegel & Ryder 2002
+Spec Model= Assumed 3keV thermal bremstrahlung absorbed by NH=1.3d20 cm-2
+Comments: the error on the flux only account for the systematic unc deriving from the
+assume 3keV temperature. Assuming kT=1keV or kT=5 keV a 20% variation of the estimated
+flux is obtained. In the IAUC circular another Chandra obs is annouced to follow the lc decay.
+I did not find the data published.
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+163.				        0.                             Chandra                   7.0		                                1.4

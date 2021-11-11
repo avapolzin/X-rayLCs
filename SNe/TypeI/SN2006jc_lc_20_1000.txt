@@ -1,0 +1,12 @@
+Ref=  Immler 2008 ApJ 674 L85
+SpecModel= thermal plasma spectrum with kT evolving from 5 keV to 2 keV, woth Galactic absorption NH=1.5d20
+Comments= X-ray lc with RISE!
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+34.5				       15.5		                Swift-XRT	        12.			                        8.                
+40.				       0.				Chandra-ACIS		8.						3.
+73.5				       20.5				Swift-XRT		33.						7.
+112.				       14.0				Swift-XRT		52.						10.
+134.5			        6.5    			Swift-XRT		20.						7.
+151.				        8.0			        Swift-XRT		17.				                7.
+177.					6.0				Swift-XRT		15.						6.

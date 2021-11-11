@@ -1,0 +1,6 @@
+Ref= Immler 2010 Atel#3012
+SpecModel=thermal plasma spectrum with a temperature of kT = 10 keV, Galactic foreground column density of N_H = 3.03E+20 
+Comments= there are unpublished Chandra obs of this object taken on Nov and Dec 2010 for a total of 50 ks
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+1.5				        0.		                Swift-XRT		130.	                              20.				

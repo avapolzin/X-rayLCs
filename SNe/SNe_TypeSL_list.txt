@@ -1,0 +1,5 @@
+Name	Type	Energy	Distance(Mpc)	k-correction
+# SCP06F6	Ia?	30_10000	8309.7	1
+SN2018gk	IIb	30_10000	140.5	1
+PTF12dam	?	30_10000	498.2	1
+ASASSN-15lh	?	30_10000	1171	1

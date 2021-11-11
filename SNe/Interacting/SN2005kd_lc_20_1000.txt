@@ -1,0 +1,11 @@
+Ref=  Immler 2007 Atel #981 
+SpecModel= thermal plasma spec with kT=10 keV and Galactic NH=1.5d21; 
+Comments: this events reaches a lum of 1d41: one of the highest. XMM observations were announced in Atel#1023
+to be perfomed on March 2007 under id=410581101. I've found no trace of those obs. in the literature.
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+438.					0.                             Swift-XRT                290.			                        50.
+1013.6763916                0.2714930                Swift-XRT-PROVV    171.768  					50.
+
+
