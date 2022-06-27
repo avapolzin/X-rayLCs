@@ -1,6 +1,6 @@
 # Novae
 
-|Name | RA/Dec | Distance (kpc) | Reference|
+|Name | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: |
 |V838 Her |18:46:31.56 +12:14:00.7 | 3.4 | Mukai et al. 2008|
 |V1974 Cyg | 20:30:31.61 +52:37:51.3 | 1.9 | Mukai et al. 2008|
