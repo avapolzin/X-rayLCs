@@ -1,8 +1,8 @@
 name	z	dl_UCLA(Mpc)	t90	lc_wget	TriggerTime(MET)
 GRB160821BS	0.16	771.1	0.48	http://www.swift.ac.uk/xrt_curves/00709357/flux.qdp	493511369.9
-GRB160625B	1.406	10233.7	0.8	http://www.swift.ac.uk/xrt_curves/00020667/flux.qdp	488587404.0
+# GRB160625B	1.406	10233.7	0.8	http://www.swift.ac.uk/xrt_curves/00020667/flux.qdp	488587404.0
 GRB160624AS	0.483	2746.4	0.2	http://www.swift.ac.uk/xrt_curves/00701288/flux.qdp	488460437.8
-GRB150423AS	1.394	10125.4	0.22	http://www.swift.ac.uk/xrt_curves/00638808/flux.qdp	451463298.2
+# GRB150423AS	1.394	10125.4	0.22	http://www.swift.ac.uk/xrt_curves/00638808/flux.qdp	451463298.2
 GRB150101BS	0.134	635.2	0.08	http://www.swift.ac.uk/xrt_curves/00020464/flux.qdp	441818593.0
 GRB101219A	0.718	4448.5	0.6	http://www.swift.ac.uk/xrt_curves/00440606/flux.qdp	314418696.0
 GRB100816A	0.8049	5121.2	2.9	http://www.swift.ac.uk/xrt_curves/00431764/flux.qdp	303611877.4
@@ -15,11 +15,11 @@ GRB070714B	0.923	6067.0	3.0	http://www.swift.ac.uk/xrt_curves/00284856/flux.qdp	
 GRB061217A	0.827	5295.5	0.210	http://www.swift.ac.uk/xrt_curves/00251634/flux.qdp	188019609.9
 GRB061210A	0.4095	2255.2	85.0	http://www.swift.ac.uk/xrt_curves/00243690/flux.qdp	187446041.0
 GRB061006A	0.438	2443.1	0.42	http://www.swift.ac.uk/xrt_curves/00232585/flux.qdp	181845952.0
-GRB060801A	1.131	7808.9	0.490	http://www.swift.ac.uk/xrt_curves/00222154/flux.qdp	176127376.5
+# GRB060801A	1.131	7808.9	0.490	http://www.swift.ac.uk/xrt_curves/00222154/flux.qdp	176127376.5
 GRB051221A	0.5465	3187.7	1.400	http://www.swift.ac.uk/xrt_curves/00173780/flux.qdp	156822675.5
-GRB050813A	1.8	13894.0	0.450	http://www.swift.ac.uk/xrt_curves/00150139/flux.qdp	145608309.4
+# GRB050813A	1.8	13894.0	0.450	http://www.swift.ac.uk/xrt_curves/00150139/flux.qdp	145608309.4
 GRB050724A	0.258	1317.1	3.00	http://www.swift.ac.uk/xrt_curves/00147478/flux.qdp	143901249.0
 GRB050509B	0.225	1127.6	0.073	http://www.swift.ac.uk/xrt_curves/00118749/flux.qdp	137304018.8
-GRB190627A	1.942	15256.4	1.60	https://www.swift.ac.uk/xrt_curves/00911609/flux.qdp	583327134.3
+# GRB190627A	1.942	15256.4	1.60	https://www.swift.ac.uk/xrt_curves/00911609/flux.qdp	583327134.3
 GRB141212AS	0.596	3541.7	0.30	https://www.swift.ac.uk/xrt_curves/00621229/flux.qdp	440079253.8
 GRB170817A	0.009	43	-	-	- #not Swift
