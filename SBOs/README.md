@@ -1,7 +1,7 @@
 # SBOs
 
 
-|Name | Type | RA/Dec | Distance (kpc) | References}|
+|Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |GRB980425A | stellar surface | 19:35:03.17 -52:50.46.1 | $3.7\times10^4$ | Pian et al. 2000; Kouveliotou et al. 2004|
 |GRB031203A | stellar surface | 08:02:30.1 -39:51:03 | $4.9\times10^5$ | Sazanov et al. 2004; Watson et al. 2004|
