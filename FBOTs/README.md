@@ -1,6 +1,6 @@
 # FBOTs
 
-GRB light curves are organized into folders by type (short, long, ultralong, and subluminous); the text files with names Swift_GRB_zonly_*.txt list the included GRBs and some additional information about them (redshift, t90, etc.). Because we focus exclusively on z ≤ 1 events in the paper, higher redshift GRBs are commented out in the list files, but the light curves themselves are still available and included in the relevant directories.
+FBOT light curves are organized into folders by type (short, long, ultralong, and subluminous); the text files with names Swift_GRB_zonly_*.txt list the included GRBs and some additional information about them (redshift, t90, etc.). Because we focus exclusively on z ≤ 1 events in the paper, higher redshift GRBs are commented out in the list files, but the light curves themselves are still available and included in the relevant directories.
 
 The light curve files are named according to the event and the relevant columns are "Time" (time since outburst in days) and "Flux" (0.3-10 keV flux in erg s-1 cm-2 -- and are rest frame by default). Other columns give the positive and negative error on "Time" and "Flux". The redshift in the list files can be used to convert the duration to the rest frame.
 
