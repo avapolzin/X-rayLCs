@@ -10,8 +10,8 @@ See Table A1 for additional details about the individual events:
 
 |Name | Type | t$_{90}$ (s) | RA/Dec | z | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|GRB980425A | subluminous | 22.0\tablenotemark{a} | 19:35:03.17 -52:50.46 | 0.0085 | $2.7\times10^4$| Pian et al. 2000; Kouveliotou et al. 2004|
-|GRB031203A | subluminous | 30\tablenotemark{b} | 08:02:30.1 -39:51:03 | 0.105 | $4.9\times10^5$ | Sazanov et al. 2004; Watson et al. 2004|
+|GRB980425A | subluminous | 22.0 | 19:35:03.17 -52:50.46 | 0.0085 | $2.7\times10^4$| Pian et al. 2000; Kouveliotou et al. 2004|
+|GRB031203A | subluminous | 30 | 08:02:30.1 -39:51:03 | 0.105 | $4.9\times10^5$ | Sazanov et al. 2004; Watson et al. 2004|
 |GRB050509B | short | 0.073 | 12:36:18.00 +29:01:24.0| 0.225 | $1.1\times10^6$ | Evans et al. 2007, 2009|
 |GRB050724 | short | 3.00 | 16:24:44.400 -27:32:27.90 | 0.258 | $1.3\times10^6$ | Evans et al. 2007, 2009|
 |GRB051221A | short | 1.400 | 21:54:48.626 +16:53:27.16 | 0.5465 | $3.2\times10^6$ | Evans et al. 2007, 2009|
@@ -22,7 +22,7 @@ See Table A1 for additional details about the individual events:
 |GRB070714B | short | 3.0 | 03:51:22.30 +28:17:51.3 | 0.923 | $6.1\times10^6$ | Evans et al. 2007, 2009|
 |GRB070724A | short | 0.4 | 01:51:14.08 -18:35:38.8 | 0.457 | $2.6\times10^6$ | Evans et al. 2007, 2009|
 |GRB071227 | short | 1.8 | 03:52:31.09 -55:59:03.3 | 0.383 | $2.1\times10^6$ | Evans et al. 2007, 2009|
-|GRB080905A | short | 1.0 | 19:10:39.10 -18:51:55.4 | 0.1218 | $5.7\times10^5$ Evans et al. 2007, 2009|
+|GRB080905A | short | 1.0 | 19:10:39.10 -18:51:55.4 | 0.1218 | $5.7\times10^5$ | Evans et al. 2007, 2009|
 |GRB090510A | short | 0.3 | 22:14:12.60 -26:35:51.1 | 0.903 | $5.9\times10^6$ | Evans et al. 2007, 2009|
 |GRB100117A | short | 0.3 | 00:45:04:56 -01:35:41.7 | 0.92 | $6.0\times10^6$ | Evans et al. 2007, 2009|
 |GRB100316D | subluminous | 292.8 | 07:10:30.63 -56:15:19.7| 0.059 | $2.7\times10^5$ | Evans et al. 2007, 2009|
