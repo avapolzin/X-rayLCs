@@ -6,7 +6,7 @@ The _Type I_, _Type II_, and _Interacting_ light curve files are named according
 
 The relevant columns are "time(days)" and "flux(1d-15 erg/s/cm2)" (flux in units of 10<sup>-15</sup> erg s<sup>-1</sup> cm<sup>-2</sup>). Other columns give the (symmetric) error on "time" and "flux", as well as the instrument that took the observation. Additional light curve-specific information is retained at the top of some of the event files.
 
-The _Superluminous_ and _Ca-rich_ light curve files are named according to the event. The columns for _Superluminous_ light curves are "time(days)" and "Lum(erg/s)" (in the 0.3-10 keV band). The colums for the _Ca-rich_ light curve are "Time(day)" and "Flux(erg/s/cm2)" (also 0.3-10 keV).
+The _Superluminous_ and _Ca-rich_ light curve files are named according to the event. The columns for _Superluminous_ light curves are "time(days)" and "Lum(erg/s)" (in the 0.3-10 keV band). The columns for the first _Ca-rich_ X-ray SN 2019ehk are "Time(day)" and "Flux(erg/s/cm2)" (also 0.3-10 keV), and the columns for SN2021gno are "MJD" (the first observation was taken 0.81 days from the explosion) and "Flux(1e-12)", which is in units of 1e-12 erg s<sup>-1</sup> cm<sup>-2</sup> for the 0.3-10 keV band.
 
 See Table A3 for additional details about the individual events:
 
