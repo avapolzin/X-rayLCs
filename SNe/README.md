@@ -54,3 +54,4 @@ See Table A3 for additional details about the individual events:
 |SN2015L (ASASSN-15lh) | I/SL | 22:02:15.45 -61:39:34.6| $1.2 \times 10^6$ | Margutti et al. 2017|
 |SN2018gk | IIb/SL | 16:35:53.908 +40:01:58.31 | $5.0 \times 10^5$ | Bose et al. 2020|
 |SN2019ehk | Ca-rich | 12:22:56.130 +15:49:33.60 | $1.6 \times 10^4$ | Jacobson-Galán et al. 2020|
+|SN2021gno | Ca-rich | 12:12:10.29 +13:14:57.04 | $3.05 \times 10^4$ | Jacobson-Galán et al. 2022|
