@@ -1,5 +1,8 @@
 # SBOs
 
+The single wind SBO observation (SN2008D) gives the light curve for the 0.5 - 8 keV band. For a Γ = 2 power law spectrum, the k-correction to 0.3 - 10 keV is 1.34. The columns are "time(days)" and "flux(1e^-15)", the latter corresponding to the (0.5-8 keV) flux in units of 1e-15 erg s<sup>-1</sup> cm<sup>-2</sup>. The distance from the table below can be used to convert flux to luminosity. In order to isolate the shock breakout, the light curve should be cropped to time ≤ 0.2 days.
+
+The stellar surface SBO light curve files are named according to the event and the relevant columns are "Time" (time since outburst in days) and "Flux" (0.3-10 keV flux in erg s-1 cm-2 -- and are rest frame by default). Other columns give the positive and negative error on "Time" and "Flux".
 
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
