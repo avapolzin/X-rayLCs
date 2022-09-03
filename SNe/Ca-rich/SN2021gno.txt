@@ -1,0 +1,15 @@
+MJD Flux(1e-12)
+59293.51  4.1
+59293.84  4.1
+# 59294.36  1.6 #upper limit
+# 59295.44  1.6 #upper limit
+# 59296.23  1.6 #upper limit
+# 59298.28  4.2 #upper limit
+# 59302.66  4.2 #upper limit
+# 59303.14  4.2 #upper limit
+# 59308.71  4.2 #upper limit
+# 59313.30  7.3 #upper limit
+# 59317.86  7.3 #upper limit
+# 59325.64  7.3 #upper limit
+# 59414.17  7.3 #upper limit
+# 59524.21  7.3 #upper limit
