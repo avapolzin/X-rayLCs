@@ -1,0 +1,11 @@
+name	distance_Mpc	simbad
+1H0707	177.6	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%402995654&Name=4U+0708-49&submit=display+all+measurements#lab_meas
+3C273	762.3	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=3c273&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id
+3C279	3115.1	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=3c279&submit=submit+id
+3C345	3537.4	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=3C345&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id
+3C454	13540.3	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=3c454&submit=submit+id
+CGC229	81.7 http://simbad.u-strasbg.fr/simbad/sim-id?Ident=Z+299-015&submit=submit+id
+MKN335	111.7	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=MKN335&submit=submit+id
+NGC3227	15.7	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%401711012&Name=NGC++3227&submit=display+all+measurements#lab_meas
+NGC4395	4.7	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=NGC+4395&submit=submit+id
+PKS2155	543.4	http://simbad.u-strasbg.fr/simbad/sim-id?Ident=PKS+2155-304&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id
