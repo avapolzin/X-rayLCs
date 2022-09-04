@@ -1,5 +1,6 @@
 # Magnetar Flares/Outbursts & Fast Radio Bursts
 
+See Table A8 for additional details about individual events:
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |1E161348-5055 | Outburst | 16:17:33.000 -51:02:00.00 | 3.3 | Rea et al. 2016; Esposito et al. 2019|
