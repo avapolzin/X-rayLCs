@@ -2,6 +2,7 @@
 
 Light curve files for individual flares (some recurrent from the same dwarf star) are named for the event and have the columns "time(s)" and "flux(cts/s)". The counts (assuming XMM Newton EPIC pn) -> flux (in erg s<sup>-1</sup> cm<sup>-2</sup> conversion is 6.484e-12, and the *stellar_flares.txt* file gives a conversion between the MOS and pn counts for each event. That same file contains the distance to each star for conversions between flux and luminosity.
 
+See Table A9 for additional details about the individual events:
 |Name | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: |
 |UY Scl | 00:14:45.752 -39:14:35.57| 0.1372 | Pye et al. 2015|
