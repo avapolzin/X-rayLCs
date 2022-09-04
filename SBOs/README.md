@@ -4,6 +4,7 @@ The single wind SBO observation (SN2008D) gives the light curve for the 0.5 - 8 
 
 The stellar surface SBO light curve files are named according to the event and the relevant columns are "Time" (time since outburst in days) and "Flux" (0.3-10 keV flux in erg s-1 cm-2 -- and are rest frame by default). Other columns give the positive and negative error on "Time" and "Flux".
 
+See Table A2 for additional details about individual events:
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |GRB980425A | stellar surface | 19:35:03.17 -52:50.46.1 | $3.7\times10^4$ | Pian et al. 2000; Kouveliotou et al. 2004|
