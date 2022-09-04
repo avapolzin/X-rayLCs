@@ -1,5 +1,9 @@
 # Novae
 
+Each light curve file is named according to the event. _<event>_*.txt_ files are from Mukai et al. (2008) and have the suffix **_high** for upper limits and **_low** for lower limits. *Novae_Mukai.txt* contains a list of events, their distances, and k-corrections, which can be used to convert to 0.3-10 keV (following Mukai et al. in assuming a 5 keV bremsstrahlung spectrum where the native ROSAT luminosity is measured for the 0.2 - 2.4 keV band and all other instruments have their luminosities reported in the 2 - 10 keV band). The columns are "Day", which refers to days since outburst, and "logLum(cgs)", which gives the log of luminosity/(erg s<sup>-1</sup>) in the instrument's band.
+
+The _*_fluxlc.qdp_ files are also named according to the event. **Novae_Page.txt** gives details of the light curve files including the distance in kpc and whether or not (isflux = YES or NO) the light curves give flux in counts or in cgs units. The relevant columns in the .qdp files are the first two: time (0th column) and observed 0.3 - 10 keV flux (1st column). If isflux = YES, then those latter values are in units of erg s<sup>-1</sup> cm<sup>-2</sup>. If isflux = NO, then those latter values are in counts per second and a uniform flux correction factor of 3.575e-11 can be applied to convert between counts/s and cgs units.
+
 |Name | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: |
 |V838 Her |18:46:31.56 +12:14:00.7 | 3.4 | Mukai et al. 2008|
@@ -21,7 +25,7 @@
 |V1281 Sco | 16:56:59.35 -35:21:50.2| 25.9 | Kantharia 2017; Page et al. 2020|
 |V458 Vul | 19:54:24.61 +20:52:52.6 | 8.5 | Page et al. 2020|
 |V597 Pup | 08:16:17.953 -34:15:25.19| 3 | Worpel et al. 2020; Page et al. 2020|
-|V2468 Cyg | 19:58:33.57 +29:52:11.6| 5.6| Raj et al. 2015; Paget et al. 2020|
+|V2468 Cyg | 19:58:33.57 +29:52:11.6| 5.6| Raj et al. 2015; Page et al. 2020|
 |V2491 Cyg | 19:43:01.977 +32:19:13.55| 10.5 - 14| Darnley et al. 2011; Page et al. 2020|
 |HV Cet (CSS081007) | 03:05:58.53 +05:47:15.7 | 4.45 | Page et al. 2020|
 |LMC 2009a | 05:04:44.20 -66:40:11.6 | 50 | Page et al. 2020|
