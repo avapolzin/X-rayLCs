@@ -4,6 +4,7 @@ Each light curve file is named according to the event. _<event>_*.txt_ files are
 
 The _*_fluxlc.qdp_ files are also named according to the event. *Novae_Page.txt* gives details of the light curve files including the distance in kpc and whether or not (isflux = YES or NO) the light curves give flux in counts or in cgs units. The relevant columns in the .qdp files are the first two: time (0th column) and observed 0.3 - 10 keV flux (1st column). If isflux = YES, then those latter values are in units of erg s<sup>-1</sup> cm<sup>-2</sup>. If isflux = NO, then those latter values are in counts per second and a uniform flux correction factor of 3.575e-11 can be applied to convert between counts/s and cgs units.
 
+See Table A6 for additional details about the individual events:
 |Name | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: |
 |V838 Her |18:46:31.56 +12:14:00.7 | 3.4 | Mukai et al. 2008|
