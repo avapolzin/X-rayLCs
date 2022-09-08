@@ -1,0 +1,1 @@
+   ulx3                  0784510301             2017-01-18T07:52:05   0.005	0.0005	3.45e-14	4.8e-15		0.	0.		# Contains the spectral fit results
