@@ -1,0 +1,11 @@
+2017MNRAS.470.4354V
+
+readcol,'lc_swift.ascii',obsid,exp,mjd,rate,erate,format='I,D,D,D,D'
+
+fac=4.2259e+37
+mjd_c=5.7575350655373E+04
+f_c=3.98d+36
+ef_c=0.12d+36
+x=mjd
+y=rate*fac
+ey=erate*fac

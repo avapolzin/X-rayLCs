@@ -1,0 +1,33 @@
+#MJD	flux	inst
+#55465.7	2.4e-9	swift
+#55469.7	4.8e-9	swift
+#55670.3	1.73e-13	cxo
+#55693.2	8.3e12	cxo
+#55721.2	1.4e-11	swift
+#55741.0	5.8e-12	swift
+#55788.8	4.5e-15	cxo
+#
+#From Table 3 of Jonker et al. (2012)^^
+#flux is in 1 - 10 keV
+###########
+#MJD	ct_rate	unabs_flux	abs_flux
+#55665.96202	3.9e-2	4.0e-13	3.0e-13
+#55674.74944	9.9e-3	7e-14	5e-14
+#55684.29844	4.8e-4	9e-15	7e-15
+#55693.21054	6.87e-1	9.4e-12	8.2e-12 # or 1.9e-11	1.7e-11
+#55788.83283	5.5e-4	6e-15	4.6e-15
+#55846.53179	4.5e-4	4e-15	2.3e-15
+#Tables 1 and 2 in Jonker et al. (2012) ^^
+#ct_rate is 0.3-7 keV for Chandra, unabs and abs_flux are 0.5-10 keV
+#
+########## COMBINED BELOW, assume Gamma = 2, t0 = 55464 based on GRB detection
+MJD	flux	k	inst
+55465.7	2.4e-9	1.523	swift
+55469.7	4.8e-9	1.523	swift
+55670.3	1.73e-13	1.523	cxo
+55684.29844	9e-15	1.171	cxo
+55693.21054	9.4e-12	1.171	cxo
+55721.2	1.4e-11	1.523	swift
+55741.0	5.8e-12	1.523	swift
+55788.83283	6e-15	1.171	cxo
+55846.53179	4e-15	1.171	cxo
