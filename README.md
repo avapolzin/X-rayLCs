@@ -60,7 +60,8 @@ The default units for each of these inputs are erg/s, Gpc<>-3</sup>/yr, deg<sup>
 ```python
 import astropy.units as u
 
-n_obs(lpk, rate, sens, fov, lunits = u.J/u.s, runits = u.Mpc**-3/u.yr, funits = u.J/u.s/u.m**2, fovunits = u.arcmin**2)
+n_obs(lpk, rate, sens, fov, lunits = u.J/u.s, runits = u.Mpc**-3/u.yr, 
+      funits = u.J/u.s/u.m**2, fovunits = u.arcmin**2)
 ```
 
 You can also change the output units -- the default is N<sub>obs</sub>/yr -- with e.g. ```python perunits = u.d```, which will return N<sub>obs</sub>/day.
