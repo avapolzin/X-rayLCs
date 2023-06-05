@@ -8,6 +8,7 @@ Each folder has its own README file that lists details of the included files and
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted.
 
 ***
+***
 # `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS.
 
@@ -25,7 +26,7 @@ sudo python3 setup.py install
 ```
 
 Within `xraydlps` there are three modules, `plot`, `classify`, and `tools`. 
-***
+
 ***
 ## `xraydlps.plot`
 ```python
@@ -33,13 +34,11 @@ from xraydlps import plot
 ```
 
 ***
-***
 ## `xraydlps.classify`
 ```python
 from xraydlps import classify
 ```
 
-***
 ***
 ## `xraydlps.tools`
 ```python
