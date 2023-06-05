@@ -9,7 +9,7 @@ If you are going to use data found here, please cite both the original source(s)
 
 ***
 ***
-# `xraydlps`
+# How to use `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package itself (via Zenodo above).
 
 To download and install, 
@@ -98,6 +98,8 @@ You can also change the output units -- the default is N<sub>obs</sub>/yr -- wit
 `convert` takes an input light curve and converts it to peak L<sub>x</sub>, t<sub>half</sub>, E<sub>iso</sub>, and duration points for use in plotting/classification.
 
 ```python
+from xraydlps.tools import convert
+
 lpk, thalf, eiso, dur = convert(time, lum)
 ```
 If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets a k-correction. Similarly, if the input light curve is not in the default units of days and erg/s, you can specify `tunits` and `lunits` with astropy units. The output will be in erg/s, days, erg, days.
