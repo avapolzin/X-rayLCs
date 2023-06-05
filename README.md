@@ -5,12 +5,12 @@ Data from [Polzin et al., submitted](https://ui.adsabs.harvard.edu/abs/2022arXiv
 
 Each folder has its own README file that lists details of the included files and will have a copy of the table that offers citations (_including references therein_) for these data.
 
-If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted.
+If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
 ***
 ***
 # `xraydlps`
-Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS.
+Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package (via Zenodo above).
 
 To download and install, 
 ```bash
@@ -32,6 +32,7 @@ Within `xraydlps` there are three modules, `plot`, `classify`, and `tools`.
 ```python
 from xraydlps import plot
 ```
+Plotting functions are designed to be modular and allow for rapid/flexible plotting of the duration-luminosity phase space.
 
 ***
 ## `xraydlps.classify`
@@ -72,3 +73,4 @@ lpk, thalf, eiso, dur = convert(time, lum)
 ```
 If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets a k-correction. Similarly, if the input light curve is not in the default units of days and erg/s, you can specify `tunits` and `lunits` with astropy units. The output will be in erg/s, days, erg, days.
 
+[![astropy](http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
