@@ -8,7 +8,7 @@ Each folder has its own README file that lists details of the included files and
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted.
 
 ***
-#`xraydlps`
+# `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS.
 
 To download and install, 
@@ -26,22 +26,23 @@ sudo python3 setup.py install
 
 Within `xraydlps` there are three modules, `plot`, `classify`, and `tools`. 
 
-##`xraydlps.plot`
+## `xraydlps.plot`
 ```python
 from xraydlps import plot
 ```
 
-##`xraydlps.classify`
+## `xraydlps.classify`
 ```python
 from xraydlps import classify
 ```
 
-##`xraydlps.tools`
+## `xraydlps.tools`
 ```python
 from xraydlps import tools
 ```
 The two front-facing functions in tools are `xraydlps.tools.n_obs` and `xraydlps.tools.convert`.
 
+### `xraydlps.tools.n_obs`
 To determine the anticipated number of observations of a class of transients per year (within z &le; 1) for a given instrument, `n_obs` takes the peak X-ray luminosity of that class and its volumetric event rate. It also takes the field-of-view and the flux limit of that instrument.
 
 ```python
