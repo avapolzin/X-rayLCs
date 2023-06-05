@@ -34,11 +34,39 @@ from xraydlps import plot
 ```
 Plotting functions are designed to be modular and allow for rapid/flexible plotting of the duration-luminosity phase space.
 
+We include here quick plotting functions for the general DLPS, the schematic DLPS, the DFPS, and our L<sub>pk</sub> vs. t<sub>1/2</sub> and E<sub>iso</sub> and t<sub>dur</sub>.
+
+Each of the functions allows you to specify which classes (and with the exception of the schematic DLPS, which subclasses) to show, it is useful to have a list of working keywords. To list available classes:
+```python
+list_classes()
+```
+
+If you would like to list the subclasses, too, the command becomes:
+```python
+list_classes(sub = True)
+```
+
+To directly recreate figures from Polzin et al. (2023), you can use our built in style functions + our general DLPS plotting function:
+```python
+from xraydlps.plot import set_mpldefaults, dlps_axes, dlps_legend, obs_dlps
+
+set_mpldefaults() #sets general matplotlib style parameters for all plots
+
+fig = plt.figure(figsize = (27, 25))
+obs_dlps() #plots light curves, can specify which classes to include + line color/appearance
+dlps_axes() #generates axes, including minor ticks + axis labels (fully customizable)
+dlps_legend() #creates legend and adds it to the plot, specify labels, colors, and appearance
+```
+Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses of transient. Classes are specified as a list, subclasses should be specified as a nested list, where classes sans subclasses or where subclasses should be turned off should be input as *None*
+
 ***
 ## `xraydlps.classify`
 ```python
 from xraydlps import classify
 ```
+Within `xraydlps.classify` we offer some preliminary trained KNN models for classifying both light curves (using a dynamic time warping metric) and more general characteristics (L<sub>pk</sub>, t<sub>1/2</sub>, E<sub>iso</sub>, and t<sub>dur</sub>). We also layout a means of rapidly training models using other hyperparameters.
+
+We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar flares) are included in the training set, so we urge caution in using the results of the KNN classification as anything other than preliminary guidance. The results of visual comparison to the DLPS are likely comparable.
 
 ***
 ## `xraydlps.tools`
