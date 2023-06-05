@@ -10,7 +10,7 @@ If you are going to use data found here, please cite both the original source(s)
 ***
 ***
 # `xraydlps`
-Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package (via Zenodo above).
+Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package itself (via Zenodo above).
 
 To download and install, 
 ```bash
@@ -72,5 +72,14 @@ You can also change the output units -- the default is N<sub>obs</sub>/yr -- wit
 lpk, thalf, eiso, dur = convert(time, lum)
 ```
 If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets a k-correction. Similarly, if the input light curve is not in the default units of days and erg/s, you can specify `tunits` and `lunits` with astropy units. The output will be in erg/s, days, erg, days.
+
+### Dependencies
+- numpy
+- matplotlib
+- pandas
+- sklearn
+- astropy
+- pickle
+- scipy
 
 [![astropy](http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
