@@ -55,14 +55,20 @@ from xraydlps.tools import n_obs
 n_obs(lpk, rate, fov, flim)
 ```
 
-The default units for each of these inputs are erg/s, Gpc<>-3</sup>, deg<sup>2</sup>, and erg/s/cm<sup>-2</sup>. To change the units, simply add the arguments *lunit*, *runit*, *fovunit*, and *funit*, specifying your input with `astropy.units`:
+The default units for each of these inputs are erg/s, Gpc<>-3</sup>/yr, deg<sup>2</sup>, and erg/s/cm<sup>-2</sup>. To change the units, simply add the arguments *lunits*, *runits*, *fovunits*, and *funits*, specifying your input with `astropy.units`:
 ```python
 import astropy.units as u
 
-n_obs(lpk, rate, fov, flim, lunit = u.J/u.s, runit = u.Mpc**-3, fovunit = u.arcmin**2, funit = u.J/u.s/u.m**2)
+n_obs(lpk, rate, sens, fov, lunits = u.J/u.s, runits = u.Mpc**-3/u.yr, funits = u.J/u.s/u.m**2, fovunits = u.arcmin**2,)
 ```
 
 You can also change the output units -- the default is N<sub>obs</sub>/yr -- with e.g. ```python perunits = u.d```, which will return N<sub>obs</sub>/day.
 
+#### `xraydlps.tools.convert`
+`convert` takes an input light curve and converts it to peak L<sub>x</sub>, t<sub>half</sub>, E<sub>iso</sub>, and duration points for use in plotting/classification.
 
+```python
+lpk, thalf, eiso, dur = convert(time, lum)
+```
+If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets a k-correction. Similarly, if the input light curve is not in the default units of days and erg/s, you can specify `tunits` and `lunits` with astropy units. The output will be in erg/s, days, erg, days.
 
