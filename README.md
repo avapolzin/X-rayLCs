@@ -57,7 +57,65 @@ obs_dlps() #plots light curves, can specify which classes to include + line colo
 dlps_axes() #generates axes, including minor ticks + axis labels (fully customizable)
 dlps_legend() #creates legend and adds it to the plot, specify labels, colors, and appearance
 ```
-Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses of transient. Classes are specified as a list, subclasses should be specified as a nested list, where classes sans subclasses or where subclasses should be turned off should be input as *None*
+Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses of transient. Classes are specified as a list, subclasses should be specified as a nested list, where classes sans subclasses or where subclasses should be turned off should be input as *None*.
+
+And, to generate a schematic DLPS plot:
+```python
+from xraydlps.plot import schematic_dlps
+
+set_mpldefaults()
+
+fig = plt.figure(figsize = (27, 25))
+schematic_dlps() #plots general dlps regions, can specify which classes to include + line color/appearance
+dlps_axes()
+dlps_legend()
+```
+
+Similarly, to plot the DFPS:
+```python
+from xraydlps.plot import obs_dfps
+
+set_mpldefaults()
+
+fig = plt.figure(figsize = (27, 25))
+obs_dfps() #plots dfps, can specify which classes to include + line color/appearance
+dlps_axes(ylabel = r'0.3 - 10 keV X-ray Flux (erg s$^{-1}$ cm$^{-2}$)', 
+            add_minoryticks = [10.**i for i in np.arange(2, 16)], 
+            ylim = [1e-17, 3e-2]) #can specify new y-limit and label since default is for dlps + new minor tick positions
+dlps_legend()
+```
+
+We also have quick plotting functions for the L<sub>pk</sub> vs. t<sub>1/2</sub> and E<sub>iso</sub> vs. t<sub>dur</sub> phase space. As with the other classes, these functions are flexible and you can alter the included (sub)classes among other features.
+```python
+from xraydlps.plot import lpk_thalf
+
+set_mpldefaults()
+
+fig = plt.figure(figsize = (27, 25))
+lpk_thalf() #plots Lpk vs. thalf, can specify which classes to include + appearance
+dlps_axes(xlabel = r'Rest Frame Time Above $\frac{1}{2}$ Peak L$_x$ (days)', 
+            add_minorxticks = [10.**i for i in np.arange(-7, 4)], xlim = [1e-7, 5e4],
+            ylabel = r'Peak L$_x$ (0.3 - 10 keV, erg s$^{-1}$)', 
+            add_minoryticks = [10.**i for i in np.arange(26, 51)], 
+            ylim = [1e26, 1e51]) #can specify new limits, labels, + minor tick positions
+dlps_legend(style = 'scatter')
+```
+
+```python
+from xraydlps.plot import iso_energy
+
+set_mpldefaults()
+
+fig = plt.figure(figsize = (27, 25))
+iso_energy() #plots Eiso vs. tdur, can specify which classes to include + appearance
+dlps_axes(xlabel = 'Rest Frame Duration (days)', 
+            add_minorxticks = [10.**i for i in np.arange(-6, 4)], xlim = [1e-6, 5e4],
+            ylabel = r'Isotropic Equivalent Energy (0.3 - 10 keV, ergs)', 
+            add_minoryticks = [10.**i for i in np.arange(26, 51)], 
+            ylim = [1e26, 2e51]) #can specify new limits, labels, + minor tick positions
+dlps_legend(style = 'scatter')
+```
+
 
 ***
 ## `xraydlps.classify`
@@ -84,7 +142,7 @@ from xraydlps.tools import n_obs
 n_obs(lpk, rate, fov, flim)
 ```
 
-The default units for each of these inputs are erg/s, Gpc<>-3</sup>/yr, deg<sup>2</sup>, and erg/s/cm<sup>-2</sup>. To change the units, simply add the arguments *lunits*, *runits*, *fovunits*, and *funits*, specifying your input with `astropy.units`:
+The default units for each of these inputs are erg/s, Gpc<sup>-3</sup>/yr, deg<sup>2</sup>, and erg/s/cm<sup>-2</sup>. To change the units, simply add the arguments *lunits*, *runits*, *fovunits*, and *funits*, specifying your input with `astropy.units`:
 ```python
 import astropy.units as u
 
@@ -92,7 +150,7 @@ n_obs(lpk, rate, sens, fov, lunits = u.J/u.s, runits = u.Mpc**-3/u.yr,
       funits = u.J/u.s/u.m**2, fovunits = u.arcmin**2)
 ```
 
-You can also change the output units -- the default is N<sub>obs</sub>/yr -- with e.g. ```python perunits = u.d```, which will return N<sub>obs</sub>/day.
+You can also change the output units -- the default is N<sub>obs</sub>/yr -- with e.g. `perunits = u.d`, which will return N<sub>obs</sub>/day.
 
 #### `xraydlps.tools.convert`
 `convert` takes an input light curve and converts it to peak L<sub>x</sub>, t<sub>half</sub>, E<sub>iso</sub>, and duration points for use in plotting/classification.
