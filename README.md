@@ -139,7 +139,7 @@ To determine the anticipated number of observations of a class of transients per
 ```python
 from xraydlps.tools import n_obs
 
-n_obs(lpk, rate, fov, flim)
+n_obs(lpk, rate, sens, fov)
 ```
 
 The default units for each of these inputs are erg/s, Gpc<sup>-3</sup>/yr, deg<sup>2</sup>, and erg/s/cm<sup>-2</sup>. To change the units, simply add the arguments *lunits*, *runits*, *fovunits*, and *funits*, specifying your input with `astropy.units`:
