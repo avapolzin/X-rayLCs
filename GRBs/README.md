@@ -4,7 +4,7 @@ GRB light curves are organized into folders by type (short, long, ultralong, and
 
 The light curve files are named according to the event and the relevant columns are "Time" (time since outburst in days) and "Flux" (0.3-10 keV flux in erg s<sup>-1</sup> cm<sup>-2</sup> -- and are rest frame by default). Other columns give the positive and negative error on "Time" and "Flux". The redshift in the list files can be used to convert the duration to the rest frame.
 
-The exception to this formatting is GRB170817A, in which the columns are "days(sincemerger)", "flux(unabsorbed,0.3-10kev)" (in erg s<sup>-1</sup> cm<sup>-2</sup>), and, like the other light curve files, positive and negative errors on the flux measurements.
+The exceptions to this formatting are the two pre-Swift subluminous GRBs and GRB170817A, in which the columns are "days(sincemerger)", "flux(unabsorbed,0.3-10kev)" (in erg s<sup>-1</sup> cm<sup>-2</sup>), and, like the other light curve files, positive and negative errors on the flux measurements. Data for GRB980425A is spread between both GRB980425A_0.3_10, which is the 0.3-10 keV light curve and GRB980425A_2_10, which is the 2 - 10 keV light curve. The relevant columns are "time(days)" and "flux(1d-15 erg/s/cm2)" (flux in units of 10<sup>-15</sup> erg s<sup>-1</sup> cm<sup>-2</sup>). Other columns give the (symmetric) error on "time" and "flux", as well as the instrument that took the observation. Additional light curve-specific information is retained at the top. The second pre-Swift subluminous GRB, GRB031203A has two columns, "Time(days)" and "Log(Lum)", which gives the cgs luminosity in log base 10.
 
 See Table A1 for additional details about the individual events:
 
@@ -60,3 +60,4 @@ See Table A1 for additional details about the individual events:
 |GRB190114C | long | 361.5 | 03:38:01.18 -26:56:47.8 | 0.425 | $2.4 \times 10^6$ | Evans et al. 2007, 2009|
 |GRB190829A | long | 63 | 02:58:10.50 -08:57:29.8| 0.0785 | $3.6\times10^5$ | Evans et al. 2007, 2009|
 |GRB191019A | long | 64.35 |22:40:05.87 -17:19:40.8 | 0.248 | $1.3\times10^6$ | Evans et al. 2007, 2009|
+|GRB221009A | long | 327 |19:12:50.4 + 19:43:48 | 0.151 | $7.2\times10^5$ | Evans et al. 2007, 2009; de Ugarte Postigo et al. 2022|
