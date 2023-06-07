@@ -1,11 +1,13 @@
 # X-ray light curves (0.3 - 10 keV)
 [![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232)
 
-Data from [Polzin et al., submitted](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
+Light curves from [Polzin et al., submitted](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
 
 Each folder has its own README file that lists details of the included files and will have a copy of the table that offers citations (_including references therein_) for these data.
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
+
+(Within _/xraydlps/xraydlps/tools_ there is a .pkl file (lcs.pkl), which stores light curves for the major classes of transient in a dataframe. Pre-made plotting functions for this dataframe are in `xraydlps` and we urge people interested in using the data for further analysis to look at the more complete data stored in the broader repository and consult the original sources for additional details and considerations.)
 
 ***
 ***
@@ -25,7 +27,7 @@ cd ~/xraydlps
 sudo python3 setup.py install
 ```
 
-Within `xraydlps` there are three modules, `plot`, `classify`, and `tools`. 
+Within `xraydlps` there are three modules, `plot`, `classify`, and `tools`. We walk through a handful of use cases with some example code below.
 
 ***
 ## `xraydlps.plot`
@@ -126,6 +128,23 @@ Within `xraydlps.classify` we offer some preliminary trained KNN models for clas
 
 We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar flares) are included in the training set, so we urge caution in using the results of the KNN classification as anything other than preliminary guidance. The results of visual comparison to the DLPS are likely comparable.
 
+To use a pre-trained model:
+```python
+from xraydlps.classify import lc_class, sum_class
+
+lc_class([time, lum]) #to classify a light curve
+
+sum_class([lpk, thalf, eiso, tdur]) #to classify light curve summary statistics
+```
+
+If you are starting from a light curve that is not in the 0.3-10 keV band or does not use default units, you can specify arguments in `lc_class` or in converting to the summary statistics with `xraydlps.tools.convert` (see below) to easily rectify this:
+
+```python
+lc_class([time, lum], tunits = u.s, k = 2.132)
+
+sum_class(convert(time, lum, tunits = u.s, k = 2.132))
+```
+
 ***
 ## `xraydlps.tools`
 ```python
@@ -170,5 +189,3 @@ If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets 
 - astropy
 - pickle
 - scipy
-
-[![astropy](http://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
