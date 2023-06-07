@@ -1,0 +1,9 @@
+Ref=  Pian 2000 Apj 536 778
+SpecModel= Power-law with NH consistent with the Galactic one
+Comments= Digitized from Fig.  7(b); BeppoSAX is not able to resolve the presence of 3 sources (S1a, S1b and S1c, of which only S1a is linked to the GRB as discovered by Chandra, Kouveliotou 2004 ApJ. From Kouvelioutou 2004, the sum of S1b+S1c ~ 4% of the total flux). Note however that it is still not clear how the afterglow of the GRB contributed to these fluxes at these epochs. Also note that Kouvelioutou 2004 uses these fluxes in the 0.3-10 keV band.
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+0.97				        0.		                BeppoSAX	   	427.6			                54.5
+1.96					0.				BeppoSAX		417.5					65.0
+7.32					0.				BeppoSAX		278.3					46.5
+204.8				0.				BeppoSAX		166.1					36.8

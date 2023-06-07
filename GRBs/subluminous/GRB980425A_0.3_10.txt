@@ -1,3 +1,9 @@
-time(days)	ertime	instrument	flux(1d-15erg/s/cm2)	erflux 
-1281.	0.	Chandra-ACIS	8.0	2.
-1464	0.	XMM	7.	2.
+Ref= Kouveliotou 2004 ApJ 608 872
+Spec Model= absorbed power-law
+Comments= The flux from Chandra only includes the contribution from the source denominated S1a, which is the one likely related to the SN. XMM is not able to resolve S1a from S1b, so that the flux measured is the sum of the two contributions. The measured value from Kouveliotou 2004 is 21d-15 erg/s/cm2. The flux of S1b measured by Chandra on day 1281 is (14. +/- 2.)d-15 (erg/s/cm2), from Kouvelioutou 2004. I then subtract this contribution and obtain the listed XMM flux. 
+
+From Kouveliotou, the 0.3-10 keV flux of S1b on day 1281 is (14. +/- 2.)d-15 (erg/s/cm2)
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+1281.				0.			        Chandra-ACIS	        8.0				                2.
+1464				0.				XMM		        7.					        2.
