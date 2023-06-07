@@ -1,4 +1,4 @@
-Timesicnediscovery(days)	X-rayflux(1d-14)
+Timesincediscovery(days)	X-rayflux(1d-14)
 14.984586	27.77693
 30.905193	39.230576
 47.74617	38.702774
