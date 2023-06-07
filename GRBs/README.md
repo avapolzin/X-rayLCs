@@ -60,4 +60,4 @@ See Table A1 for additional details about the individual events:
 |GRB190114C | long | 361.5 | 03:38:01.18 -26:56:47.8 | 0.425 | $2.4 \times 10^6$ | Evans et al. 2007, 2009|
 |GRB190829A | long | 63 | 02:58:10.50 -08:57:29.8| 0.0785 | $3.6\times10^5$ | Evans et al. 2007, 2009|
 |GRB191019A | long | 64.35 |22:40:05.87 -17:19:40.8 | 0.248 | $1.3\times10^6$ | Evans et al. 2007, 2009|
-|GRB221009A | long | 327 |19:12:50.4 + 19:43:48 | 0.151 | $7.2\times10^5$ | Evans et al. 2007, 2009; de Ugarte Postigo et al. 2022|
+|GRB221009A | long | 327 |19:12:50.4 +19:43:48 | 0.151 | $7.2\times10^5$ | Evans et al. 2007, 2009; de Ugarte Postigo et al. 2022|
