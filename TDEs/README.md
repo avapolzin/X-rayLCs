@@ -10,6 +10,8 @@ ASASSN15oi_Xray.txt (Holoien et al. 2018) also has two columns, "Timesincediscov
 
 The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeobs", which is in seconds, and "flux", which is in cgs units. The "terr" and "ferr" columns give the error on time and flux respectively. To correct the flux for absorption (which, with the exception of GRBs, we only do explicitly in cases where the column density is exceedingly high and the correction is well-constrained), we use a factor of 8.91/4.83.
 
+Additionally, there are single data points associated with PS10jh (Gezari et al. 2012) -- L<sub>x</sub> = 5.8e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 315.235 days -- and ASASSN-14ae (Holoien et al. 2014) -- L<sub>x</sub> = 1.6e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 50 days.
+
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |PS10jh | thermal | 16:09:28.296 +53:40:23.52 | $8.2\times10^5$ | Gezari et al. 2012; Auchettl et al. 2017|
