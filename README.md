@@ -3,7 +3,7 @@
 
 Light curves from [Polzin et al., submitted](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
 
-Each folder has its own README file that lists details of the included files and will have a copy of the table that offers citations (_including references therein_) for these data.
+Each folder has its own README file that lists details of the included files (as a rule, unless it is specifically stated otherwise, included light curves are not corrected for absorption or corrected to the rest frame) and will have a copy of the table that offers citations (_including references therein_) for these data.
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
