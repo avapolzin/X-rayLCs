@@ -8,7 +8,7 @@ ASASSN-14li_XRT_Brown2016.txt (Brown et al. 2017) has two columns, "Days" and "C
 
 ASASSN15oi_Xray.txt (Holoien et al. 2018) also has two columns, "Timesincediscovery(days)" and "X-rayflux(1e-14)". The later can be converted to flux in cgs units by "X-rayflux(1e-14)" x 1e-14.
 
-The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeobs", which is in seconds, and "flux", which is in cgs units. The "terr" and "ferr" columns give the error on time and flux respectively. To correct the flux for absorption (which, with the exception of GRBs, we only do explicitly in cases where the column density is exceedingly high and the correction is well-constrained), we use a factor of 8.91/4.83
+The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeobs", which is in seconds, and "flux", which is in cgs units. The "terr" and "ferr" columns give the error on time and flux respectively. To correct the flux for absorption (which, with the exception of GRBs, we only do explicitly in cases where the column density is exceedingly high and the correction is well-constrained), we use a factor of 8.91/4.83.
 
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
