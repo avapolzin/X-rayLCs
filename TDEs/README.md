@@ -16,7 +16,7 @@ Redshifts are from Auchettl et al. (2017) or, in the case of ASASSN-19bt, Holoie
 
 See Table A4 for additional details about the individual events:
 
-|Name | Type | RA/Dec | Distance (kpc) | Redshift | References|
+|Name | Type | RA/Dec | Distance (kpc) | z | References|
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |PS10jh | thermal | 16:09:28.296 +53:40:23.52 | $8.2\times10^5$ | 0.1696 | Gezari et al. 2012; Auchettl et al. 2017|
 |ASASSN-14ae | thermal | 11:08:40.11 +34:05:52.4 | $2.0\times10^5$ | 0.0436 | Holoien et al. 2014; Auchettl et al. 2017|
