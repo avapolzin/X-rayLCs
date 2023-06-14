@@ -1,6 +1,6 @@
 # TDEs
 
-All light curves from Auchettl et al. (2017) are in TDEs_Auchettl.txt, where a single light curve can be constructed from the set of rows with the same "Name". Given that the time resolution is ~0.01 yr, we take the first datapoint in each light curve to be +0.01 yr from the detection of the outburst. We use a k-correction of 2.203 (assuming a power law spectral model with Γ = 1.8) to go from 0.3 - 2 keV to 0.3 - 10 keV.
+All light curves from Auchettl et al. (2017) are in TDEs_Auchettl.txt, where a single light curve can be constructed from the set of rows with the same "Name". Given that the time resolution is ~0.01 yr, we take the first datapoint in each light curve to be +0.01 yr from the detection of the outburst.
 
 For ASASSN-19bt from Holoien et al. (2019), the "Time" is MJD - 58504.6, to align with the first detection light of the outburst, "Luminosity" is the 0.3-10 keV X-ray luminosity in cgs units. 
 
@@ -36,5 +36,5 @@ See Table A4 for additional details about the individual events:
 |NGC 247 | thermal | 00:47:08.55 -20:45:37.44 | $2240$ | 0.000531 | Auchettl et al. 2017|
 |OGLE 16aaa | thermal | 01:07:20.88 -64:16:20.70 | $8.1\times10^5$ | 0.1655 | Auchettl et al. 2017|
 |PTF-10iya | thermal | 14:38:40.98 +37:39:33.45 | $1.2\times10^6$ | 0.22405 | Auchettl et al. 2017|
-|XMMSL1 J0740-85 | therma | 07:40:08.09 -85:39:31.30 | $7.4\times10^5$ | 0.0173 | Auchettl et al. 2017|
+|XMMSL1 J0740-85 | thermal | 07:40:08.09 -85:39:31.30 | $7.4\times10^4$ | 0.0173 | Auchettl et al. 2017|
 
