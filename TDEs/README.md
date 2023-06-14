@@ -1,6 +1,6 @@
 # TDEs
 
-All light curves from Auchettl et al. (2017) are in TDEs_Auchettl.txt, where a single light curve can be constructed from the set of rows with the same "Name". Given that the time resolution is ~0.01 yr, we take the first datapoint in each light curve to be +0.01 yr from the detection of the outburst.
+All light curves from Auchettl et al. (2017) are in TDEs_Auchettl.txt, where a single light curve can be constructed from the set of rows with the same "Name". Given that the time resolution is ~0.01 yr, we take the first datapoint in each light curve to be +0.01 yr from the detection of the outburst. We use a k-correction of 2.203 (assuming a power law spectral model with Γ = 1.8) to go from 0.3 - 2 keV to 0.3 - 10 keV.
 
 For ASASSN-19bt from Holoien et al. (2019), the "Time" is MJD - 58504.6, to align with the first detection light of the outburst, "Luminosity" is the 0.3-10 keV X-ray luminosity in cgs units. 
 
@@ -10,27 +10,27 @@ ASASSN15oi_Xray.txt (Holoien et al. 2018) also has two columns, "Timesincediscov
 
 The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeobs", which is in seconds, and "flux", which is in cgs units. The "terr" and "ferr" columns give the error on time and flux respectively. To correct the flux for absorption (which, with the exception of GRBs, we only do explicitly in cases where the column density is exceedingly high and the correction is well-constrained), we use a factor of 8.91/4.83.
 
-Additionally, there are single data points associated with PS10jh (Gezari et al. 2012) -- L<sub>x</sub> = 5.8e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 315.235 days -- and ASASSN-14ae (Holoien et al. 2014) -- L<sub>x</sub> = 1.6e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 50 days.
+Additionally, there are single data points associated with PS10jh (Gezari et al. 2012) -- L<sub>x</sub> = 5.8e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 368.7 days (315.235 days rest-frame for z = 0.1696) -- and ASASSN-14ae (Holoien et al. 2014) -- L<sub>x</sub> = 1.6e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 50 days.
 
-|Name | Type | RA/Dec | Distance (kpc) | References|
-| :---: | :---: | :---: | :---: | :---: |
-|PS10jh | thermal | 16:09:28.296 +53:40:23.52 | $8.2\times10^5$ | Gezari et al. 2012; Auchettl et al. 2017|
-|ASASSN-14ae | thermal | 11:08:40.11 +34:05:52.4 | $2.0\times10^5$ | Holoien et al. 2014; Auchettl et al. 2017|
-|ASASSN-14li | thermal | 12:48:15.22 +17:46:26.5 | $9.0\times10^4$ | Miller et al. 2015; Brown et al. 2017; Auchettl et al. 2017; Bright et al. 2018|
-|ASASSN-15oi | thermal | 20:39:09.096 -30:45:20.71 | $2.2\times10^5$ | Auchettl et al. 2017; Holoien et al. 2018|
-|Swift 1644+57 | non-thermal | 16:44:49.3 +57:34:51 | $1.9\times10^6$ | Mangano et al. 2016; Auchettl et al. 2017|
-|ASASSN-19bt | non-thermal | 07:00:11.410 -66:02:25.16 | $1.15\times10^5$ | Holoien et al. 2019|
-|Swift J2058.4+0516a | non-thermal | 20:58:19.898 +05:13:32.25 | $1\times10^7$ | Auchettl et al. 2017|
-|SDSS J131122.15-012345.6 | thermal | 13:11:22.154 -01:23:45.61 | $9.0\times10^5$ | Auchettl et al. 2017|
-|SDSS J132341.97+482701.3 | thermal | 13:23:41.973 +48:27:01.26 | $4.0\times10^5$ | Auchettl et al. 2017|
-|SDSS J1201+3003 | thermal | 12:01:36.028 +30:03:05.52 | $7.1\times10^5$ | Auchettl et al. 2017|
-|WINGS J1348 | thermal | 13:48:51.1 +26:35:05.7 | $2.8\times10^5$ | Auchettl et al. 2017|
-|RBS 1032 | thermal | 11:47:26.73 +49:42:57.3 | $1.1\times10^5$ | Auchettl et al. 2017|
-|3XMM J1521+0749 | thermal | 11:47:26.70 +49:42:57.8 | $8.9\times10^5$ | Auchettl et al. 2017|
-|2MASX J0249 | thermal | 02:49:17.32 -04:12:52.20 | $8.0\times10^4$ | Auchettl et al. 2017|
-|IGR J17361-4441 | thermal | 17:36:17.42 -44:44:05.98 | $1.8\times10^5$ | Auchettl et al. 2017|
-|NGC 247 | thermal | 00:47:08.55 -20:45:37.44 | $2240$ | Auchettl et al. 2017|
-|OGLE 16aaa | thermal | 01:07:20.88 -64:16:20.70 | $8.1\times10^5$ | Auchettl et al. 2017|
-|PTF-10iya | thermal | 14:38:40.98 +37:39:33.45 | $1.2\times10^6$ | Auchettl et al. 2017|
-|XMMSL1 J0740-85 | therma | 07:40:08.09 -85:39:31.30 | $7.4\times10^5$ | Auchettl et al. 2017|
+|Name | Type | RA/Dec | Distance (kpc) | Redshift | References|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|PS10jh | thermal | 16:09:28.296 +53:40:23.52 | $8.2\times10^5$ | 0.1696 | Gezari et al. 2012; Auchettl et al. 2017|
+|ASASSN-14ae | thermal | 11:08:40.11 +34:05:52.4 | $2.0\times10^5$ | 0.0436 | Holoien et al. 2014; Auchettl et al. 2017|
+|ASASSN-14li | thermal | 12:48:15.22 +17:46:26.5 | $9.0\times10^4$ | 0.0206 | Miller et al. 2015; Brown et al. 2017; Auchettl et al. 2017; Bright et al. 2018|
+|ASASSN-15oi | thermal | 20:39:09.096 -30:45:20.71 | $2.2\times10^5$ | 0.0484 | Auchettl et al. 2017; Holoien et al. 2018|
+|Swift 1644+57 | non-thermal | 16:44:49.3 +57:34:51 | $1.9\times10^6$ | 0.3543 | Mangano et al. 2016; Auchettl et al. 2017|
+|ASASSN-19bt | non-thermal | 07:00:11.410 -66:02:25.16 | $1.15\times10^5$ | 0.0262 | Holoien et al. 2019|
+|Swift J2058.4+0516a | non-thermal | 20:58:19.898 +05:13:32.25 | $1\times10^7$ | 1.1853 | Auchettl et al. 2017|
+|SDSS J131122.15-012345.6 | thermal | 13:11:22.154 -01:23:45.61 | $9.0\times10^5$ | 0.18 | Auchettl et al. 2017|
+|SDSS J132341.97+482701.3 | thermal | 13:23:41.973 +48:27:01.26 | $4.0\times10^5$ | 0.08754 | Auchettl et al. 2017|
+|SDSS J1201+3003 | thermal | 12:01:36.028 +30:03:05.52 | $7.1\times10^5$ | 0.146 | Auchettl et al. 2017|
+|WINGS J1348 | thermal | 13:48:51.1 +26:35:05.7 | $2.8\times10^5$ | 0.062 | Auchettl et al. 2017|
+|RBS 1032 | thermal | 11:47:26.73 +49:42:57.3 | $1.1\times10^5$ | 0.026 | Auchettl et al. 2017|
+|3XMM J1521+0749 | thermal | 11:47:26.70 +49:42:57.8 | $8.9\times10^5$ | 0.17901 | Auchettl et al. 2017|
+|2MASX J0249 | thermal | 02:49:17.32 -04:12:52.20 | $8.0\times10^4$ | 0.0186 | Auchettl et al. 2017|
+|IGR J17361-4441 | thermal | 17:36:17.42 -44:44:05.98 | $1.8\times10^5$ | 0.04 | Auchettl et al. 2017|
+|NGC 247 | thermal | 00:47:08.55 -20:45:37.44 | $2240$ | 0.000531 | Auchettl et al. 2017|
+|OGLE 16aaa | thermal | 01:07:20.88 -64:16:20.70 | $8.1\times10^5$ | 0.1655 | Auchettl et al. 2017|
+|PTF-10iya | thermal | 14:38:40.98 +37:39:33.45 | $1.2\times10^6$ | 0.22405 | Auchettl et al. 2017|
+|XMMSL1 J0740-85 | therma | 07:40:08.09 -85:39:31.30 | $7.4\times10^5$ | 0.0173 | Auchettl et al. 2017|
 
