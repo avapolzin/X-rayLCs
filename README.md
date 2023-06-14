@@ -124,7 +124,7 @@ dlps_legend(style = 'scatter')
 ```python
 from xraydlps import classify
 ```
-Within `xraydlps.classify` we offer some preliminary trained KNN models for classifying both light curves (using a dynamic time warping metric) and more general characteristics (L<sub>pk</sub>, t<sub>1/2</sub>, E<sub>iso</sub>, and t<sub>dur</sub>). We also layout a means of rapidly training models using other hyperparameters.
+Within `xraydlps.classify` we offer some preliminary trained KNN models for classifying both light curves (using a dynamic time warping metric) and more general characteristics (L<sub>pk</sub>, t<sub>1/2</sub>, E<sub>iso</sub>, and t<sub>dur</sub>). We also offer a means of breaking up the existing light curves into training/test sets that default to including especially sparsely populated classes (i.e., SBOs, FRBs, ...) only in the training set, which is consistent with the models included here.
 
 We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar flares) are included in the training set, so we urge caution in using the results of the KNN classification as anything other than preliminary guidance. The results of visual comparison to the DLPS are likely comparable.
 
@@ -144,6 +144,16 @@ lc_class([time, lum], tunits = u.s, k = 2.132)
 
 sum_class(convert(time, lum, tunits = u.s, k = 2.132))
 ```
+
+For those who want to try other hyperparameters, metrics, or classifiers, we include a convenience function to break up the training set, so that classes with a paucity of observations (like SBOs or FRBs) are included in the training set. `split` has two arguments -- a dataframe, which should be formatted like the one in lcs.pkl (default is lcs.pkl here) and minlen, which sets the minimum length of the included light curves. If the model is for time-series classification, then we *strongly recommend* setting minlen ≥ 2.
+
+```python
+from xraydlps.classify import split
+
+xtrain, xtest, ytrain, ytest = split(minlen = 2)
+```
+
+Our own implementation of dynamic time warping is available as `dtw_dist` (`xraydlps.classify.dtw_dist`) and can be used by a classifier by setting metric = `dtw_dist` or equivalent.
 
 ***
 ## `xraydlps.tools`
