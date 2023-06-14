@@ -12,6 +12,10 @@ The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeob
 
 Additionally, there are single data points associated with PS10jh (Gezari et al. 2012) -- L<sub>x</sub> = 5.8e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 368.7 days (315.235 days rest-frame for z = 0.1696) -- and ASASSN-14ae (Holoien et al. 2014) -- L<sub>x</sub> = 1.6e41 erg s<sup>-1</sup> cm<sup>-2</sup> at 50 days.
 
+Redshifts are from Auchettl et al. (2017) or, in the case of ASASSN-19bt, Holoien et al. (2019).
+
+See Table A4 for additional details about the individual events:
+
 |Name | Type | RA/Dec | Distance (kpc) | Redshift | References|
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |PS10jh | thermal | 16:09:28.296 +53:40:23.52 | $8.2\times10^5$ | 0.1696 | Gezari et al. 2012; Auchettl et al. 2017|
