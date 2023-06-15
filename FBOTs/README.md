@@ -10,9 +10,11 @@ The columns are:
 
 See Table A5 for additional details about the individual events:
 
-|Name | RA/Dec | Distance (kpc) | References|
-| :---: | :---: | :---: | :---: |
-|CSS161010 | 04:58:34.396 -08:18:03.95 | $1.5 \times 10^5$ | Coppejans et al. 2020|
-|AT2018cow | 16:16:00.2242 +22:16:04.890 | $6.0 \times 10^4$ | Margutti et al. 2019|
-|AT2020xnd | 22:20:02.04 -02:50:25.1 | $1.2 \times 10^6$ | Bright et al. 2021|
-|AT2020mrf | 15:47:54.18 +44:29:07.16 | $6.37\times 10^5$ | Yao et al. 2021|
+|Name | RA/Dec | Distance (kpc) | z | References|
+| :---: | :---: | :---: | :---: | :---: |
+|CSS161010 | 04:58:34.396 -08:18:03.95 | $1.5 \times 10^5$ | 0.034 | Coppejans et al. 2020|
+|AT2018cow | 16:16:00.2242 +22:16:04.890 | $6.0 \times 10^4$ | 0.0141 | Margutti et al. 2019|
+|AT2020xnd | 22:20:02.04 -02:50:25.1 | $1.2 \times 10^6$ | 0.2433 | Bright et al. 2022|
+|AT2020mrf | 15:47:54.18 +44:29:07.16 | $6.37\times 10^5$ | 0.1353 | Yao et al. 2022|
+|AT2022tsd | 03:20:10.863 +08:44:55.63 | $6.37\times 10^6$ | 0.256 | Schulze et al. 2022; Matthews et al. 2022|
+
