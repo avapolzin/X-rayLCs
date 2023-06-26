@@ -81,7 +81,8 @@ set_mpldefaults()
 
 fig = plt.figure(figsize = (27, 25))
 obs_dfps() #plots dfps, can specify which classes to include + line color/appearance
-dlps_axes(ylabel = r'0.3 - 10 keV X-ray Flux (erg s$^{-1}$ cm$^{-2}$)', 
+dlps_axes(xlabel = r'Observed Time Above $\frac{1}{2}$ Peak L$_x$ (days)', , 
+            ylabel = r'0.3 - 10 keV X-ray Flux (erg s$^{-1}$ cm$^{-2}$)', 
             add_minoryticks = [10.**i for i in np.arange(2, 16)], 
             ylim = [1e-17, 3e-2]) #can specify new y-limit and label since default is for dlps + new minor tick positions
 dlps_legend()
