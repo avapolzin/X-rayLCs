@@ -23,14 +23,14 @@ See Table A3 for additional details about the individual events:
 |SN1995N | IIn | 14:49:28.29 -10:10:14.0| $2.4 \times 10^4$ | *0.006170* | Zampieri et al. 2005|
 |SN1996cr | IIn |14:13:10.05 -65:20:44.8 | $3.8 \times10^3$ | *0.001449* | Bauer et al. 2008|
 |SN1998bw | Ib/c | 19:35:03.17 -52:50:46.1| $3.8 \times 10^4$ | *0.0085* | Kouveliotou et al. 2004|
-|SN1999em | IIP | 04:41:27.04 -02:51:45.2| $7.8  \times  10^3$ | Pooley et al. 2002|
-|SN1999gi | IIP | 10:18:16.66 +41:26:28.2| $8.7 \times 10^3$ | Schlegel 2001|
-|SN2001em | Ib/c |21:42:23.61 +12:29:50.3 | $8.0 \times 10^4$ | Pooley & Lewin 2004a|
-|SN2001ig | II | 22:57:30.69 -41:02:25.9 | $1.1 \times 10^4$ | Schlegel & Ryder 2002|
-|SN2002ap | Ib/c | 01:36:23.85 +15:45:13.2 | $1.0 \times 10^4$ | Soria et al. 2004|
-|SN2002hh | II | 20:34:44.29 +60:07:19.0| $5.1 \times 10^3$ | Pooley & Lewin 2002|
-|SN2002hi | IIn | 07:19:54.08 +17:58:18.8| $1.8 \times 10^5$ | Pooley & Lewin 2003|
-|SN2003bg | Ic/pec | 04:10:59.42 -31:24:50.3| $1.9 \times 10^4$ | Soderberg et al. 2006|
+|SN1999em | IIP | 04:41:27.04 -02:51:45.2| $7.8 \times 10^3$ | *0.00239* | Pooley et al. 2002|
+|SN1999gi | IIP | 10:18:16.66 +41:26:28.2| $8.7 \times 10^3$ | *0.00197* | Schlegel 2001|
+|SN2001em | Ib/c |21:42:23.61 +12:29:50.3 | $8.0 \times 10^4$ | *0.01951* | Pooley & Lewin 2004a|
+|SN2001ig | II | 22:57:30.69 -41:02:25.9 | $1.1 \times 10^4$ | *0.00314* | Schlegel & Ryder 2002|
+|SN2002ap | Ib/c | 01:36:23.85 +15:45:13.2 | $1.0 \times 10^4$ | *0.002194* | Soria et al. 2004|
+|SN2002hh | II | 20:34:44.29 +60:07:19.0| $5.1 \times 10^3$ | *0.0002* | Pooley & Lewin 2002|
+|SN2002hi | IIn | 07:19:54.08 +17:58:18.8| $1.8 \times 10^5$ | *0.061957* | Pooley & Lewin 2003|
+|SN2003bg | Ic/pec | 04:10:59.42 -31:24:50.3| $1.9 \times 10^4$ | *0.0046* | Soderberg et al. 2006|
 |SN2004dj | IIP | 07:37:17.04 +65:35:57.8| $3.2 \times 10^3$ | Pooley & Lewin 2004b|
 |SN2004et | II |20 35 25.33 +60 07 17.7 | $5.5 \times  10^3$ | Misra et al. 2007|
 |SN2005ip | IIn |09:32:06.42 +08:26:44.4 | $3.0 \times 10^4$ | Pooley et al. 2007|
