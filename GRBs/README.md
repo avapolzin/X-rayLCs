@@ -4,11 +4,13 @@ GRB light curves are organized into folders by type (short, long, ultralong, and
 
 The light curve files are named according to the event and the relevant columns are "Time" (time since outburst in days) and "Flux" (0.3-10 keV flux in erg s<sup>-1</sup> cm<sup>-2</sup> -- and are rest frame by default). Other columns give the positive and negative error on "Time" and "Flux". The redshift in the list files can be used to convert the duration to the rest frame.
 
+We filter for upper limits by ensuring that the last two columns ("Fluxpos" and "Fluxneg", which give the error on the flux) are non-zero.
+
 The exceptions to this formatting are the two pre-Swift subluminous GRBs and GRB170817A, in which the columns are "days(sincemerger)", "flux(unabsorbed,0.3-10kev)" (in erg s<sup>-1</sup> cm<sup>-2</sup>), and, like the other light curve files, positive and negative errors on the flux measurements. Data for GRB980425A is spread between both GRB980425A_0.3_10, which is the 0.3-10 keV light curve and GRB980425A_2_10, which is the 2 - 10 keV light curve. The relevant columns are "time(days)" and "flux(1d-15 erg/s/cm2)" (flux in units of 10<sup>-15</sup> erg s<sup>-1</sup> cm<sup>-2</sup>). Other columns give the (symmetric) error on "time" and "flux", as well as the instrument that took the observation. Additional light curve-specific information is retained at the top. The second pre-Swift subluminous GRB, GRB031203A has two columns, "Time(days)" and "Log(Lum)", which gives the cgs luminosity in log base 10.
 
 See Table A1 for additional details about the individual events:
 
-|Name | Type | t$_{90}$ (s) | RA/Dec | z | Distance (kpc) | References|
+|Name | Type | t<sub>90</sub> (s) | RA/Dec | z | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |GRB980425A | subluminous | 22.0 | 19:35:03.17 -52:50.46 | 0.0085 | $2.7\times10^4$| Pian et al. 2000; Kouveliotou et al. 2004|
 |GRB031203A | subluminous | 30 | 08:02:30.1 -39:51:03 | 0.105 | $4.9\times10^5$ | Sazanov et al. 2004; Watson et al. 2004|
