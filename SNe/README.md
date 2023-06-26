@@ -35,7 +35,6 @@ See Table A3 for additional details about the individual events:
 |SN2004et | II |20 35 25.33 +60 07 17.7 | $5.5 \times  10^3$ | Misra et al. 2007|
 |SN2005ip | IIn |09:32:06.42 +08:26:44.4 | $3.0 \times 10^4$ | Pooley et al. 2007|
 |SN2005kd | IIn | 04:03:16.88 +71:43:18.9| $6.4 \times 10^4$ | Immler et al. 2007c; Pooley et al. 2007|
-<!-- |SN2006aj | Ib/c | 03 21 39.670 +16 52 02.27| $1.5 \times 10^5$ | "Margutti GRB catalog"| -->
 |SN2006bp | IIP | 11:53:55.74 +52:21:09.4| $1.5 \times 10^4$ | Immler et al. 2007e|
 |SN2006jc | Ibc | 09:17:20.78 +41:54:32.7| $2.4 \times 10^4$ | Immler et al. 2008|
 |SN2006jd | IIb/IIn | 08:02:07.43 +00:48:31.5| $7.9 \times 10^4$ | Immler et al. 2007a|
