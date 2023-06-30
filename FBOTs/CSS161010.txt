@@ -1,4 +1,4 @@
 time(days)	flux(cgs) Lum
 99	1.33e-15	3.4e39
 130	1.94e-15	5.0e39
-291	1.34e-15	3.4e39
+# 291	1.31e-15	3.4e39 #upper limit!
