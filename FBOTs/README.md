@@ -4,7 +4,7 @@ FBOT light curves are named according to the event and are all in the 0.3-10 keV
 
 The columns are:
 - _AT2018cow_: "Time(days)" "0.3-10keVLum(erg)/s", and "Err", where time is in days since outburst/discovery and luminosity is given in erg s<sup>-1</sup>
-- _AT2020mrf_: "time(days)" and	"flux(cgs)" where time is in days since outburst/discovery and flux is given in erg s<sup>-1</sup> cm<sup>-2</sup>
+- _AT2020mrf_: "time(days)", "flux(cgs)", "lum(cgs)" where time is in days since outburst/discovery, flux is given in erg s<sup>-1</sup> cm<sup>-2</sup>, and luminosity is in erg s<sup>-1</sup>
 - _AT2020xnd_: "Time(days)", "Lum", "err_Lum+", and "err_Lum-", where time is given in MJD (the discovery date in MJD is 59134.6708) and luminosity is given in erg s<sup>-1</sup>
 - _CSS161010_: "time(days)", "flux(cgs)", and "Lum", where time is days since outburst/discovery, flux is in erg s<sup>-1</sup> cm<sup>-2</sup>, and luminosity is in erg s<sup>-1</sup>
 
