@@ -1,4 +1,5 @@
+# N LMC 2005	05:10:32.68 -69:12:35.7	55	Mukai et al. 2008
 Day	logLum(cgs)
-4	35.21
-5	35.31
-6	35.12
+# 4	35.21 #upper limit!
+# 5	35.31 #upper limit!
+# 6	35.12 #upper limit!
