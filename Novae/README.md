@@ -4,6 +4,8 @@ Each light curve file is named according to the event. _<event>_*.txt_ files are
 
 The _*_fluxlc.qdp_ files are also named according to the event. *Novae_Page.txt* gives details of the light curve files including the distance in kpc and whether or not (isflux = YES or NO) the light curves give flux in counts or in cgs units. The relevant columns in the .qdp files are the first two: time (0th column) and observed 0.3 - 10 keV flux (1st column). If isflux = YES, then those latter values are in units of erg s<sup>-1</sup> cm<sup>-2</sup>. If isflux = NO, then those latter values are in counts per second and a uniform flux correction factor of 3.575e-11 can be applied to convert between counts/s and cgs units.
 
+N LMC 2005, V1188 Sco, and V476 Sct are still included as upper limit light curves here, but not included in our work or its plots. Other upper limits (also not included in our work) for events with other existing data are marked and can be excluded that way.
+
 See Table A6 for additional details about the individual events:
 |Name | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: |
@@ -13,12 +15,9 @@ See Table A6 for additional details about the individual events:
 |V382 Vel | 10:44:48.39 -52:25:30.7| 1.7 | Mukai et al. 2008|
 |N LMC 2000 | 05:25:01.63 -70:14:17.4 | 55 | Mukai et al. 2008|
 |V4633 Sgr | 18:21:40.49 -27:31:37.3| 8.9 | Mukai et al. 2008|
-|N LMC 2005 | 05:10:32.68 -69:12:35.7 | 55 | Mukai et al. 2008|
 |V5116 Sgr | 18:17:50.77 -30:26:31.3 | 11.3 | Mukai et al. 2008|
 |V1663 Aql | 19:05:12.50 +05:14:12.0 | 5.5 | Mukai et al. 2008|
-|V1188 Sco | 17:44:21.59 -34:16:35.7 | 7.5 | Mukai et al. 2008|
 |V477 Sct | 18:38:42.93 -12:16:15.6 | 11 | Mukai et al. 2008|
-|V476 Sct | 18:32:04.75 -06:43:34.3 | 4 | Mukai et al. 2008|
 |V382 Nor | 16:19:44.74 -51:34:53.1 | 13.8 | Mukai et al. 2008|
 |RS Oph | 17:50:13.2 -06:42:28.5 | 1.6 | Page et al. 2020|
 |V2362 Cyg | 21:11:32.342 +44:48:03.67 | 7.2 - 15.8 | Poggiani 2009; Page et al. 2020|
