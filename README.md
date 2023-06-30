@@ -9,7 +9,7 @@ If you are going to use data found here, please cite both the original source(s)
 
 Interactive plots facilitating exploration of the data/DLPS are available [here](https://avapolzin.github.io/projects/xraydlps/).
 
-(Within _/xraydlps/xraydlps/tools_ there is a .pkl file (lcs.pkl), which stores light curves for the major classes of transient in a dataframe. Pre-made plotting functions for this dataframe are in `xraydlps` and we urge people interested in using the data for further analysis to look at the more complete data stored in the broader repository and consult the original sources for additional details and considerations.)
+(Within _/xraydlps/xraydlps/tools_ there is a .pkl file (lcs.pkl), which stores light curves for the major classes of transient in a dataframe. Pre-made plotting functions for this dataframe are in `xraydlps` and are used for our [interactive plots](https://avapolzin.github.io/projects/xraydlps/), but we urge people interested in using the data for further analysis to look at the more complete data stored in the broader repository and consult the original sources for additional details and considerations.)
 
 ***
 ***
