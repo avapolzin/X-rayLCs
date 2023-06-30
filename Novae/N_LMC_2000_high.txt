@@ -1,4 +1,4 @@
 Day	logLum(cgs)
 17	34.52
 51	34.27
-294	32.92
+# 294	32.92 #upper limit!
