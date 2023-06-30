@@ -34,7 +34,7 @@ See Table A3 for additional details about the individual events:
 |SN2002hi | IIn | 07:19:54.08 +17:58:18.8| $1.8 \times 10^5$ | *0.061957* | Pooley & Lewin 2003|
 |SN2003bg | Ic/pec | 04:10:59.42 -31:24:50.3| $1.9 \times 10^4$ | *0.0046* | Soderberg et al. 2006|
 |SN2004dj | IIP | 07:37:17.04 +65:35:57.8| $3.2 \times 10^3$ | *0.000434* | Pooley & Lewin 2004b|
-|SN2004et | II |20 35 25.33 +60 07 17.7 | $5.5 \times  10^3$ | *0.00016* | Misra et al. 2007|
+|SN2004et | II |20:35:25.33 +60:07:17.7 | $5.5 \times  10^3$ | *0.00016* | Misra et al. 2007|
 |SN2005ip | IIn |09:32:06.42 +08:26:44.4 | $3.0 \times 10^4$ | *0.007164* | Immler & Pooley 2007|
 |SN2005kd | IIn | 04:03:16.88 +71:43:18.9| $6.4 \times 10^4$ | *0.015165* | Immler et al. 2007c; Pooley et al. 2007|
 |SN2006bp | IIP | 11:53:55.74 +52:21:09.4| $1.5 \times 10^4$ | *0.00351* | Immler et al. 2007e|
