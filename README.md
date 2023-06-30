@@ -7,6 +7,8 @@ Each folder has its own README file that lists details of the included files (as
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
+Interactive plots facilitating exploration of the data/DLPS are available [here](https://avapolzin.github.io/projects/xraydlps/).
+
 (Within _/xraydlps/xraydlps/tools_ there is a .pkl file (lcs.pkl), which stores light curves for the major classes of transient in a dataframe. Pre-made plotting functions for this dataframe are in `xraydlps` and we urge people interested in using the data for further analysis to look at the more complete data stored in the broader repository and consult the original sources for additional details and considerations.)
 
 ***
