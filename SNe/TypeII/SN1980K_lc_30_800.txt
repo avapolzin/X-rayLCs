@@ -1,2 +1,5 @@
-time(days)	flux(1d-15erg/s/cm2)
-8139.5	9.3
+Ref=Chandra: Soria & Perna 2008 ApJ 683 767 
+SpecModel= Chandra obs: thin thermal spectrum (Soria & Perna 2008)
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+ 8139.5				388.5			Chandra-ACIS-S	9.3				                -9.
