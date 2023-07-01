@@ -1,4 +1,9 @@
-time(days)	flux(1d-15erg/s/cm2)
-7260.	4050.
-7627	5280.
-8011.	6400.
+ef=  t=7627,8011 (Sturm2010 A&A 515  A5) t=7260 (Heng 2008 ApJ 676 361)
+SpecModel= double plane parallel shock 
+Comments: ABSORBED flux listed
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+7260.				0.			        XMM-EPIC-PN	        4050.				                 70.
+7627				0.			        XMM-EPIC-PN	        5280.			                         80.
+8011.				0.				XMM-EPIC-PN		6400.						 80.
