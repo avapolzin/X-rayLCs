@@ -1,7 +1,12 @@
-time(days)	flux(1d-15erg/s/cm2)
-750.	719.
-770.	973.
-1140.	734.
-1296.	1502.
-3310	173.
-3554.	117.
+Ref= Zampieri 2005, MNRAS, 364, 1419
+SpecModel= double MEKAL model; 
+Comments: Chandra and ASCA data have been extrapolated to the 0.2-10 keV; XMM value simmetrized with respect tot he uncertainties;
+Values digitized from Fig. 4 Zampieri 2005. ASCA observations are probably contaminared by a nearby X-ray source. For the value reported below an attempt has been made by Zampieri to subtract this contribution (See Zampieri Sec 5 for details).
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+750.					0.				ROSAT		   			719.	                        340.
+770.					0.				ROSAT					973.				95.
+1140.				0.				ROSAT					734.				64.
+1296.				0.				ASCA					1502.			185.
+3310				0.				XMM					173.			        27.
+3554.				0.				Chandra					117.				27.
