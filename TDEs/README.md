@@ -2,11 +2,13 @@
 
 All light curves from Auchettl et al. (2017) are in TDEs_Auchettl.txt, where a single light curve can be constructed from the set of rows with the same "Name". Given that the time resolution is ~0.01 yr, we take the first datapoint in each light curve to be +0.01 yr from the detection of the outburst.
 
-For ASASSN-19bt from Holoien et al. (2019), the "Time" is MJD - 58504.6, to align with the first detection light of the outburst, "Luminosity" is the 0.3-10 keV X-ray luminosity in cgs units. 
+For ASASSN-19bt from Holoien et al. (2019), the "Time" is MJD - 58504.6, to align with the first detection light of the outburst, "Luminosity" is the 0.3-10 keV X-ray luminosity in cgs units. Upper limits are marked with a #, so that they can be ignored.
 
 ASASSN-14li_XRT_Brown2016.txt (Brown et al. 2017) has two columns, "Days" and "Count-rate(0.01)" -- to get flux (cgs) from the later simply multiply by the "Count-rate(0.01)" x 0.01 x 3.5e-11.
 
 ASASSN15oi_Xray.txt (Holoien et al. 2018) also has two columns, "Timesincediscovery(days)" and "X-rayflux(1e-14)". The later can be converted to flux in cgs units by "X-rayflux(1e-14)" x 1e-14.
+
+Swift1644_XRT_phil.txt (Mangano et al. 2016) has the same columns as most XRT products, which are named "timeobs", "terr1", "terr2", "flux", "ferr1", and "ferr2" in our case. "timeobs" gives the time in seconds and "flux" is in cgs units; "terr" gives the error on the time and "ferr" gives the error on the flux. Upper limits are indicated by "ferr" being 0.
 
 The relevant columns of Swift1644_XRT_phil.txt (Mangano et al. 2016) are "timeobs", which is in seconds, and "flux", which is in cgs units. The "terr" and "ferr" columns give the error on time and flux respectively. To correct the flux for absorption (which, with the exception of GRBs, we only do explicitly in cases where the column density is exceedingly high and the correction is well-constrained), we use a factor of 8.91/4.83.
 
