@@ -7,7 +7,7 @@ The columns are:
 - _AT2020mrf_: "time(days)", "flux(cgs)", "lum(cgs)" where time is in days since outburst/discovery, flux is given in erg s<sup>-1</sup> cm<sup>-2</sup>, and luminosity is in erg s<sup>-1</sup>
 - _AT2020xnd_: "Time(days)", "Lum", "err_Lum+", and "err_Lum-", where time is given in MJD (the discovery date in MJD is 59134.6708) and luminosity is given in erg s<sup>-1</sup>
 - _CSS161010_: "time(days)", "flux(cgs)", and "Lum", where time is days since outburst/discovery, flux is in erg s<sup>-1</sup> cm<sup>-2</sup>, and luminosity is in erg s<sup>-1</sup>
-- Access _AT2022tsd_ data [here](https://www.wis-tns.org/astronotes/astronote/2023-159)
+- Access original version of _AT2022tsd_ data table [here](https://www.wis-tns.org/astronotes/astronote/2023-159)
 
 See Table A5 for additional details about the individual events:
 
