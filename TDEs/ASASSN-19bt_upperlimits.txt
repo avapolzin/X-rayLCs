@@ -1,8 +1,8 @@
 Time	Luminosity
-16.8	7.68e40
+# 16.8	7.68e40 #upper limit!
 30.8	6.73e40
 38.1	4.48e40
-44.7	6.62e40
-63.8	1.26e41
-75.3	8.69e40
+# 44.7	6.62e40 #upper limit!
+# 63.8	1.26e41 #upper limit!
+# 75.3	8.69e40 #upper limit!
 83.8	1.24e40
