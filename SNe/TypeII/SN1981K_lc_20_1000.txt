@@ -1,2 +1,6 @@
-time(days)	flux(1d-15erg/s/cm2)
-7180	1.9
+Ref=Immler2007 CBET828
+SpecModel=thermal plasma model kT=1 keV Galactic NH
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+7180				203.			        Chandra-ACIS-S	1.9	   			                0.4
