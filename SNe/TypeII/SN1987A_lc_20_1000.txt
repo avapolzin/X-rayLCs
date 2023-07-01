@@ -1,7 +1,12 @@
-time(days)	flux(1d-15erg/s/cm2)
-4713	259.
-5157	382.
-5919.	1140.
-7260.	4240.
-7627	5510.
-8011.	6640.
+Ref=  t=7627,8011 (Sturm2010 A&A 515 A5) t=7260 (Heng 2008 ApJ 676 361)  t=4713,5157,5919 Haberl2006 A&A 460 811
+SpecModel= double plane parallel shock MEKAL+MEKAL Harlberl06; 
+Comments:  ABSORBED flux listed
+
+
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+4713				0.				XMM-EPIC-PN	        259.				               -9.
+5157				0.				XMM-EPIC-PN		382.					       -9
+5919.				0.				XMM-EPIC-PN		1140.					-9.		
+7260.				0.			        XMM-EPIC-PN	        4240.				        60.
+7627				0.			        XMM-EPIC-PN	        5510.			                 70.
+8011.				0.				XMM-EPIC-PN		6640.					 70.
