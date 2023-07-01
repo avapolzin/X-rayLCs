@@ -1,2 +1,2 @@
-time(days)	flux(1d-15erg/s/cm2)
-8558.0263672	3.4849999938160181e+02
+time(days)			ertime			instrument		flux(1d-15 erg/s/cm2)		erflux 
+8558.0263672                8.0010242   Swift-XRT-PROVV              3.4849999938160181e+02 -5.0000000e+00
