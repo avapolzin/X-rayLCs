@@ -51,7 +51,7 @@ See Table A3 for additional details about the individual events:
 |SN2011dh | IIb | 13:30:05.106 +47:10:10.92| $7.3 \times 10^3$ | 0.0015 | Soderberg et al. 2012|
 |SN2011ja | IIP | 13:05:11.12 -49:31:27.0| $3.0 \times 10^3$ | *0.001797* | Chakraborti et al. 2013|
 |PTF12dam | Ic/SL | 14:24:46.20 +46:13:48.3| $4.98 \times 10^5$ | 0.107 | Margutti et al. 2018|
-|SN2013by | IIL/IIn | 16:59:02.43 -60:11:41.8| $1.5 \times 10^5$ | *0.003833* | Margutti et al. 2013|
+|SN2013by | IIL/IIn | 16:59:02.43 -60:11:41.8| $1.5 \times 10^4$ | *0.003833* | Margutti et al. 2013|
 |SN2013ej | IIP/IIL | 01:36:48.16 +15:45:31.0| $9.6 \times 10^3$ | *0.002192* | Chakraborti et al. 2016|
 |SN2014C | Ib/IIn | 22:37:05.60 +34:24:31.9|  $1.5\times10^4$ | *0.002716* | Brethauer et al. 2022|
 |SN2018gk | IIb/SL | 16:35:53.908 +40:01:58.31 | $1.4 \times 10^5$ | *0.031010* | Bose et al. 2020|
