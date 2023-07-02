@@ -1,6 +1,5 @@
 # time (s), error time (250 s bins), rate, error rate
 # converion to flux 1E-12 erg/s/cm2
-# distance 5 kpc, thus 7.5e+52 from flux to Lx
 1495.90295 125 1.1056633 7.2586149E-2 0.998641968
 1745.90295 125 1.43059027 8.31035525E-2 0.998641968
 1995.90295 125 1.85947645 9.36240554E-2 1.00448203
