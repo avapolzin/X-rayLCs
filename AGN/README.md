@@ -1,8 +1,8 @@
 # AGN
 
-We use a k-correction of 2.203 (assuming a power law spectral model with Γ = 1.8) to go from 0.3 - 2 keV to 0.3 - 10 keV.
+We use a k-correction of 2.203 (assuming a power law spectral model with Γ = 1.8) to go from 0.3 - 2 keV to 0.3 - 10 keV. As with TDEs from Auchettl et al., we assume that each light curve picks up +0.1 days after the initial identification of the outburst.
 
-For GSN 069, the AGN/QPE, 
+For GSN 069, the AGN/QPE, the first column gives the time in seconds and the third column gives the flux/1e-12. Because there are multiple outbursts from the same object, we group the first 75 observations, and then each subsequent set of 125 until the end, to isolate individual events.
 
 |Name | RA/Dec | Distance (kpc) | z | References|
 | :---: | :---: | :---: | :---: | :---: |
