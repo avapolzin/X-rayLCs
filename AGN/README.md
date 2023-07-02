@@ -2,6 +2,8 @@
 
 We use a k-correction of 2.203 (assuming a power law spectral model with Γ = 1.8) to go from 0.3 - 2 keV to 0.3 - 10 keV. As with TDEs from Auchettl et al., we assume that each light curve picks up +0.1 days after the initial identification of the outburst.
 
+There are no data points with Lx > 0 and t > 0 for 1H0707-495 and NGC 3227, so though we leave them in the table below and in the data in this repository, they do not appear in the DLPS.
+
 For GSN 069, the AGN/QPE, the first column gives the time in seconds and the third column gives the flux/1e-12. Because there are multiple outbursts from the same object, we group the first 75 observations, and then each subsequent set of 125 until the end, to isolate individual events.
 
 |Name | RA/Dec | Distance (kpc) | z | References|
