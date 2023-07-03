@@ -10,6 +10,9 @@ from astropy.io import fits
 import astropy.units as u
 import numpy as np
 
+rxte_flux = 1.918e-11 #pca
+xte_flux = 5.688e-10 #asm
+
 SSCygdist = 114.6*u.pc.to(u.cm) 
 SSCyg_asm = fits.open('../DNe/SSCyg/xa_sscyg_d1.lc')
 SSCyg_asmTime_ = np.array(SSCyg_asm[1].data['TIME']+ (SSCyg_asm[0].header['MJDREFI'] + SSCyg_asm[0].header['MJDREFF']))
