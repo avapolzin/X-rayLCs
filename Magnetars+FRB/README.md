@@ -1,5 +1,27 @@
 # Magnetar Flares/Outbursts & Fast Radio Bursts
 
+For the FRB, FRB 200428, the HXMT data are in SGR1935+2154_FRB200428.fits. To go from counts ('RATE' column) to flux, we use a factor of 1.4e-8 (8.76 keV -> erg; from the HXMT ground calibration paper), and an additional k-correction factor of 1.067. Time (in days) can be calculated from the 'TIME' column. Since 'TIME' is natively in seconds and does not start exactly at t0 (taken to be 58967.60722222 based on the radio burst), we have to subtract off (t0 - dat.header['MJDREFI']) - 3, keeping in mind that 'MJDREFI' will need to be converted to seconds.
+
+Since that's not entirely straightforward as an explanation, here is a code snippet to guide:
+
+```python
+from astropy.io import fits
+import numpy as np
+import astropy.units as u
+
+FRB200428_dat = fits.open('../1s_LE_0.005s_lc_afterSatCor_ch106-1170.fits', sep='\s+', header = None, comment = '#')[1]
+dist_FRB = 4.4*u.kpc.to(u.cm)
+conv = 1*u.keV.to(u.erg) * 8.76
+Luminosity = (FRB200428_dat.data['RATE']*conv*1.067)*4*np.pi*dist_FRB**2
+Duration = (FRB200428_dat.data['TIME'] - (58967.60722222 - FRB200428_dat.header['MJDREFI'])*u.d.to(u.s) - 3)*u.s.to(u.d)
+Flux = FRB200428_dat.data['RATE']*conv*1.067
+
+Duration = Duration[Luminosity > 0]
+Luminosity = Luminosity[Luminosity > 0]
+Flux = Flux[Flux > 0]
+```
+
+
 See Table A8 for additional details about individual events:
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
