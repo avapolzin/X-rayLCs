@@ -9,7 +9,7 @@ from astropy.io import fits
 import numpy as np
 import astropy.units as u
 
-FRB200428_dat = fits.open('../1s_LE_0.005s_lc_afterSatCor_ch106-1170.fits', sep='\s+', header = None, comment = '#')[1]
+FRB200428_dat = fits.open('../1s_LE_0.005s_lc_afterSatCor_ch106-1170.fits')[1]
 dist_FRB = 4.4*u.kpc.to(u.cm)
 conv = 1*u.keV.to(u.erg) * 8.76
 Luminosity = (FRB200428_dat.data['RATE']*conv*1.067)*4*np.pi*dist_FRB**2
