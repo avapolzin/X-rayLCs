@@ -6,6 +6,7 @@ There are no data points with Lx > 0 and t > 0 for 1H0707-495 and NGC 3227, so t
 
 For GSN 069, the AGN/QPE, the first column gives the time in seconds and the third column gives the flux/1e-12. Because there are multiple outbursts from the same object, we group the first 75 observations, and then each subsequent set of 125 until the end, to isolate individual events.
 
+See Table A4 for additional details about individual events:
 |Name | RA/Dec | Distance (kpc) | z | References|
 | :---: | :---: | :---: | :---: | :---: |
 | PKS 2155-304 | 21:58:52.07 -30:13:32.1 | $5.4 \times 10^5$ | 0.116 | Auchettl et al. 2018|
