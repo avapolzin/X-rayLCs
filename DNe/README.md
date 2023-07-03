@@ -11,28 +11,28 @@ import astropy.units as u
 import numpy as np
 
 SSCygdist = 114.6*u.pc.to(u.cm) 
-    SSCyg_asm = fits.open('../DNe/SSCyg/xa_sscyg_d1.lc')
-    SSCyg_asmTime_ = np.array(SSCyg_asm[1].data['TIME']+ (SSCyg_asm[0].header['MJDREFI'] + SSCyg_asm[0].header['MJDREFF']))
-    SSCyg_asmFlux_ = np.array(SSCyg_asm[1].data['RATE'] * xte_flux)
-    SSCyg_asmLum_ = SSCyg_asmFlux_*4*np.pi*SSCygdist**2
-    SSCyg_1 = fits.open('../DNe/SSCyg/xp1004001_e3_n2a.lc')
-    SSCyg_1Time_ = np.array((SSCyg_1[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_1[0].header['MJDREFI'] + SSCyg_1[0].header['MJDREFF']))
-    SSCyg_1Flux_ = np.array(SSCyg_1[1].data['RATE'] * rxte_flux)
-    SSCyg_1Lum_ = SSCyg_1Flux_*4*np.pi*SSCygdist**2
-    SSCyg_2 = fits.open('../DNe/SSCyg/xp2003301_e3_n2a.lc')
-    SSCyg_2Time_ = np.array((SSCyg_2[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_2[0].header['MJDREFI'] + SSCyg_2[0].header['MJDREFF']))
-    SSCyg_2Flux_ = np.array(SSCyg_2[1].data['RATE'] * rxte_flux)
-    SSCyg_2Lum_ = SSCyg_2Flux_*4*np.pi*SSCygdist**2
-    SSCyg_4 = fits.open('../DNe/SSCyg/xp4001201_e4_n2a.lc')
-    SSCyg_4Time_ = np.array((SSCyg_4[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_4[0].header['MJDREFI'] + SSCyg_4[0].header['MJDREFF']))
-    SSCyg_4Flux_ = np.array(SSCyg_4[1].data['RATE'] * rxte_flux)
-    SSCyg_4Lum_ = SSCyg_4Flux_*4*np.pi*SSCygdist**2
-    SSCyg_5 = fits.open('../DNe/SSCyg/xp5001101_e5_n2a.lc')
-    SSCyg_5Time_ = np.array((SSCyg_5[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_5[0].header['MJDREFI'] + SSCyg_5[0].header['MJDREFF']))
-    SSCyg_5Flux_ = np.array(SSCyg_5[1].data['RATE'] * rxte_flux)
-    SSCyg_5Lum_ = SSCyg_5Flux_*4*np.pi*SSCygdist**2
+SSCyg_asm = fits.open('../DNe/SSCyg/xa_sscyg_d1.lc')
+SSCyg_asmTime_ = np.array(SSCyg_asm[1].data['TIME']+ (SSCyg_asm[0].header['MJDREFI'] + SSCyg_asm[0].header['MJDREFF']))
+SSCyg_asmFlux_ = np.array(SSCyg_asm[1].data['RATE'] * xte_flux)
+SSCyg_asmLum_ = SSCyg_asmFlux_*4*np.pi*SSCygdist**2
+SSCyg_1 = fits.open('../DNe/SSCyg/xp1004001_e3_n2a.lc')
+SSCyg_1Time_ = np.array((SSCyg_1[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_1[0].header['MJDREFI'] + SSCyg_1[0].header['MJDREFF']))
+SSCyg_1Flux_ = np.array(SSCyg_1[1].data['RATE'] * rxte_flux)
+SSCyg_1Lum_ = SSCyg_1Flux_*4*np.pi*SSCygdist**2
+SSCyg_2 = fits.open('../DNe/SSCyg/xp2003301_e3_n2a.lc')
+SSCyg_2Time_ = np.array((SSCyg_2[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_2[0].header['MJDREFI'] + SSCyg_2[0].header['MJDREFF']))
+SSCyg_2Flux_ = np.array(SSCyg_2[1].data['RATE'] * rxte_flux)
+SSCyg_2Lum_ = SSCyg_2Flux_*4*np.pi*SSCygdist**2
+SSCyg_4 = fits.open('../DNe/SSCyg/xp4001201_e4_n2a.lc')
+SSCyg_4Time_ = np.array((SSCyg_4[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_4[0].header['MJDREFI'] + SSCyg_4[0].header['MJDREFF']))
+SSCyg_4Flux_ = np.array(SSCyg_4[1].data['RATE'] * rxte_flux)
+SSCyg_4Lum_ = SSCyg_4Flux_*4*np.pi*SSCygdist**2
+SSCyg_5 = fits.open('../DNe/SSCyg/xp5001101_e5_n2a.lc')
+SSCyg_5Time_ = np.array((SSCyg_5[1].data['TIME'])*u.s.to(u.d)+ (SSCyg_5[0].header['MJDREFI'] + SSCyg_5[0].header['MJDREFF']))
+SSCyg_5Flux_ = np.array(SSCyg_5[1].data['RATE'] * rxte_flux)
+SSCyg_5Lum_ = SSCyg_5Flux_*4*np.pi*SSCygdist**2
 
-    SSCyg_refs = [(50365, 50380), (51335, 51355), (51600, 51660), (51660, 51700)]
+SSCyg_refs = [(50365, 50380), (51335, 51355), (51600, 51660), (51660, 51700)]
 
     for i in SSCyg_refs:
         SSCyg_asmTime = SSCyg_asmTime_[(SSCyg_asmTime_ >= i[0]) & (SSCyg_asmTime_ <= i[1])] - i[0]
