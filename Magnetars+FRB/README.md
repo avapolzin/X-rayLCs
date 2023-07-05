@@ -2,7 +2,11 @@
 
 Among the magnetar outbursts, all of the Coti Zelati et al. (2018) ones follow the same format. Their columns are "day" and "total_luminosity(e33erg/s)". The latter can be converted to luminosity (in cgs units) by multiplying by a factor of 10<sup>33</sup> erg s<sup>-1</sup>. "_v1" and "_v2" are used to distinguish between recurrent outbursts from the same magnetar. There are three such cases here: 1E1048.1-5937, SGR 1627-41, and 1E2259+586. OutburstList.txt lists all of the Coti Zelati magnetars and their distances.
 
-<-- 1900+14IFBurstForest.txt contains the total duration (s) and total flux (cgs; 1 - 10 kev) of the intermediate flares/short bursts from SGR 1900+14's 2006 burst forest. Since the flux is 1 - 10 keV, -->
+<!--- 1900+14IFBurstForest.txt contains the total duration (s) and total flux (cgs; 1 - 10 kev) of the intermediate flares/short bursts from SGR 1900+14's 2006 burst forest. Since the flux is 1 - 10 keV --->
+
+1E161348-5055 (or RCW 103) has light curves distributed between two files -- RCW103_Esposito_Fig3.qdp and RCW103_Rea_lum_history_allice.qdp. *RCW103_Esposito_Fig3.qdp:*the first column gives the time in days, the third column gives the flux in units of 10<sup>-12</sup> erg s<sup>-1</sup> cm<sup>-2</sup>. For the luminosity, we also apply a factor of 1.551 correction for dust absorption following Esposito et al. (2019). *RCW103_Rea_lum_history_alice.qdp:* the first column gives the time in days in TJD with t0 = 11447 d. The second column is error on the time. The third column is 0.5 - 10 keV luminosity in 10<sup>33</sup> erg s<sup>-1</sup>, and the fourth is the error on the luminosity. We apply a corrective factor of 1.023 here to adjust to 0.3 - 10 keV.
+
+SGR19135+2154.qdp is an intermediate flare/short burst from the same burst forest as FRB 200428. The first column gives the time in seconds, t0 = 31.6 s. The second column is the count rate. To convert to 0.3 - 10 keV flux, we use a factor of 1.283e-8.
 
 For the FRB, FRB 200428, the HXMT data are in SGR1935+2154_FRB200428.fits. To go from counts ('RATE' column) to flux, we use a factor of 1.4e-8 (8.76 keV -> erg; from the HXMT ground calibration paper), and an additional k-correction factor of 1.067. Time (in days) can be calculated from the 'TIME' column. Since 'TIME' is natively in seconds and does not start exactly at t0 (taken to be 58967.60722222 based on the radio burst), we have to subtract off (t0 - dat.header['MJDREFI']) - 3, keeping in mind that 'MJDREFI' will need to be converted to seconds.
 
@@ -30,7 +34,6 @@ See Table A8 for additional details about individual events:
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |1E161348-5055 | Outburst | 16:17:33.000 -51:02:00.00 | 3.3 | Rea et al. 2016; Esposito et al. 2019|
-|SGR 1900+14 | IF/SB | 19:07:13.0 +09:19:34| 10.4 | Case & Bhattacharya 1998; Israel et al. 2008|
 |SGR 1627-41 | Outburst | 16:35:52.0 -0.47:35:12 | 11 | Coti Zelati et al. 2018|
 |1E2259+586 | Outburst | 23:01:08.14 +58:52:44.5| 3.2 | Coti Zelati et al. 2018|
 |XTE J1810-197 | Outburst | 18:09:51.07 -19:43:51.8| 3.5 | Coti Zelati et al. 2018|
