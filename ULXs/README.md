@@ -54,7 +54,7 @@ for i in range(2):
 
 Qiu+2019.txt lists data from CG X-1; "lum" and "flux" are in cgs, "start_time" gives the exposure start time in date + time, and "k" is the k-correction for each observation.
 
-XMMUJ004243.6+412519.txt has three columns, "days", "lum", and "instr". "lum" is the unabsorbed 0.3-10 keV luminosity in units of 10<sup>38</sup> erg s<sup><-1/sup>.
+XMMUJ004243.6+412519.txt has three columns, "days", "lum", and "instr". "lum" is the unabsorbed 0.3-10 keV luminosity in units of 10<sup>38</sup> erg s<sup>-1</sup>.
 
 See Table A9 for additional details about individual events:
 |Name | RA/Dec | Distance (kpc) | References|
