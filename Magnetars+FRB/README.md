@@ -1,5 +1,9 @@
 # Magnetar Flares/Outbursts & Fast Radio Bursts
 
+Among the magnetar outbursts, all of the Coti Zelati et al. (2018) ones follow the same format. Their columns are "day" and "total_luminosity(e33erg/s)". The latter can be converted to luminosity (in cgs units) by multiplying by a factor of 10<sup>33</sup> erg s<sup>-1</sup>. "_v1" and "_v2" are used to distinguish between recurrent outbursts from the same magnetar. There are three such cases here: 1E1048.1-5937, SGR 1627-41, and 1E2259+586. OutburstList.txt lists all of the Coti Zelati magnetars and their distances.
+
+<-- 1900+14IFBurstForest.txt contains the total duration (s) and total flux (cgs; 1 - 10 kev) of the intermediate flares/short bursts from SGR 1900+14's 2006 burst forest. Since the flux is 1 - 10 keV, -->
+
 For the FRB, FRB 200428, the HXMT data are in SGR1935+2154_FRB200428.fits. To go from counts ('RATE' column) to flux, we use a factor of 1.4e-8 (8.76 keV -> erg; from the HXMT ground calibration paper), and an additional k-correction factor of 1.067. Time (in days) can be calculated from the 'TIME' column. Since 'TIME' is natively in seconds and does not start exactly at t0 (taken to be 58967.60722222 based on the radio burst), we have to subtract off (t0 - dat.header['MJDREFI']) - 3, keeping in mind that 'MJDREFI' will need to be converted to seconds.
 
 Since that's not entirely straightforward as an explanation, here is a code snippet to guide:
