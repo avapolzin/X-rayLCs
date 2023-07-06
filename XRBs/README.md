@@ -1,5 +1,89 @@
 # XRBs
 
+Light curves are in either the HMXRB or LMXRB directory based on their classification.
+
+The X Persei data is in *X-Per_sum_bar_tot2_1ks.qdp*. The first column is the time in seconds; the ninth column is the count rate. It can be converted to 0.3 - 10 keV cgs flux with a factor of 1.087e-11.
+
+The IGR J01217-7257 (SXP 2.16) light curve is in *SXP2.16.txt*. The first column is time in seconds; the fourth column is the count rate, which can be converted to 0.3 - 10 keV cgs flux with a factor of 2.84-11.
+
+The SXP 15.6 light curve is in its own subdirectory in *lc_swift.ascii*. There is information regarding the single Chandra observation of this event in the README file. (See the reference for details; we do not include this point in the DLPS.) The third column is the time in MJD, t0 = 57500 d. The fourth column is luminosity/(4.2259e37).
+
+The subdirectory HMXRB/RXJ0209_or_SXP_9.3 hosts the light curve for RX JO209.6-7427. The column "MJD" can be corrected to time in days by subtracting t0 = 58800 d. The column "UnabsorbedFlux(0.5-10keV)" can be used to get the flux. The k-correction to 0.3 - 10 keV is ~1.0.
+
+Important details of the Ferrigno et al. sample of HMXRBs are in *HMXB_Ferrigno.txt*. The filenames are *HMXB_Ferrigno\["name"\]+.txt*. Within the individual event files, "MJD" can be adjusted to days with "MJD" - min("MJD") + HMXB_Ferrigno\["t_offset"\], and "Flux(cgs)" is flux in cgs units.
+
+The SMC X-2 light curve is in *SMC_X-2_2015_outburst.dat*. The first column is time in days, t0 = 57289. The fourth column is the count rate, which can be converted to 0.3 - 10 keV flux in cgs units with a factor of 7.25427e-11.
+
+The SMC X-3 outburst data is in *SMC_X-3_2016_burst.dat*. The first column gives the time in days with t0 = 57599 d, and the fourth column gives the count rate, which can be converted to flux by multiplying by 5.96e-11.
+
+*J0243_lc.dat* contains the light curve for Swift J0243.6+6124. The first column contains the time in days with t0 = 58029 d. The fourth column is the count rate. To get 0.3 - 10 keV cgs flux, multiply by a factor of 8.36e-11.
+
+The first column of *RXJ0520_2013.dat* is time in days (t0 = 56305 d) and the fourth column is the count rate, which can be multiplied by 7.26e-11 to convert it to cgs flux. These data correspond to RX J0520.5-6932.
+
+The only SFXT in our sample, XMMU J053108.3-690923, has data in *XMMU_J053108.3-690923_SFXT.dat*. The first column is the time in seconds (which should be filtered to 3e4 s < t < 11e4 s consistent with the outburst) and the fourth column gives the count rate. The conversion factor to 0.3 - 10 keV flux is 1.89e-10.
+
+MAXI J1659-152's light curve is in *MAXI_J1659-152.txt*. The relevant columns are "MJD" (t0 = 55684.29844 d), "Flux", and "k". "k" is the k-correction on the flux, so the 0.3 - 10 keV cgs flux is "Flux" * "k".
+
+GX 339-4 has successive outbursts; for simplicity, data can be read in as follows, making it easy to iterate through the outbursts:
+```python
+import numpy as np
+import astropy.units as u
+import pandas as pd
+
+GX339 = pd.read_csv('../new_DLPS_data/LMXRB/GX3394.txt', header = 0, sep = '\s+', comment = '#')
+GX339_time_ = GX339['MJD']
+GX339_flux_ = GX339['Flux(cgs)']
+
+refs339 = [(50750, 52300), (52300, 53150), (53150, 53700), (53700, 54000), (54000, 54200), (54200, 54600), (54600, 54850), (54850, 55150), (55150, 56000)]
+
+for i in refs339:
+    GX339_time = GX339_time_[(GX339_time_ > i[0]) & (GX339_time_ <= i[1])] - i[0]
+    GX339_flux = GX339_flux_[(GX339_time_ > i[0]) & (GX339_time_ <= i[1])]
+    GX339_lum = GX339_flux * 4 * np.pi* (8*u.kpc.to(u.cm))**2
+```
+
+The data for Aql X-1 are stored between six files. The final times (in days) are tob1, tob2, and tob3; and the final luminosities (0.3-10 keV; cgs) are lob1, lob2, and lob3:
+```python
+import numpy as np
+import astropy.units as u
+import pandas as pd
+
+t1_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb1.txt', header = None, sep = '\s+')
+ob1_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb1_fluxes.txt', header = None, sep = '\s+')
+ob1 = ob1_[1]*1.065
+tob1_ = []
+for i in ob1_[0].values:
+    tob1_.append(t1_[1].values[t1_[0].values == i])
+tob1 = np.concatenate(tob1_)   
+tob1 = tob1/(24*3600) + 51910 - 56450
+ob1 = ob1[np.argsort(tob1)]
+tob1 = tob1[np.argsort(tob1)]
+lob1 = ob1*4 * np.pi*(5*u.kpc.to(u.cm))**2
+
+t2_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb2.txt', header = None, sep = '\s+')
+ob2_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb2_fluxes_036.txt', header = None, sep = '\s+')
+ob2 = ob2_[1]*1.065
+tob2_ = []
+for i in ob2_[0].values:
+    tob2_.append(t2_[1].values[t2_[0].values == i])
+tob2 = np.concatenate(tob2_)   
+tob2 = tob2/(24*3600) + 51910 - 56838
+ob2 = ob2[np.argsort(tob2)]
+tob2 = tob2[np.argsort(tob2)]
+lob2 = ob2*4 * np.pi*(5*u.kpc.to(u.cm))**2
+
+t3_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb3.txt', header = None, sep = '\s+')
+ob3_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb3_fluxes.txt', header = None, sep = '\s+')
+ob3 = ob3_[1]*1.065
+tob3_ = []
+for i in ob3_[0].values:
+    tob3_.append(t3_[1].values[t3_[0].values == i])
+tob3 = np.concatenate(tob3_)   
+tob3 = tob3/(24*3600) + 51910 - 57597
+ob3 = ob3[np.argsort(tob3)]
+tob3 = tob3[np.argsort(tob3)]
+lob3 = ob3*4 * np.pi*(5*u.kpc.to(u.cm))**2
+```
 
 *The light cuve of PSR J1023+0038 is not included in this repository.*
 
