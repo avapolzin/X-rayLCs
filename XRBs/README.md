@@ -30,7 +30,7 @@ import numpy as np
 import astropy.units as u
 import pandas as pd
 
-GX339 = pd.read_csv('../new_DLPS_data/LMXRB/GX3394.txt', header = 0, sep = '\s+', comment = '#')
+GX339 = pd.read_csv('GX3394.txt', header = 0, sep = '\s+', comment = '#')
 GX339_time_ = GX339['MJD']
 GX339_flux_ = GX339['Flux(cgs)']
 
@@ -48,8 +48,8 @@ import numpy as np
 import astropy.units as u
 import pandas as pd
 
-t1_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb1.txt', header = None, sep = '\s+')
-ob1_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb1_fluxes.txt', header = None, sep = '\s+')
+t1_ = pd.read_csv('LopezNavas2020/info_outb1.txt', header = None, sep = '\s+')
+ob1_ = pd.read_csv('LopezNavas2020/PObb_outb1_fluxes.txt', header = None, sep = '\s+')
 ob1 = ob1_[1]*1.065
 tob1_ = []
 for i in ob1_[0].values:
@@ -60,8 +60,8 @@ ob1 = ob1[np.argsort(tob1)]
 tob1 = tob1[np.argsort(tob1)]
 lob1 = ob1*4 * np.pi*(5*u.kpc.to(u.cm))**2
 
-t2_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb2.txt', header = None, sep = '\s+')
-ob2_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb2_fluxes_036.txt', header = None, sep = '\s+')
+t2_ = pd.read_csv('LopezNavas2020/info_outb2.txt', header = None, sep = '\s+')
+ob2_ = pd.read_csv('LopezNavas2020/PObb_outb2_fluxes_036.txt', header = None, sep = '\s+')
 ob2 = ob2_[1]*1.065
 tob2_ = []
 for i in ob2_[0].values:
@@ -72,8 +72,8 @@ ob2 = ob2[np.argsort(tob2)]
 tob2 = tob2[np.argsort(tob2)]
 lob2 = ob2*4 * np.pi*(5*u.kpc.to(u.cm))**2
 
-t3_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/info_outb3.txt', header = None, sep = '\s+')
-ob3_ = pd.read_csv('../new_DLPS_data/LMXRB/LopezNavas2020/PObb_outb3_fluxes.txt', header = None, sep = '\s+')
+t3_ = pd.read_csv('LopezNavas2020/info_outb3.txt', header = None, sep = '\s+')
+ob3_ = pd.read_csv('LopezNavas2020/PObb_outb3_fluxes.txt', header = None, sep = '\s+')
 ob3 = ob3_[1]*1.065
 tob3_ = []
 for i in ob3_[0].values:
