@@ -42,7 +42,7 @@ for i in refs339:
     GX339_lum = GX339_flux * 4 * np.pi* (8*u.kpc.to(u.cm))**2
 ```
 
-The data for Aql X-1 are stored between six files. The final times (in days) are tob1, tob2, and tob3; and the final luminosities (0.3-10 keV; cgs) are lob1, lob2, and lob3:
+The data for Aql X-1 are stored between six files. The final times (in days) are tob1, tob2, and tob3; and the final luminosities (0.3-10 keV; cgs) are lob1, lob2, and lob3. Flux is given by ob1, ob2, and ob3:
 ```python
 import numpy as np
 import astropy.units as u
