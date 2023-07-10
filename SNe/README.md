@@ -12,6 +12,8 @@ For most classes of SNe, we filter for upper limits by excluding those data poin
 
 Unless otherwise stated in the header of the file, the fluxes and luminosities are *un*absorbed. Redshifts in italics are inferred from the SN's reported host galaxy.
 
+*The light curve for SN2018bsz is not included in this repository.*
+
 See Table A3 for additional details about the individual events:
 
 |Name | Type | RA/Dec | Distance (kpc) | z | References|
@@ -55,5 +57,6 @@ See Table A3 for additional details about the individual events:
 |SN2013ej | IIP/IIL | 01:36:48.16 +15:45:31.0| $9.6 \times 10^3$ | *0.002192* | Chakraborti et al. 2016|
 |SN2014C | Ib/IIn | 22:37:05.60 +34:24:31.9|  $1.5\times10^4$ | *0.002716* | Brethauer et al. 2022|
 |SN2018gk | IIb/SL | 16:35:53.908 +40:01:58.31 | $1.4 \times 10^5$ | *0.031010* | Bose et al. 2020|
+|SN2018bsz | I/SL | 16:09:39.112 -32:03:45.63 | $1.1 \times 10^5$ | 0.0267 | Matthews et al. in prep|
 |SN2019ehk | Ca-rich | 12:22:56.130 +15:49:33.60 | $1.6 \times 10^4$ | *0.00524* | Jacobson-Galán et al. 2020|
 |SN2021gno | Ca-rich | 12:12:10.29 +13:14:57.04 | $3.05 \times 10^4$ | *0.0062* | Jacobson-Galán et al. 2022|
