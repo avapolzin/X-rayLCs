@@ -34,7 +34,7 @@ See Table A8 for additional details about individual events:
 |Name | Type | RA/Dec | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
 |1E161348-5055 | Outburst | 16:17:33.000 -51:02:00.00 | 3.3 | Rea et al. 2016; Esposito et al. 2019|
-|SGR 1627-41 | Outburst | 16:35:52.0 -0.47:35:12 | 11 | Coti Zelati et al. 2018|
+|SGR 1627-41 | Outburst | 16:35:52.0 -47:35:12 | 11 | Coti Zelati et al. 2018|
 |1E2259+586 | Outburst | 23:01:08.14 +58:52:44.5| 3.2 | Coti Zelati et al. 2018|
 |XTE J1810-197 | Outburst | 18:09:51.07 -19:43:51.8| 3.5 | Coti Zelati et al. 2018|
 |SGR 1806-20 | Outburst |18:08:39.32 -20:24:40.1 | 8.7 | Coti Zelati et al. 2018|
