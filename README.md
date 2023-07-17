@@ -18,6 +18,8 @@ Interactive plots facilitating exploration of the data/DLPS are available [here]
 # How to use `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package itself (via Zenodo above).
 
+Full code documentation: [xraydlps.readthedocs.io](xraydlps.readthedocs.io).
+
 To download and install, 
 ```bash
 cd ~
@@ -137,26 +139,28 @@ To use a pre-trained model:
 ```python
 from xraydlps.classify import lc_class, sum_class
 
-lc_class([time, lum]) #to classify a light curve
+lc_class(time, lum) #to classify a light curve
 
-sum_class([lpk, thalf, eiso, tdur]) #to classify light curve summary statistics
+sum_class(time, lum) #to classify light curve summary statistics
 ```
 
 If you are starting from a light curve that is not in the 0.3-10 keV band or does not use default units, you can specify arguments in `lc_class` or in converting to the summary statistics with `xraydlps.tools.convert` (see below) to easily rectify this:
 
 ```python
-lc_class([time, lum], tunits = u.s, k = 2.132)
+lc_class(time, lum, tunits = u.s, k = 2.132)
 
-sum_class(convert(time, lum, tunits = u.s, k = 2.132))
+sum_class(time, lum, tunits = u.s, k = 2.132)
 ```
 
-For those who want to try other hyperparameters, metrics, or classifiers, we include a convenience function to break up the training set, so that classes with a paucity of observations (like SBOs or FRBs) are included in the training set. `split` has two arguments -- a dataframe, which should be formatted like the one in lcs.pkl (default is lcs.pkl here) and minlen, which sets the minimum length of the included light curves. If the model is for time-series classification, then we *strongly recommend* setting minlen ≥ 2.
+<!--- For those who want to try other hyperparameters, metrics, or classifiers, we include a convenience function to break up the training set, so that classes with a paucity of observations (like SBOs or FRBs) are included in the training set. `split` has two arguments -- a dataframe, which should be formatted like the one in lcs.pkl (default is lcs.pkl here) and minlen, which sets the minimum length of the included light curves. If the model is for time-series classification, then we *strongly recommend* setting minlen ≥ 2.
 
 ```python
 from xraydlps.classify import split
 
 xtrain, xtest, ytrain, ytest = split(minlen = 2)
-```
+``` --->
+For those who want to try other hyperparameters, metrics, or datasets with the KNeighborsClassifier, we include a couple of convenience functions to facilitate training -- `xraydlps.classify.train_lcmodel` and `xraydlps.classify.train_summodel`. We encourage users who are interested in using the classifier for more than preliminary guidance to train and validate their own models this way.
+
 
 Our own implementation of dynamic time warping is available as `dtw_dist` (`xraydlps.classify.dtw_dist`) and can be used by a classifier by setting metric = `dtw_dist` or equivalent.
 
