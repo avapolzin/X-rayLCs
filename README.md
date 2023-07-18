@@ -7,7 +7,7 @@ Each folder has its own README file that lists details of the included files (as
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
-(If for some reason any of the data that should be here are not or do not open, feel free to reach out via email or open an issue. Please note that a couple of light curves from the paper -- namely the LMXRB PSR J1023+0038 and the two FXTs XRT 110103 and XRT 120830 -- are not available here.)
+(If for some reason any of the data that should be here are not or do not open, feel free to reach out via email or open an issue. Please note that a handful of light curves from the paper -- namely the superluminous SN 2018bsz, LMXRB PSR J1023+0038, and the two FXTs XRT 110103 and XRT 120830 -- are not available here.)
 
 Interactive plots facilitating exploration of the data/DLPS are available [here](https://avapolzin.github.io/projects/xraydlps/).
 
@@ -18,7 +18,7 @@ Interactive plots facilitating exploration of the data/DLPS are available [here]
 # How to use `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package itself (via Zenodo above).
 
-Full code documentation: [xraydlps.readthedocs.io](xraydlps.readthedocs.io).
+Full code documentation: [xraydlps.readthedocs.io](xraydlps.readthedocs.io)
 
 To download and install, 
 ```bash
@@ -204,7 +204,7 @@ If the input light curve is not in the 0.3 - 10 keV band, the argument `k` sets 
 - numpy
 - matplotlib
 - pandas
-- sklearn
+- scikit-learn
 - astropy
 - pickle
 - scipy
