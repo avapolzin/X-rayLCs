@@ -2,7 +2,7 @@
 
 Unlike other light curves included in the DLPS, the yet unclassified "oddballs" are not included in `xraydlps` for plotting or classification. Instead, the light curves for these FXTs can be accessed here, with the exception of the light curves for XRT 110103 and XRT 120830, which were digitized for inclusion in the DLPS and so are not shared as data here.
 
-*XRT_000519_0.1-7-src803-lc300s-back-an-sub.asc* and *XRT_000519_0.3-7keV-lc-src803-3.2s-reso.asc* contains light curves for XTR 000519 at two different resolutions (300s and 3.2s respectively) in two separate energy bands (0.1 - 7 keV) and (0.3 - 7 keV). To convert from the Chandra count rate to 0.3 - 10 keV flux, we use the photon index between assumed in Section 2.3 (Γ \~ 1.7, for Γ<sub>Peak 1</sub> = 1.6 and Γ<sub>Peak 2</sub> = 1.95) resulting in 2.132e-11 for the 0.1 - 7 keV -> 0.3 - 10 keV conversion and 2.171e-11 for the 0.3 - 7 keV -> 0.3 - 10 keV conversion. The first column is time (in seconds, adopting t0 = 75110614.016523 s), the second column is count rate, and the third column is count rate error. We only use the 300s-binned light curve in the DLPS, but since the data sample the evolution of the event somewhat differently, we share both here.
+*XRT_000519_0.1-7-src803-lc300s-back-an-sub.asc* and *XRT_000519_0.3-7keV-lc-src803-3.2s-reso.asc* contains light curves for XTR 000519 at two different resolutions (300s and 3.2s respectively) in two separate energy bands (0.1 - 7 keV) and (0.3 - 7 keV). To convert from the Chandra count rate to 0.3 - 10 keV flux, we use the photon index between assumed in Section 2.3 (Γ \~ 1.7) resulting in 2.132e-11 for the 0.1 - 7 keV -> 0.3 - 10 keV conversion and 2.171e-11 for the 0.3 - 7 keV -> 0.3 - 10 keV conversion. The first column is time (in seconds, adopting t0 = 75110614.016523 s), the second column is count rate, and the third column is count rate error. We only use the 300s-binned light curve in the DLPS, but since the data sample the evolution of the event somewhat differently, we share both here.
 
 ```python
 import numpy as np
@@ -104,4 +104,4 @@ See Table A10 for additional details about the individual events:
 |CDF-S XT2 | 03:32:18.38 -27:52:24.2 | 0.738 | $$4.68 \times 10^6$$ | Xue et al. 2019|
 |EXMM 023135.0-603743 | 02:31:34.9 -60:37:43.3 | 0.092 | $$4.35 \times 10^5$$ | Novara et al. 2020|
 
-The cosmology we adopt in this paper sets XRT 000519's 1.1 Gpc estimate at z = 0.22 rather than 0.23 -- this should have no impact on the results or plotting. (Just worth noting for people using our exact code above to plot the light curve, who may wish to use z = 0.23 instead.)
+The cosmology we adopt in this paper sets XRT 000519's 1.1 Gpc estimate at z = 0.22 rather than 0.23 -- this should have no impact on the results or plotting. (Just worth noting for people using our exact code above to plot the light curve, who may wish to use z = 0.23 as reported in Jonker et al. (2013) instead.)
