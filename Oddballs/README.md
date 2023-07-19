@@ -92,7 +92,7 @@ The light curves for XRT 110103 and XRT 120830 were digitized for inclusion in t
 See Table A10 for additional details about the individual events:
 |Name | RA/Dec | z | Distance (kpc) | References|
 | :---: | :---: | :---: | :---: | :---: |
-|XRT 000519 | 12:25:31.64 +13:03:58.8 | 0.004 | $$1.62 \times 10^4$$ | Jonker et al. 2013|
+|XRT 000519 | 12:25:31.64 +13:03:58.8 | - | $$1.62 \times 10^4$$ | Jonker et al. 2013|
 | | | 0.23 | $$1.1 \times 10^6$$| | 
 | | | 1.5 | $$1.11 \times 10^7$$| |
 |XRT 110103 | 14:08:28.89 -27:03:29.4 | - | $$9.49 \times 10^4$$ | Glennie et al. 2015|
@@ -103,3 +103,5 @@ See Table A10 for additional details about the individual events:
 | | | 2.25 | $$1.81 \times 10^7$$ | |
 |CDF-S XT2 | 03:32:18.38 -27:52:24.2 | 0.738 | $$4.68 \times 10^6$$ | Xue et al. 2019|
 |EXMM 023135.0-603743 | 02:31:34.9 -60:37:43.3 | 0.092 | $$4.35 \times 10^5$$ | Novara et al. 2020|
+
+The cosmology we adopt in this paper sets XRT 000519's 1.1 Gpc estimate at z = 0.22 rather than 0.23 -- this should have no impact on the results or plotting. (Just worth noting for people using our exact code above to plot the light curve, who may wish to use z = 0.23 instead.)
