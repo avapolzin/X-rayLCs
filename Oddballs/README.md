@@ -90,8 +90,8 @@ The light curve for EXMM 023135.0-603743 is in *Novara_SBO_candidate_lc_SN_100_G
 The light curves for XRT 110103 and XRT 120830 were digitized for inclusion in the DLPS and so are not shared as data here.
 
 See Table A10 for additional details about the individual events:
-|Name | Type | RA/Dec | z | Distance (kpc) | References|
-| :---: | :---: | :---: | :---: | :---: | :---: |
+|Name | RA/Dec | z | Distance (kpc) | References|
+| :---: | :---: | :---: | :---: | :---: |
 |XRT 000519 | 12:25:31.64 +13:03:58.8 | 0.004 | $$1.62 \times 10^4$$ | Jonker et al. 2013|
 | | | 0.23 | $$1.1 \times 10^6$$| | 
 | | | 1.5 | $$1.11 \times 10^7$$| |
