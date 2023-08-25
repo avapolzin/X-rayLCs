@@ -87,7 +87,7 @@ set_mpldefaults()
 
 fig = plt.figure(figsize = (27, 25))
 obs_dfps() #plots dfps, can specify which classes to include + line color/appearance
-dlps_axes(xlabel = r'Observed Time Above $\frac{1}{2}$ Peak L$_x$ (days)', , 
+dlps_axes(xlabel = r'Observed Time Since Identification (days)', , 
             ylabel = r'0.3 - 10 keV X-ray Flux (erg s$^{-1}$ cm$^{-2}$)', 
             add_minoryticks = [10.**i for i in np.arange(2, 16)], 
             ylim = [1e-17, 3e-2]) #can specify new y-limit and label since default is for dlps + new minor tick positions
@@ -133,7 +133,7 @@ from xraydlps import classify
 ```
 Within `xraydlps.classify` we offer some preliminary trained KNN models for classifying both light curves (using a dynamic time warping metric) and more general characteristics (L<sub>pk</sub>, t<sub>1/2</sub>, E<sub>iso</sub>, and t<sub>dur</sub>). We also offer a means of breaking up the existing light curves into training/test sets that default to including especially sparsely populated classes (i.e., SBOs, FRBs, ...) only in the training set, which is consistent with the models included here.
 
-We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar flares) are included in the training set, so we urge caution in using the results of the KNN classification as anything other than preliminary guidance. The results of visual comparison to the DLPS are likely comparable.
+We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar flares) are included in the training set, so we urge caution in using the results of the KNN classification as anything other than preliminary guidance. (The pre-trained classifiers we provide are at best ~60-70% accurate based on testing.) The results of visual comparison to the DLPS are likely comparable.
 
 To use a pre-trained model:
 ```python
@@ -151,6 +151,8 @@ lc_class(time, lum, tunits = u.s, k = 2.132)
 
 sum_class(time, lum, tunits = u.s, k = 2.132)
 ```
+
+There are some other arguments that are meant to allow further customization of the pre-trained models -- `verbose = True` (the default) has the classifier output all possible classes + assigned probabilities (`skip_zero = True` to only show classes with non-zero probabilities) and `full = True` will use the classifier trained on **all** of the available light curves rather than a subset.
 
 <!--- For those who want to try other hyperparameters, metrics, or classifiers, we include a convenience function to break up the training set, so that classes with a paucity of observations (like SBOs or FRBs) are included in the training set. `split` has two arguments -- a dataframe, which should be formatted like the one in lcs.pkl (default is lcs.pkl here) and minlen, which sets the minimum length of the included light curves. If the model is for time-series classification, then we *strongly recommend* setting minlen ≥ 2.
 
