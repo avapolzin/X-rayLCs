@@ -51,7 +51,7 @@ plot.list_classes()
 
 If you would like to list the subclasses, too, the command becomes:
 ```python
-plot.list_classes(sub = True)
+plot.list_classes(subs = True)
 ```
 
 To directly recreate figures from Polzin et al. (2023), you can use our built in style functions + our general DLPS plotting function:
@@ -70,6 +70,7 @@ Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses o
 And, to generate a schematic DLPS plot:
 ```python
 from xraydlps.plot import schematic_dlps
+import matplotlib.pyplot as plt
 
 set_mpldefaults()
 
