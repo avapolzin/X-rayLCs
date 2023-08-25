@@ -46,12 +46,12 @@ We include here quick plotting functions for the general DLPS, the schematic DLP
 
 Each of the functions allows you to specify which classes (and with the exception of the schematic DLPS, which subclasses) to show, it is useful to have a list of working keywords. To list available classes:
 ```python
-list_classes()
+plot.list_classes()
 ```
 
 If you would like to list the subclasses, too, the command becomes:
 ```python
-list_classes(sub = True)
+plot.list_classes(sub = True)
 ```
 
 To directly recreate figures from Polzin et al. (2023), you can use our built in style functions + our general DLPS plotting function:
