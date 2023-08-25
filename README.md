@@ -65,7 +65,7 @@ obs_dlps() #plots light curves, can specify which classes to include + line colo
 dlps_axes() #generates axes, including minor ticks + axis labels (fully customizable)
 dlps_legend() #creates legend and adds it to the plot, specify labels, colors, and appearance
 ```
-Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses of transient. Classes are specified as a list, subclasses should be specified as a nested list, where classes sans subclasses or where subclasses should be turned off should be input as *None*.
+For whatever reason, you may have to run `set_mpldefaults` twice before the font changes propagate. Additionally, we recommend changing the font size in the legend with the `fontsize` key word argument to be 0.5 - 0.8 times the selected fontsize -- this is purely aesthetic, though, so we don't enforce this with hardcoding. Toggling `subson = True` in `obs_dlps` shows individual (specified) subclasses of transient. Classes are specified as a list, subclasses should be specified as a nested list, where classes sans subclasses or where subclasses should be turned off should be input as *None*.
 
 And, to generate a schematic DLPS plot:
 ```python
