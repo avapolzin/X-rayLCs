@@ -18,7 +18,7 @@ Interactive plots facilitating exploration of the data/DLPS are available [here]
 # How to use `xraydlps`
 Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., submitted and the package itself (via Zenodo above).
 
-Full code documentation: [xraydlps.readthedocs.io](xraydlps.readthedocs.io)
+Full code documentation: [xraydlps.readthedocs.io](https://xraydlps.readthedocs.io)
 
 To download and install, 
 ```bash
