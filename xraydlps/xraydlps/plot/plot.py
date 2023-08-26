@@ -177,7 +177,7 @@ def dlps_legend(labels = [cs, sc], colors = [defaultc_colors, defaultsc_colors],
 				if 'scatter', have to specify marker. Case insensitive.
 		marker (str or arr-like): Marker to be used in legend.
 		subson (bool): Default is False. If true, use subclass legend.
-		**kwargs modify ax.legend(), see matplotlib documentation.
+		**kwargs: Modify ax.legend(), see matplotlib documentation.
 
 
 	"""
@@ -242,7 +242,7 @@ def obs_dlps(classes = cs, subclasses = sc, subson = False,
 		k (float or arr-like): Value of k-correction if plotting outside of 0.3-10 keV band. 
 			Should be the length of classes.
 		ax (axis object): Axis on which to plot, e.g., ax.plot().
-		**kwargs modify ax.plot(), see matplotlib documentation.
+		**kwargs: Modify ax.plot(), see matplotlib documentation.
 	"""
 	lcs = load()
 
@@ -313,7 +313,7 @@ def schematic_dlps(classes = np.concatenate((cs, ['sgrbs'])), expecton = False,
 		k (float or arr-like): Value of k-correction if plotting outside of 0.3-10 keV band. 
 			Should be the length of classes.
 		ax (axis object): Axis on which to plot, e.g., ax.plot().
-		**kwargs modify ax.plot(), see matplotlib documentation.
+		**kwargs: Modify ax.plot(), see matplotlib documentation.
 	"""
 	carr = np.array(classes)
 	colarr = np.array(colors)
@@ -466,7 +466,7 @@ def obs_dfps(classes = cs, subclasses = sc, subson = False,
 		k (float or arr-like): Value of k-correction if plotting outside of 0.3-10 keV band. 
 			Should be the length of classes.
 		ax (axis object): Axis on which to plot, e.g., ax.plot().
-		**kwargs modify ax.plot(), see matplotlib documentation.
+		**kwargs: Modify ax.plot(), see matplotlib documentation.
 	"""
 	lcs = load()
 
@@ -531,6 +531,23 @@ def iso_energy(classes = cs, subclasses = sc, subson = False,
 			 colors = [defaultc_colors, defaultsc_colors], 
 			 xunit = u.d, yunit = u.erg, k = 1, ax = plt, **kwargs):
 
+	"""
+	Plot the isotropic equivalent energy vs. the duration of the light curves.
+
+	Parameters:
+		classes (arr-like): List of classes to plot.
+		subclasses (arr-like): If subson = True, plot these subclasses. Should be a nested list, 
+			with subclasses grouped in sub-list by class.
+		subson (bool): Plot subclasses instead of classes -- if subson = True, must specify subclasses.
+		xunit (astropy units object): Units of time for observational DLPS. Default is days.
+		yunit (astropy units object): Units of flux for observational DFPS. Default is erg/s/cm**2
+		k (float or arr-like): Value of k-correction if plotting outside of 0.3-10 keV band. 
+			Should be the length of classes.
+		ax (axis object): Axis on which to plot, e.g., ax.plot().
+		**kwargs: Modify ax.plot(), see matplotlib documentation.
+	"""
+		
+
 	lcs = load()
 
 	xconv = u.d.to(xunit)
@@ -576,6 +593,22 @@ def iso_energy(classes = cs, subclasses = sc, subson = False,
 def lpk_thalf(classes = cs, subclasses = sc, subson = False,
 			 colors = [defaultc_colors, defaultsc_colors], 
 			 xunit = u.d, yunit = u.erg/u.s, k = 1, ax = plt, **kwargs):
+
+	"""
+	Plot the peak luminosity vs. time above 1/2 peak luminosity.
+
+	Parameters:
+		classes (arr-like): List of classes to plot.
+		subclasses (arr-like): If subson = True, plot these subclasses. Should be a nested list, 
+			with subclasses grouped in sub-list by class.
+		subson (bool): Plot subclasses instead of classes -- if subson = True, must specify subclasses.
+		xunit (astropy units object): Units of time for observational DLPS. Default is days.
+		yunit (astropy units object): Units of flux for observational DFPS. Default is erg/s/cm**2
+		k (float or arr-like): Value of k-correction if plotting outside of 0.3-10 keV band. 
+			Should be the length of classes.
+		ax (axis object): Axis on which to plot, e.g., ax.plot().
+		**kwargs: Modify ax.plot(), see matplotlib documentation.
+	"""
 
 	lcs = load()
 

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotting Functions &mdash; xraydlps 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classifier Functions" href="classify.html" />
+    <link rel="prev" title="Welcome to xraydlps’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            xraydlps
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classify.html">Classifier Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">xraydlps</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Plotting Functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/plot.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="plotting-functions">
+<span id="xraydlps-plot"></span><h1>Plotting Functions<a class="headerlink" href="#plotting-functions" title="Permalink to this headline"></a></h1>
+<p>Functions to plot the X-ray DLPS.</p>
+<span class="target" id="module-xraydlps.plot"></span><dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.dlps_axes">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">dlps_axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xlabel='Rest</span> <span class="pre">Frame</span> <span class="pre">Time</span> <span class="pre">Since</span> <span class="pre">Identification</span> <span class="pre">(days)',</span> <span class="pre">ylabel=r'0.3</span> <span class="pre">-</span> <span class="pre">10</span> <span class="pre">keV</span> <span class="pre">X-ray</span> <span class="pre">Luminosity</span> <span class="pre">(erg</span> <span class="pre">s$^{-1}$)',</span> <span class="pre">add_minorxticks=[10.**i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">np.arange(-8,</span> <span class="pre">4)],</span> <span class="pre">add_minoryticks=[10.**i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">np.arange(26,</span> <span class="pre">51)],</span> <span class="pre">ax=plt,</span> <span class="pre">xlim=[3e-9,</span> <span class="pre">5e4],</span> <span class="pre">ylim=[1e26,</span> <span class="pre">1e51],</span> <span class="pre">rightticks=True,</span> <span class="pre">tickwidth=[3,</span> <span class="pre">3],</span> <span class="pre">xscale='log',</span> <span class="pre">yscale='log'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.dlps_axes" title="Permalink to this definition"></a></dt>
+<dd><p>Quickly set up axes for X-ray DLPS plots. For most full DLPS plots, should not need to change defaults.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xlabel</strong> (<em>str</em>) – Label for x-axis of DLPS plot.</p></li>
+<li><p><strong>ylabel</strong> (<em>str</em>) – Label for y-axis of DLPS plot.</p></li>
+<li><p><strong>add_minorxticks</strong> (<em>arr-like</em>) – If None, will not add ticks. Otherwise, list of x-values for which to add minor tick.</p></li>
+<li><p><strong>add_minoryticks</strong> (<em>arr-like</em>) – If None, will not add ticks. Otherwise, list of y-values for which to add minor tick.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to add ticks/labels; e.g., set plt.xlabel or ax.set_xlabel.</p></li>
+<li><p><strong>xlim</strong> (<em>arr-like</em>) – Lower and upper limit of x-axis.</p></li>
+<li><p><strong>ylim</strong> (<em>arr-like</em>) – Lower and upper limit of y-axis.</p></li>
+<li><p><strong>rightticks</strong> (<em>bool</em>) – If True, plot minor ticks on right y-axis.
+(Looks best if major ticks are enabled for the rightside, too.)</p></li>
+<li><p><strong>tickwidth</strong> (<em>list</em>) – Width of major and minor ticks to be added respectively. Best if this matches set_mpldefaults().</p></li>
+<li><p><strong>xscale</strong> (<em>str</em>) – Set scaling of x-axis.</p></li>
+<li><p><strong>yscale</strong> (<em>str</em>) – Set scaling of y-axis.</p></li>
+</ul>
+</dd>
+</dl>
+<p>(Can hard code changes to minor tick lengths to suit personal preference.)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.dlps_legend">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">dlps_legend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[cs,</span> <span class="pre">sc]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[defaultc_colors,</span> <span class="pre">defaultsc_colors]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'patch'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subson</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.dlps_legend" title="Permalink to this definition"></a></dt>
+<dd><p>Easily enerate custom legend for plots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labels</strong> (<em>arr-like</em>) – List of strings that serve as labels in legend.</p></li>
+<li><p><strong>colors</strong> (<em>arr-like</em>) – List of colors corresponding to labels.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to add legend, e.g., ax.legend().</p></li>
+<li><p><strong>style</strong> (<em>str</em><em> or </em><em>arr-like</em>) – ‘Patch’, ‘line’, or ‘scatter’ –
+if ‘scatter’, have to specify marker. Case insensitive.</p></li>
+<li><p><strong>marker</strong> (<em>str</em><em> or </em><em>arr-like</em>) – Marker to be used in legend.</p></li>
+<li><p><strong>subson</strong> (<em>bool</em>) – Default is False. If true, use subclass legend.</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.legend(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.iso_energy">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">iso_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">cs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subclasses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subson</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[defaultc_colors,</span> <span class="pre">defaultsc_colors]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.erg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.iso_energy" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the isotropic equivalent energy vs. the duration of the light curves.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>arr-like</em>) – List of classes to plot.</p></li>
+<li><p><strong>subclasses</strong> (<em>arr-like</em>) – If subson = True, plot these subclasses. Should be a nested list,
+with subclasses grouped in sub-list by class.</p></li>
+<li><p><strong>subson</strong> (<em>bool</em>) – Plot subclasses instead of classes – if subson = True, must specify subclasses.</p></li>
+<li><p><strong>xunit</strong> (<em>astropy units object</em>) – Units of time for observational DLPS. Default is days.</p></li>
+<li><p><strong>yunit</strong> (<em>astropy units object</em>) – Units of flux for observational DFPS. Default is erg/s/cm**2</p></li>
+<li><p><strong>k</strong> (<em>float</em><em> or </em><em>arr-like</em>) – Value of k-correction if plotting outside of 0.3-10 keV band.
+Should be the length of classes.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to plot, e.g., ax.plot().</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.plot(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.list_classes">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">list_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.list_classes" title="Permalink to this definition"></a></dt>
+<dd><p>List available classes of transients.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>subs</strong> (<em>bool</em>) – If subs = True, return tuples with classes + subclasses of transients.</p></li>
+<li><p><strong>colors</strong> (<em>bool</em>) – If colors = True, return tuple that includes default plotting colors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.lpk_thalf">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">lpk_thalf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">cs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subclasses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subson</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[defaultc_colors,</span> <span class="pre">defaultsc_colors]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.erg</span> <span class="pre">/</span> <span class="pre">u.s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.lpk_thalf" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the peak luminosity vs. time above 1/2 peak luminosity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>arr-like</em>) – List of classes to plot.</p></li>
+<li><p><strong>subclasses</strong> (<em>arr-like</em>) – If subson = True, plot these subclasses. Should be a nested list,
+with subclasses grouped in sub-list by class.</p></li>
+<li><p><strong>subson</strong> (<em>bool</em>) – Plot subclasses instead of classes – if subson = True, must specify subclasses.</p></li>
+<li><p><strong>xunit</strong> (<em>astropy units object</em>) – Units of time for observational DLPS. Default is days.</p></li>
+<li><p><strong>yunit</strong> (<em>astropy units object</em>) – Units of flux for observational DFPS. Default is erg/s/cm**2</p></li>
+<li><p><strong>k</strong> (<em>float</em><em> or </em><em>arr-like</em>) – Value of k-correction if plotting outside of 0.3-10 keV band.
+Should be the length of classes.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to plot, e.g., ax.plot().</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.plot(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.obs_dfps">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">obs_dfps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">cs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subclasses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subson</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[defaultc_colors,</span> <span class="pre">defaultsc_colors]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.erg</span> <span class="pre">/</span> <span class="pre">u.s</span> <span class="pre">/</span> <span class="pre">u.cm</span> <span class="pre">**</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.obs_dfps" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the observational DFPS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>arr-like</em>) – List of classes to plot.</p></li>
+<li><p><strong>subclasses</strong> (<em>arr-like</em>) – If subson = True, plot these subclasses. Should be a nested list,
+with subclasses grouped in sub-list by class.</p></li>
+<li><p><strong>subson</strong> (<em>bool</em>) – Plot subclasses instead of classes – if subson = True, must specify subclasses.</p></li>
+<li><p><strong>xunit</strong> (<em>astropy units object</em>) – Units of time for observational DLPS. Default is days.</p></li>
+<li><p><strong>yunit</strong> (<em>astropy units object</em>) – Units of flux for observational DFPS. Default is erg/s/cm**2</p></li>
+<li><p><strong>k</strong> (<em>float</em><em> or </em><em>arr-like</em>) – Value of k-correction if plotting outside of 0.3-10 keV band.
+Should be the length of classes.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to plot, e.g., ax.plot().</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.plot(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.obs_dlps">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">obs_dlps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">cs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subclasses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subson</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[defaultc_colors,</span> <span class="pre">defaultsc_colors]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.erg</span> <span class="pre">/</span> <span class="pre">u.s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.obs_dlps" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the observational DLPS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>arr-like</em>) – List of classes to plot.</p></li>
+<li><p><strong>subclasses</strong> (<em>arr-like</em>) – If subson = True, plot these subclasses. Should be a nested list,
+with subclasses grouped in sub-list by class.</p></li>
+<li><p><strong>subson</strong> (<em>bool</em>) – Plot subclasses instead of classes – if subson = True, must specify subclasses.</p></li>
+<li><p><strong>xunit</strong> (<em>astropy units object</em>) – Units of time for observational DLPS. Default is days.</p></li>
+<li><p><strong>yunit</strong> (<em>astropy units object</em>) – Units of luminosity for observational DLPS. Default is erg/s</p></li>
+<li><p><strong>k</strong> (<em>float</em><em> or </em><em>arr-like</em>) – Value of k-correction if plotting outside of 0.3-10 keV band.
+Should be the length of classes.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to plot, e.g., ax.plot().</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.plot(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.schematic_dlps">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">schematic_dlps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.concatenate((cs,</span> <span class="pre">['sgrbs']))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expecton</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">np.concatenate((defaultc_colors,</span> <span class="pre">['#79ED79']))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yunit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">u.erg</span> <span class="pre">/</span> <span class="pre">u.s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.schematic_dlps" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the schematic DLPS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>arr-like</em>) – List of classes to plot. In addition to other classes, ‘sgrbs’ is a valid option.</p></li>
+<li><p><strong>expecton</strong> (<em>bool</em>) – Plot region where we would expect SBOs + magnetars (if included in classes).</p></li>
+<li><p><strong>xunit</strong> (<em>astropy units object</em>) – Units of time for observational DLPS. Default is days.</p></li>
+<li><p><strong>yunit</strong> (<em>astropy units object</em>) – Units of luminosity for observational DFPS. Default is erg/s</p></li>
+<li><p><strong>k</strong> (<em>float</em><em> or </em><em>arr-like</em>) – Value of k-correction if plotting outside of 0.3-10 keV band.
+Should be the length of classes.</p></li>
+<li><p><strong>ax</strong> (<em>axis object</em>) – Axis on which to plot, e.g., ax.plot().</p></li>
+<li><p><strong>**kwargs</strong> – Modify ax.plot(), see matplotlib documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="xraydlps.plot.set_mpldefaults">
+<span class="sig-prename descclassname"><span class="pre">xraydlps.plot.</span></span><span class="sig-name descname"><span class="pre">set_mpldefaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontfamily</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'serif'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">majortick_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">majortick_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minorticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minortick_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minortick_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rightticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hatch_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">markersize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xraydlps.plot.set_mpldefaults" title="Permalink to this definition"></a></dt>
+<dd><p>Set matplotlib.rc defaults for DLPS.</p>
+<p>Not necessary for plots, but uses style Polzin et al. (2023).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontfamily</strong> (<em>str</em>) – Font family to use.</p></li>
+<li><p><strong>fontsize</strong> (<em>int</em>) – Fontsize to use.</p></li>
+<li><p><strong>majortick_width</strong> (<em>int</em>) – Width of major ticks.</p></li>
+<li><p><strong>majortick_size</strong> (<em>int</em>) – Length of major ticks.</p></li>
+<li><p><strong>minorticks</strong> (<em>bool</em>) – If True, include minor ticks.</p></li>
+<li><p><strong>minortick_width</strong> (<em>int</em>) – Width of minor ticks.</p></li>
+<li><p><strong>minortick_size</strong> (<em>int</em>) – Length of minor ticks.</p></li>
+<li><p><strong>rightticks</strong> (<em>bool</em>) – If True, include right ticks.</p></li>
+<li><p><strong>hatch_width</strong> (<em>int</em>) – Width of hatches.</p></li>
+<li><p><strong>linewidth</strong> (<em>int</em>) – Default line width.</p></li>
+<li><p><strong>markersize</strong> (<em>int</em>) – Default marker size.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to xraydlps’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classify.html" class="btn btn-neutral float-right" title="Classifier Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ava Polzin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

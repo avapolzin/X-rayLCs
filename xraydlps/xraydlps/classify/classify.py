@@ -294,7 +294,7 @@ def train_summodel(dataframe = load(), n_neighbors = 1, use_thalf = False, min_l
 	Parameters:
 		dataframe (df): Dataframe that contains data and labels. Labels column 'class', data column 'lc'.
 		n_neighbors (int): Number of neighbors used by KNN. If include_singles, n_neighbors = 1.
-		use_thalf (bool): If True, include thalf (time above 1/2 Lpk) in classification. Requires len(lc) > 1.
+		use_thalf (bool): If True, include thalf -- time above 1/2 Lpk -- in classification. Requires len(lc) > 1.
 		min_len (int): Minimum length of included light curve -- if use_thalf = True, min_len becomes 2.
 		include_singles (bool): Include SBO (SN2008D) and FRB (FRB200428) in classifier.
 		frb_as_magnetar (bool): If include_singles = False, re-assign FRB to magnetar label. Otherwise ignored.
