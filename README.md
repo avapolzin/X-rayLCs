@@ -124,8 +124,8 @@ iso_energy() #plots Eiso vs. tdur, can specify which classes to include + appear
 dlps_axes(xlabel = 'Rest Frame Duration (days)', 
             add_minorxticks = [10.**i for i in np.arange(-6, 4)], xlim = [1e-6, 5e4],
             ylabel = r'Isotropic Equivalent Energy (0.3 - 10 keV, ergs)', 
-            add_minoryticks = [10.**i for i in np.arange(26, 51)], 
-            ylim = [1e26, 2e51]) #can specify new limits, labels, + minor tick positions
+            add_minoryticks = [10.**i for i in np.arange(32, 56)], 
+            ylim = [1e32, 2e55]) #can specify new limits, labels, + minor tick positions
 dlps_legend(style = 'scatter')
 ```
 
