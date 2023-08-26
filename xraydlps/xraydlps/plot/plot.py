@@ -1,11 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 import astropy.units as u
 import matplotlib.patches as mpatches
 import matplotlib.lines as mlines
 import pickle
 import pandas as pd
-from .tools import load, convert
+from xraydlps.tools import load, convert
 
 cs = ['grbs', 'sbo', 'sne', 'tdes', 'agn', 
 			'fbots', 'novae', 'dne', 'magnetars', 
@@ -14,7 +15,7 @@ cs = ['grbs', 'sbo', 'sne', 'tdes', 'agn',
 sc = [['long', 'short', 'ultralong', 'subluminous'], None, 
 			['cc-I', 'cc-II', 'interacting', 'Ca-rich', 'superluminous'], 
 			['nonthermal', 'thermal'], None, None, None, None, 
-			['outburst, flare'], None, None, ['highmass', 'lowmass'], None]
+			['outburst', 'flare'], None, None, ['highmass', 'lowmass'], None]
 
 defaultc_colors = ['#2ca02c', '#17becf', '#d62728', '#ff7f0e', 
 		'#cc5f00', '#8c564b', 'xkcd:burnt yellow', 'xkcd:wheat', '#e377c2', 
@@ -25,6 +26,30 @@ defaultsc_colors = [['#2ca02c', '#79ED79', '#1f701f', '#124012'], '#1298a6',
 		['#ff7f0e', '#FFB241'], '#cc5f00', '#8c564b',  'xkcd:burnt yellow', 'xkcd:wheat', 
 		['#e377c2', '#FFAAF5'], 'gray', '#9467bd', ['#1f77b4', '#52AAE7'], 
 		'#004481'] #defined for subclasses of transient
+
+
+def list_classes(subs = False, colors = False):
+	"""
+	List available classes of transients.
+
+	Parameters:
+		subs (bool): If subs = True, return tuples with classes + subclasses of transients.
+		colors (bool): If colors = True, return tuple that includes default plotting colors.
+	"""
+	if not subs:
+		if not colors:
+			for c in cs:
+				print(c)
+		if colors:
+			for z in zip(cs, defaultc_colors):
+				print(z)
+	if subs:
+		if not colors:
+			for z in zip(cs, sc):
+				print(z)
+		if colors:
+			for z in zip(cs, sc, defaultsc_colors):
+				print(z)
 
 ##########
 # * * * * 
@@ -38,12 +63,29 @@ def set_mpldefaults(fontfamily = 'serif',
 					minortick_width = 3,
 					minortick_size = 10,
 					rightticks = True,
-					hatch_width = 3):
+					hatch_width = 3,
+					linewidth = 8,
+					markersize = 20):
 	"""
-	Set matplotlib.rc defaults for DLPS. 
+	Set matplotlib.rc defaults for DLPS.
+
+	Not necessary for plots, but uses style Polzin et al. (2023).
+
+	Parameters:
+		fontfamily (str): Font family to use.
+		fontsize (int): Fontsize to use.
+		majortick_width (int): Width of major ticks.
+		majortick_size (int): Length of major ticks.
+		minorticks (bool): If True, include minor ticks.
+		minortick_width (int): Width of minor ticks.
+		minortick_size (int): Length of minor ticks.
+		rightticks (bool): If True, include right ticks.
+		hatch_width (int): Width of hatches.
+		linewidth (int): Default line width.
+		markersize (int): Default marker size.
 	"""
 	matplotlib.rcParams['font.family'] = fontfamily
-	matplotlib.rcParams.update({'font.size': fontsize})
+	# matplotlib.rcParams['font.size'] = fontsize
 	matplotlib.rcParams['xtick.major.size'] = majortick_size
 	matplotlib.rcParams['ytick.major.size'] = majortick_size
 	matplotlib.rcParams['xtick.major.width'] = majortick_width
@@ -57,6 +99,9 @@ def set_mpldefaults(fontfamily = 'serif',
 		matplotlib.rcParams['ytick.minor.width'] = minortick_width
 	matplotlib.rcParams['ytick.right'] = rightticks
 	matplotlib.rc('hatch', linewidth = hatch_width)
+	matplotlib.rcParams['lines.linewidth'] = linewidth
+	matplotlib.rcParams['lines.markersize'] = markersize
+	matplotlib.rc('font', size = fontsize)
 
 
 
@@ -68,7 +113,8 @@ def dlps_axes(xlabel = 'Rest Frame Time Since Identification (days)',
 			  add_minorxticks = [10.**i for i in np.arange(-8, 4)],
 			  add_minoryticks = [10.**i for i in np.arange(26, 51)],
 			  ax = plt, xlim = [3e-9, 5e4], ylim = [1e26, 1e51],
-			  rightticks = True, xscale = 'log', yscale = 'log'):
+			  rightticks = True, tickwidth = [3, 3],
+			  xscale = 'log', yscale = 'log'):
 	"""
 	Quickly set up axes for X-ray DLPS plots. For most full DLPS plots, should not need to change defaults.
 
@@ -82,6 +128,7 @@ def dlps_axes(xlabel = 'Rest Frame Time Since Identification (days)',
 		ylim (arr-like): Lower and upper limit of y-axis.
 		rightticks (bool): If True, plot minor ticks on right y-axis. 
 							(Looks best if major ticks are enabled for the rightside, too.)
+		tickwidth (list): Width of major and minor ticks to be added respectively. Best if this matches set_mpldefaults(). 
 		xscale (str): Set scaling of x-axis.
 		yscale (str): Set scaling of y-axis.
 
@@ -94,30 +141,31 @@ def dlps_axes(xlabel = 'Rest Frame Time Since Identification (days)',
 
 	if add_minorxticks:
 		for i in add_minorxticks:
-			ax.vlines(x = i, ymin = ylim[0] - xtick_len, ymax = ylim[0], clip_on = False, color = 'k')
+			ax.vlines(x = i, ymin = ylim[0] - xtick_len, ymax = ylim[0], clip_on = False, color = 'k', lw = tickwidth[1])
 		for j in add_minoryticks:
-			ax.vlines(x = i, ymin = xlim[0] - ytick_len_left, ymax = xlim[0], clip_on = False, color = 'k')
-			if right_ticks:
-				ax.vlines(x = i, ymin = xlim[1], ymax = xlim[1] + ytick_len_right, clip_on = False, color = 'k')
+			ax.vlines(x = i, ymin = xlim[0] - ytick_len_left, ymax = xlim[0], clip_on = False, color = 'k', lw = tickwidth[1])
+			if rightticks:
+				ax.vlines(x = i, ymin = xlim[1], ymax = xlim[1] + ytick_len_right, clip_on = False, color = 'k', lw = tickwidth[0])
 
 	if ax == plt:
 		ax.xlabel(xlabel)
 		ax.ylabel(ylabel)
-		ax.xlimit(xlim)
-		ax.ylimit(ylim)
+		ax.xlim(xlim)
+		ax.ylim(ylim)
 		ax.xscale(xscale)
 		ax.yscale(yscale)
 
 	else:
 		ax.set_xlabel(xlabel)
 		ax.set_ylabel(ylabel)
-		ax.set_xlimit(xlim)
-		ax.set_ylimit(ylim)
+		ax.set_xlim(xlim)
+		ax.set_ylim(ylim)
 		ax.set_xscale(xscale)
 		ax.set_yscale(yscale)
 
 
-def dlps_legend(labels = cs, colors = defaultc_colors, ax = plt, style = 'patch', marker = None, **kwargs):
+def dlps_legend(labels = [cs, sc], colors = [defaultc_colors, defaultsc_colors], 
+				ax = plt, style = 'patch', marker = None, subson = False, **kwargs):
 	"""
 	Easily enerate custom legend for plots.
 
@@ -128,10 +176,37 @@ def dlps_legend(labels = cs, colors = defaultc_colors, ax = plt, style = 'patch'
 		style (str or arr-like): 'Patch', 'line', or 'scatter' -- 
 				if 'scatter', have to specify marker. Case insensitive.
 		marker (str or arr-like): Marker to be used in legend.
+		subson (bool): Default is False. If true, use subclass legend.
 		**kwargs modify ax.legend(), see matplotlib documentation.
 
 
 	"""
+	if not subson:
+		labels = labels[0]
+		colors = colors[0]
+	if subson:
+		labels_ = []
+		for i, s in enumerate(sc):
+			if s:
+				for s_ in s:
+					if cs[i] == 'magnetars':
+						labels_.append(s_+', '+cs[i])
+					else:
+						labels_.append(s_+' '+cs[i])
+			if not s:
+				labels_.append(cs[i])
+			
+		colors_ = []
+		for c in defaultsc_colors:
+			if type(c) == list:
+				for i in c:
+					colors_.append(i)
+			if type(c) == str:
+				colors_.append(c)
+		labels = labels_
+		colors = colors_
+
+
 	if type(style) == str:
 		style = [style]*len(labels)
 	if type(marker) == str:
@@ -152,7 +227,7 @@ def dlps_legend(labels = cs, colors = defaultc_colors, ax = plt, style = 'patch'
 	
 def obs_dlps(classes = cs, subclasses = sc, subson = False,
 			 colors = [defaultc_colors, defaultsc_colors], 
-			 xunit = u.d, yunit = u.erg/u.s, k = 1, ax = plt, **kwargs):
+			 xunit = u.d, yunit = u.erg/u.s, k = 1., ax = plt, **kwargs):
 
 	"""
 	Plot the observational DLPS.
@@ -173,7 +248,7 @@ def obs_dlps(classes = cs, subclasses = sc, subson = False,
 
 	xconv = u.d.to(xunit)
 	yconv = (u.erg/u.s).to(yunit)
-	if type(k) == float:
+	if (type(k) == float) or (type(k) == int):
 		k = [k]*len(classes)
 
 	if colors == [defaultc_colors, defaultsc_colors]: # hacky test for default parameters (might be temporary if I find a better way)
@@ -187,19 +262,19 @@ def obs_dlps(classes = cs, subclasses = sc, subson = False,
 			ki = k[i]
 			if subclasses[i]:
 				if sc[i]:
-			        for k, s in enumerate(sc[i]):
-			        	col = colors[1][i][k]
-			            for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
-							for obj in lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == sc)]:
-								time = obj[1]['time'] * xconv
-								lum = obj[1]['lum'] * yconv * ki
-								ax.plot(time, lum, color = col)
+					for k_, s in enumerate(sc[i]):
+						col = colors[i][k_]
+						for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
+							# for obj in lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)]:
+							time = obj[1]['time'] * xconv
+							lum = obj[1]['lum'] * yconv * ki
+							ax.plot(time, lum, color = col)
 
-								if len(time) == 1:
-									ax.scatter(time, lum, color = col) #s = lw^2
+							if len(time) == 1:
+								ax.scatter(time, lum, color = col) #s = lw^2
 
 			if not subclasses[i]:
-				col = colors[1][i]
+				col = colors[i]
 				for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 					time = obj[1]['time'] * xconv
 					lum = obj[1]['lum'] * yconv * ki
@@ -211,7 +286,7 @@ def obs_dlps(classes = cs, subclasses = sc, subson = False,
 	if not subson:
 		for i, c in enumerate(classes):
 			ki = k[i]
-			col = colors[0][i]
+			col = colors[i]
 			for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 				time = obj[1]['time'] * xconv
 				lum = obj[1]['lum'] * yconv * ki
@@ -242,7 +317,7 @@ def schematic_dlps(classes = np.concatenate((cs, ['sgrbs'])), expecton = False,
 	"""
 	carr = np.array(classes)
 	colarr = np.array(colors)
-	if type(k) == float:
+	if (type(k) == float) or (type(k) == int):
 		k = [k]*len(classes)
 	karr = np.array(k)
 
@@ -252,131 +327,131 @@ def schematic_dlps(classes = np.concatenate((cs, ['sgrbs'])), expecton = False,
 	if expecton:
 		if 'sbo' in classes:
 			plt.fill_between([3e-5*xconv, 1*xconv], 
-				[1e40*yconv*karr[carr == 'sbo'], 1e35*yconv*karr[carr == 'sbo']], 
-				[1e49*yconv*karr[carr == 'sbo'], 1e44*yconv*karr[carr == 'sbo']], 
-				edgecolor = colarr[carr == 'sbo'], facecolor = 'none', hatch = 'X', 
+				[1e40*yconv*karr[carr == 'sbo'][0], 1e35*yconv*karr[carr == 'sbo'][0]], 
+				[1e49*yconv*karr[carr == 'sbo'][0], 1e44*yconv*karr[carr == 'sbo'][0]], 
+				edgecolor = colarr[carr == 'sbo'][0], facecolor = 'none', hatch = 'X', 
 				linewidth = 0) #SS SBO
 
 		if 'magnetars' in classes:
 			plt.fill_between([10**-5.3*xconv, 10**0.3*xconv], 
-				[10**41.5*yconv*karr[carr == 'magnetars'], 10**36.5*yconv*karr[carr == 'magnetars']], 
-				[10**38.5*yconv*karr[carr == 'magnetars'], 10**33.5*yconv*karr[carr == 'magnetars']], 
-				edgecolor = colarr[carr == 'sbo'], hatch = '+', facecolor = 'none', 
+				[10**41.5*yconv*karr[carr == 'magnetars'][0], 10**36.5*yconv*karr[carr == 'magnetars'][0]], 
+				[10**38.5*yconv*karr[carr == 'magnetars'][0], 10**33.5*yconv*karr[carr == 'magnetars'][0]], 
+				edgecolor = colarr[carr == 'magnetars'][0], hatch = '+', facecolor = 'none', 
 				linewidth = 0) #magnetar exp
 
 	if 'agn' in classes:
 		plt.fill_between([8e-2*xconv, 5e3*xconv], 
-			[2e38*yconv*karr[carr == 'agn'], 2e38*yconv*karr[carr == 'agn']], 
-			[3e46*yconv*karr[carr == 'agn'], 3e46*yconv*karr[carr == 'agn']], 
-			color = colarr[carr == 'agn']) #AGN - 1
+			[2e38*yconv*karr[carr == 'agn'][0], 2e38*yconv*karr[carr == 'agn'][0]], 
+			[3e46*yconv*karr[carr == 'agn'][0], 3e46*yconv*karr[carr == 'agn'][0]], 
+			color = colarr[carr == 'agn'][0]) #AGN - 1
 		plt.fill_between([2.5e-3*xconv, 8e-2*xconv], 
-			[1e41*yconv*karr[carr == 'agn']], 
-			[3e42*yconv*karr[carr == 'agn'], 3e42*yconv*karr[carr == 'agn']], 
-			color = colarr[carr == 'agn']) #AGN - 2, QPEs
+			[1e41*yconv*karr[carr == 'agn'][0]], 
+			[3e42*yconv*karr[carr == 'agn'][0], 3e42*yconv*karr[carr == 'agn'][0]], 
+			color = colarr[carr == 'agn'][0]) #AGN - 2, QPEs
 
 	if 'grbs' in classes:
 		plt.fill_between([3e-4*xconv, 2e3*xconv], 
-			[1e46*yconv*karr[carr == 'grbs'], 3e38*yconv*karr[carr == 'grbs']], 
-			[6e50*yconv*karr[carr == 'grbs'], 3e43*yconv*karr[carr == 'grbs']], 
-			color = colarr[carr == 'grbs'], zorder = 0) #GRBs - 1
+			[1e46*yconv*karr[carr == 'grbs'][0], 3e38*yconv*karr[carr == 'grbs'][0]], 
+			[6e50*yconv*karr[carr == 'grbs'][0], 3e43*yconv*karr[carr == 'grbs'][0]], 
+			color = colarr[carr == 'grbs'][0]) #GRBs - 1
 		plt.fill_between([5e-5*xconv, 3*xconv], 
-			[3e45*yconv*karr[carr == 'grbs'], 1e40*yconv*karr[carr == 'grbs']], 
-			[3e47*yconv*karr[carr == 'grbs'], 1e42*yconv*karr[carr == 'grbs']], 
-			color = colarr[carr == 'grbs'], zorder = 0) #GRBs - 2
+			[3e45*yconv*karr[carr == 'grbs'][0], 1e40*yconv*karr[carr == 'grbs'][0]], 
+			[3e47*yconv*karr[carr == 'grbs'][0], 1e42*yconv*karr[carr == 'grbs'][0]], 
+			color = colarr[carr == 'grbs'][0]) #GRBs - 2
 		if 'sgrbs' in classes:
-			scol = colarr[carr == 'sgrbs']
-			sk = karr[carr == 'sgrbs']
+			scol = colarr[carr == 'sgrbs'][0]
+			sk = karr[carr == 'sgrbs'][0]
 		if 'sgrbs' not in classes:
-			scol = colarr[carr == 'grbs']
-			sk = karr[carr == 'grbs']
+			scol = colarr[carr == 'grbs'][0]
+			sk = karr[carr == 'grbs'][0]
 		plt.fill_between([3e-4*xconv, 7e2*xconv], 
 			[4.2e44*yconv*sk, 3e36*yconv*sk], 
 			[7e49*yconv*sk, 5e41*yconv*sk], 
-			color = scol, zorder = 0)#sGRBs
+			color = scol)#sGRBs
 
 	if 'tdes' in classes:
 		plt.fill_between([1e-2*xconv, 1e4*xconv], 
-			[3e46*yconv*karr[carr == 'tdes'], 3e42*yconv*karr[carr == 'tdes']], 
-			[1e50*yconv*karr[carr == 'tdes'], 1e46*yconv*karr[carr == 'tdes']], 
-			color = colarr[carr == 'tdes'], zorder = 0) #TDEs - 1
+			[3e46*yconv*karr[carr == 'tdes'][0], 3e42*yconv*karr[carr == 'tdes'][0]], 
+			[1e50*yconv*karr[carr == 'tdes'][0], 1e46*yconv*karr[carr == 'tdes'][0]], 
+			color = colarr[carr == 'tdes'][0]) #TDEs - 1
 		plt.fill_between([3e0*xconv, 1e4*xconv], 
-			[3e37*yconv*karr[carr == 'tdes'], 3e37*yconv*karr[carr == 'tdes']], 
-			[1e45*yconv*karr[carr == 'tdes'], 1e45*yconv*karr[carr == 'tdes']], 
-			color = colarr[carr == 'tdes'], zorder = 0) #TDEs - 2
+			[3e37*yconv*karr[carr == 'tdes'][0], 3e37*yconv*karr[carr == 'tdes'][0]], 
+			[1e45*yconv*karr[carr == 'tdes'][0], 1e45*yconv*karr[carr == 'tdes'][0]], 
+			color = colarr[carr == 'tdes'][0]) #TDEs - 2
 
 	if 'sne' in classes:
 		plt.fill_between([2.5e-1*xconv, 1.5e4*xconv], 
-			[1e39*yconv*karr[carr == 'sne'], 1e34*yconv*karr[carr == 'sne']], 
-			[1e42*yconv*karr[carr == 'sne'], 1e42*yconv*karr[carr == 'sne']], 
-			color = colarr[carr == 'sne'], zorder = 0)
+			[1e39*yconv*karr[carr == 'sne'][0], 1e34*yconv*karr[carr == 'sne'][0]], 
+			[1e42*yconv*karr[carr == 'sne'][0], 1e42*yconv*karr[carr == 'sne'][0]], 
+			color = colarr[carr == 'sne'][0])
 
 	if 'sbo' in classes:
 		plt.fill_between([2e-4*xconv, 1e-2*xconv], 
-			[1e43*yconv*karr[carr == 'sbo'], 2e41*yconv*karr[carr == 'sbo']], 
-			[5e44*yconv*karr[carr == 'sbo'], 1e43*yconv*karr[carr == 'sbo']], 
-			color = colarr[carr == 'sbo'], zorder = 0) #wind SBO
+			[1e43*yconv*karr[carr == 'sbo'][0], 2e41*yconv*karr[carr == 'sbo'][0]], 
+			[5e44*yconv*karr[carr == 'sbo'][0], 1e43*yconv*karr[carr == 'sbo'][0]], 
+			color = colarr[carr == 'sbo'][0]) #wind SBO
 
 	if 'xrbs' in classes:
 		plt.fill_between([1e-6*xconv, 3e3*xconv], 
-			[1e31*yconv*karr[carr == 'xrbs'], 1e31*yconv*karr[carr == 'xrbs']], 
-			[2e35*yconv*karr[carr == 'xrbs'], 2e35*yconv*karr[carr == 'xrbs']], 
-			color = colarr[carr == 'xrbs'], zorder = 0) #XRBs - 1
+			[1e31*yconv*karr[carr == 'xrbs'][0], 1e31*yconv*karr[carr == 'xrbs'][0]], 
+			[2e35*yconv*karr[carr == 'xrbs'][0], 2e35*yconv*karr[carr == 'xrbs'][0]], 
+			color = colarr[carr == 'xrbs'][0]) #XRBs - 1
 		plt.fill_between([1.5e-1*xconv, 3e3*xconv], 
-			[2e35*yconv*karr[carr == 'xrbs'], 2e35*yconv*karr[carr == 'xrbs']], 
-			[3e39*yconv*karr[carr == 'xrbs'], 3e39*yconv*karr[carr == 'xrbs']], 
-			color = colarr[carr == 'xrbs'], zorder = 0) #XRBs - 2
+			[2e35*yconv*karr[carr == 'xrbs'][0], 2e35*yconv*karr[carr == 'xrbs'][0]], 
+			[3e39*yconv*karr[carr == 'xrbs'][0], 3e39*yconv*karr[carr == 'xrbs'][0]], 
+			color = colarr[carr == 'xrbs'][0]) #XRBs - 2
 
 	if 'dne' in classes:
 		plt.fill_between([7e-4*xconv, 2e3*xconv], 
-			[4e29*yconv*karr[carr == 'dne'], 4e29*yconv*karr[carr == 'dne']], 
-			[1e34*yconv*karr[carr == 'dne'], 1e34*yconv*karr[carr == 'dne']], 
-			color = colarr[carr == 'dne'], zorder = 0) #DNe
+			[4e29*yconv*karr[carr == 'dne'][0], 4e29*yconv*karr[carr == 'dne'][0]], 
+			[1e34*yconv*karr[carr == 'dne'][0], 1e34*yconv*karr[carr == 'dne'][0]], 
+			color = colarr[carr == 'dne'][0]) #DNe
 
 	if 'novae' in classes:
 		plt.fill_between([1.5e-1*xconv, 6e3*xconv], 
-			[1.5e30*yconv*karr[carr == 'novae'], 1.5e30*yconv*karr[carr == 'novae']], 
-			[7e36*yconv*karr[carr == 'novae'], 7e36*yconv*karr[carr == 'novae']], 
-			color = colarr[carr == 'novae'], zorder = 0) #Novae
+			[1.5e30*yconv*karr[carr == 'novae'][0], 1.5e30*yconv*karr[carr == 'novae'][0]], 
+			[7e36*yconv*karr[carr == 'novae'][0], 7e36*yconv*karr[carr == 'novae'][0]], 
+			color = colarr[carr == 'novae'][0]) #Novae
 
 	if 'coolstellar' in classes:
 		plt.fill_between([2e-3*xconv, 1.2e0*xconv], 
-			[1.5e28*yconv*karr[carr == 'coolstellar'], 1.5e28*yconv*karr[carr == 'coolstellar']], 
-			[6e32*yconv*karr[carr == 'coolstellar'], 6e32*yconv*karr[carr == 'coolstellar']], 
-			color = colarr[carr == 'coolstellar'], zorder = 0) #cool stellar flares
+			[1.5e28*yconv*karr[carr == 'coolstellar'][0], 1.5e28*yconv*karr[carr == 'coolstellar'][0]], 
+			[6e32*yconv*karr[carr == 'coolstellar'][0], 6e32*yconv*karr[carr == 'coolstellar'][0]], 
+			color = colarr[carr == 'coolstellar'][0]) #cool stellar flares
 
 	if 'frb' in classes:
 		plt.fill_between([2.5e-8*xconv, 1.5e-5*xconv], 
-			[5e39*yconv*karr[carr == 'frb'], 5e39*yconv*karr[carr == 'frb']], 
-			[1e42*yconv*karr[carr == 'frb'], 1e42*yconv*karr[carr == 'frb']], 
-			color = colarr[carr == 'frb'], zorder = 0) #FRB
+			[5e39*yconv*karr[carr == 'frb'][0], 5e39*yconv*karr[carr == 'frb'][0]], 
+			[1e42*yconv*karr[carr == 'frb'][0], 1e42*yconv*karr[carr == 'frb'][0]], 
+			color = colarr[carr == 'frb'][0]) #FRB
 
 	if 'magnetars' in classes:
 		plt.fill_between([1e-6*xconv, 3e-5*xconv], 
-			[2e39*yconv*karr[carr == 'magnetars'], 2e39*yconv*karr[carr == 'magnetars']], 
-			[9e40*yconv*karr[carr == 'magnetars'], 9e40*yconv*karr[carr == 'magnetars']], 
-			color = colarr[carr == 'magnetars'], zorder = 0) #magnetar - 1
+			[2e39*yconv*karr[carr == 'magnetars'][0], 2e39*yconv*karr[carr == 'magnetars'][0]], 
+			[9e40*yconv*karr[carr == 'magnetars'][0], 9e40*yconv*karr[carr == 'magnetars'][0]], 
+			color = colarr[carr == 'magnetars'][0]) #magnetar - 1
 		plt.fill_between([2e-1*xconv, 8e3*xconv], 
-			[4e33*yconv*karr[carr == 'magnetars'], 9e29*yconv*karr[carr == 'magnetars']], 
-			[1e36*yconv*karr[carr == 'magnetars'], 1e36*yconv*karr[carr == 'magnetars']], 
-			color = colarr[carr == 'magnetars'], zorder = 0) #magnetar - 2
+			[4e33*yconv*karr[carr == 'magnetars'][0], 9e29*yconv*karr[carr == 'magnetars'][0]], 
+			[1e36*yconv*karr[carr == 'magnetars'][0], 1e36*yconv*karr[carr == 'magnetars'][0]], 
+			color = colarr[carr == 'magnetars'][0]) #magnetar - 2
 
 	if 'ulxs' in classes:
 		plt.fill_between([0.6*xconv, 9e3*xconv], 
-			[3e38*yconv*karr[carr == 'ulxs'], 3e38*yconv*karr[carr == 'ulxs']], 
-			[3e40*yconv*karr[carr == 'ulxs'], 3e40*yconv*karr[carr == 'ulxs']], 
-			color = colarr[carr == 'ulxs'], zorder = 0) #ULX
+			[3e38*yconv*karr[carr == 'ulxs'][0], 3e38*yconv*karr[carr == 'ulxs'][0]], 
+			[3e40*yconv*karr[carr == 'ulxs'][0], 3e40*yconv*karr[carr == 'ulxs'][0]], 
+			color = colarr[carr == 'ulxs'][0]) #ULX
 
 	if 'fbots' in classes:
 		plt.fill_between([2.5*xconv, 400*xconv], 
-			[1e42*yconv*karr[carr == 'fbots'], 1e38*yconv*karr[carr == 'fbots']], 
-			[2e44*yconv*karr[carr == 'fbots'], 2e44*yconv*karr[carr == 'fbots']], 
-			color = colarr[carr == 'fbots'], zorder = 0) #FBOT
+			[1e42*yconv*karr[carr == 'fbots'][0], 1e38*yconv*karr[carr == 'fbots'][0]], 
+			[2e44*yconv*karr[carr == 'fbots'][0], 2e44*yconv*karr[carr == 'fbots'][0]], 
+			color = colarr[carr == 'fbots'][0]) #FBOT
 
 
 
 def obs_dfps(classes = cs, subclasses = sc, subson = False,
 			 colors = [defaultc_colors, defaultsc_colors], 
-			 xunit = u.d, yunit = u.erg/u.s/u.cm**2, k = 1, ax = plt, **kwargs):
+			 xunit = u.d, yunit = u.erg/u.s/u.cm**2, k = 1., ax = plt, **kwargs):
 
 	"""
 	Plot the observational DFPS.
@@ -397,7 +472,7 @@ def obs_dfps(classes = cs, subclasses = sc, subson = False,
 
 	xconv = u.d.to(xunit)
 	yconv = (u.erg/u.s/u.cm**2).to(yunit)
-	if type(k) == float:
+	if (type(k) == float) or (type(k) == int):
 		k = [k]*len(classes)
 
 	if colors == [defaultc_colors, defaultsc_colors]: # hacky test for default parameters (might be temporary if I find a better way)
@@ -411,29 +486,28 @@ def obs_dfps(classes = cs, subclasses = sc, subson = False,
 			ki = k[i]
 			if subclasses[i]:
 				if sc[i]:
-			        for k, s in enumerate(sc[i]):
-			        	col = colors[1][i][k]
-			            for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
-							for obj in lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == sc)]:
-								if np.isfinite(obj[1]['z']):
-						            time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
-						        if not np.isfinite(obj[1]['z']):
-						            time = obj[1]['time'] * xconv
-								flux = obj[1]['flux'] * yconv * ki
-								ax.plot(time, flux, color = col)
+					for k_, s in enumerate(sc[i]):
+						col = colors[i][k_]
+						for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
+							if np.isfinite(obj[1]['z']):
+								time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
+							if not np.isfinite(obj[1]['z']):
+								time = obj[1]['time'] * xconv
+							flux = obj[1]['flux'] * yconv * ki
+							ax.plot(time, flux, color = col)
 
-								if len(time) == 1:
-									ax.scatter(time, flux, color = col) #s = lw^2
+							if len(time) == 1:
+								ax.scatter(time, flux, color = col) #s = lw^2
 
 			if not subclasses[i]:
-				col = colors[1][i]
+				col = colors[i]
 				for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 					if np.isfinite(obj[1]['z']):
-			            time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
-			        if not np.isfinite(obj[1]['z']):
-			            time = obj[1]['time'] * xconv
+						time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
+					if not np.isfinite(obj[1]['z']):
+						time = obj[1]['time'] * xconv
 					flux = obj[1]['flux'] * yconv * ki
-					ax.plot(time, lum, color = col)
+					ax.plot(time, flux, color = col)
 
 					if len(time) == 1:
 						ax.scatter(time, flux, color = col)
@@ -441,12 +515,12 @@ def obs_dfps(classes = cs, subclasses = sc, subson = False,
 	if not subson:
 		for i, c in enumerate(classes):
 			ki = k[i]
-			col = colors[0][i]
+			col = colors[i]
 			for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 				if np.isfinite(obj[1]['z']):
-		            time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
-		        if not np.isfinite(obj[1]['z']):
-		            time = obj[1]['time'] * xconv
+					time = obj[1]['time'] * (1 + obj[1]['z']) * xconv
+				if not np.isfinite(obj[1]['z']):
+					time = obj[1]['time'] * xconv
 				flux = obj[1]['flux'] * yconv * ki
 				ax.plot(time, flux, color = col)
 
@@ -461,7 +535,7 @@ def iso_energy(classes = cs, subclasses = sc, subson = False,
 
 	xconv = u.d.to(xunit)
 	yconv = (u.erg).to(yunit)
-	if type(k) == float:
+	if (type(k) == float) or (type(k) == int):
 		k = [k]*len(classes)
 
 	if colors == [defaultc_colors, defaultsc_colors]: # hacky test for default parameters (might be temporary if I find a better way)
@@ -475,38 +549,29 @@ def iso_energy(classes = cs, subclasses = sc, subson = False,
 			ki = k[i]
 			if subclasses[i]:
 				if sc[i]:
-			        for k, s in enumerate(sc[i]):
-			        	col = colors[1][i][k]
-			            for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
+					for k_, s in enumerate(sc[i]):
+						col = colors[i][k_]
+						for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
 							for obj in lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == sc)]:
 								time = obj[1]['tdur'] * xconv
 								eiso = obj[1]['eiso'] * yconv * ki
-								ax.plot(time, eiso, color = col)
-
-								if len(time) == 1:
-									ax.scatter(time, eiso, color = col) #s = lw^2
+								ax.scatter(time, eiso, color = col) #s = lw^2
 
 			if not subclasses[i]:
-				col = colors[1][i]
+				col = colors[i]
 				for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 					time = obj[1]['tdur'] * xconv
 					eiso = obj[1]['eiso'] * yconv * ki
-					ax.plot(time, eiso, color = col)
-
-					if len(time) == 1:
-						ax.scatter(time, eiso, color = col)
+					ax.scatter(time, eiso, color = col)
 
 	if not subson:
 		for i, c in enumerate(classes):
 			ki = k[i]
-			col = colors[0][i]
+			col = colors[i]
 			for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 				time = obj[1]['tdur'] * xconv
 				eiso = obj[1]['eiso'] * yconv * ki
-				ax.plot(time, eiso, color = col)
-
-				if len(time) == 1:
-					ax.scatter(time, eiso, color = col)
+				ax.scatter(time, eiso, color = col)
 
 def lpk_thalf(classes = cs, subclasses = sc, subson = False,
 			 colors = [defaultc_colors, defaultsc_colors], 
@@ -516,7 +581,7 @@ def lpk_thalf(classes = cs, subclasses = sc, subson = False,
 
 	xconv = u.d.to(xunit)
 	yconv = (u.erg/u.s).to(yunit)
-	if type(k) == float:
+	if (type(k) == float) or (type(k) == int):
 		k = [k]*len(classes)
 
 	if colors == [defaultc_colors, defaultsc_colors]: # hacky test for default parameters (might be temporary if I find a better way)
@@ -530,38 +595,29 @@ def lpk_thalf(classes = cs, subclasses = sc, subson = False,
 			ki = k[i]
 			if subclasses[i]:
 				if sc[i]:
-			        for k, s in enumerate(sc[i]):
-			        	col = colors[1][i][k]
-			            for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
+					for k_, s in enumerate(sc[i]):
+						col = colors[i][k_]
+						for j, obj in enumerate(lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == s)].iterrows()):
 							for obj in lcs.loc[(lcs['class'] == c) & (lcs['subclass'] == sc)]:
 								time = obj[1]['thalf'] * xconv
 								lum = obj[1]['lpk'] * yconv * ki
-								ax.plot(time, lum, color = col)
-
-								if len(time) == 1:
-									ax.scatter(time, lum, color = col) #s = lw^2
+								ax.scatter(time, lum, color = col) #s = lw^2
 
 			if not subclasses[i]:
-				col = colors[1][i]
+				col = colors[i]
 				for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 					time = obj[1]['thalf'] * xconv
 					lum = obj[1]['lpk'] * yconv * ki
-					ax.plot(time, lum, color = col)
-
-					if len(time) == 1:
-						ax.scatter(time, lum, color = col)
+					ax.scatter(time, lum, color = col)
 
 	if not subson:
 		for i, c in enumerate(classes):
 			ki = k[i]
-			col = colors[0][i]
+			col = colors[i]
 			for j, obj in enumerate(lcs.loc[lcs['class'].values == c].iterrows()):
 				time = obj[1]['thalf'] * xconv
 				lum = obj[1]['lpk'] * yconv * ki
-				ax.plot(time, lum, color = col)
-
-				if len(time) == 1:
-					ax.scatter(time, lum, color = col)
+				ax.scatter(time, lum, color = col)
 
 
 

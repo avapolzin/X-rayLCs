@@ -1,1 +1,1 @@
-from .tools import load, n_obs, convert, list_classes, get_stat
+from .tools import load, n_obs, convert, get_stat

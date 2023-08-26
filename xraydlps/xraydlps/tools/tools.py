@@ -6,6 +6,10 @@ import numpy as np
 from scipy.interpolate import interp1d
 from sklearn.metrics import auc
 
+# import pkgutil
+import pkg_resources
+import pandas as pd
+
 cosmo = FlatLambdaCDM(H0 = 69.6, Om0 = 0.286)
 sky = (4*np.pi*u.radian**2).to(u.deg**2)
 
@@ -16,21 +20,23 @@ def get_dcom(dl):
 	## bit of a roundabout way to get comoving distance, but assuming luminosity distances as input
 	return cosmo.comoving_distance(get_z(dl)).value
 
+DATA_PATH = pkg_resources.resource_filename('xraydlps', 'data/')
+
 ##########
 # * * * * 
 ##########
 
-
-def load(pkl_path = 'lcs.pkl'):
+def load(pkl_file = 'lcs.pkl'):
 	"""
 	Convenience function to load pickled files. User-facing application is to access lcs.pkl.
 
 	Parameters:
-		pkl_path (str): Path to pickled file.
+		pkl_file (str): Path to pickled file.
 
 	Returns:
 		Unpickled file.
 	"""
+	pkl_path = pkg_resources.resource_filename('xraydlps', 'data/'+pkl_file)
 
 	with open(pkl_path, 'rb') as pkl:
 		pk = pickle.load(pkl)
@@ -64,11 +70,11 @@ def n_obs(lpk, rate, sens, fov,
 	rconv = runits.to(u.Gpc**-3/u.yr)
 	fconv = funits.to(u.erg/u.s/u.cm**2)
 	fovconv = fovunits.to(u.deg**2)
-	outconv = 1/u.yr.to(1/perunits)
+	outconv = (1/u.yr).to(1/perunits)
 
 
 	frac = fov*fovconv/sky.value
-	depth = np.sqrt(lpk/(4*np.pi*sens))*u.cm.to(u.Mpc)
+	depth = np.sqrt(lpk*lconv/(4*np.pi*sens*fconv))*u.cm.to(u.Mpc)
 	if depth < 6701.2: #condition on z <= 1
 		inst_depth = depth 
 	else:
@@ -77,7 +83,7 @@ def n_obs(lpk, rate, sens, fov,
 	inst_depth_com = get_dcom(inst_depth)
 	inst_vol = 4/3*np.pi*(inst_depth*u.Mpc.to(u.Gpc))**3 * frac
 
-	nobs = rate*inst_vol*outconv
+	nobs = rate*rconv*inst_vol*outconv
 
 	return nobs
 
@@ -100,8 +106,8 @@ def convert(time, lum, k = 1, tunits = u.d, lunits = u.erg/u.s):
 	** Note that light curves must have multiple data points for this to work properly. **
 	"""
 
-	tconv = tunit.to(u.d)
-	lconv = k*lunit.to(u.erg/u.s)
+	tconv = tunits.to(u.d)
+	lconv = k*lunits.to(u.erg/u.s)
 
 	time = tconv * time
 	lum = k * lconv * lum
@@ -120,33 +126,6 @@ def convert(time, lum, k = 1, tunits = u.d, lunits = u.erg/u.s):
 		thalf = (np.max(time) - np.min(time))*len(check(time_check)[check(time_check) >= 0.5*lpk])/1000
 
 	return lpk, thalf, eiso, dur
-
-
-def list_classes(sub = False):
-	"""
-	Returns all available classes for plotting. If sub = True, also list available sublcasses.
-	"""
-
-	cs = ['grbs', 'sbo', 'sne', 'tdes', 'agn', 
-			'fbots', 'novae', 'dne', 'magnetars', 
-			'frb', 'coolstellar', 'xrbs', 'ulxs']
-
-	subs = [['long', 'short', 'ultralong', 'subluminous'], None, 
-			['cc-I', 'cc-II', 'interacting', 'Ca-rich', 'superluminous'], 
-			['nonthermal', 'thermal'], None, None, None, None, 
-			['outburst, flare'], None, None, ['highmass', 'lowmass'], None]
-
-	if not sub:
-		for c in cs:
-			print(c)
-
-	if sub:
-		for i, c in enumerate(cs):
-			sc = subs[i]
-			if sc:
-				print(c, sc)
-			if not sc:
-				print(c)
 
 
 
