@@ -57,6 +57,7 @@ plot.list_classes(subs = True)
 To directly recreate figures from Polzin et al. (2023), you can use our built in style functions + our general DLPS plotting function:
 ```python
 from xraydlps.plot import set_mpldefaults, dlps_axes, dlps_legend, obs_dlps
+import matplotlib.pyplot as plt
 
 set_mpldefaults() #sets general matplotlib style parameters for all plots
 
@@ -83,12 +84,13 @@ dlps_legend()
 Similarly, to plot the DFPS:
 ```python
 from xraydlps.plot import obs_dfps
+import numpy as np
 
 set_mpldefaults()
 
 fig = plt.figure(figsize = (27, 25))
 obs_dfps() #plots dfps, can specify which classes to include + line color/appearance
-dlps_axes(xlabel = r'Observed Time Since Identification (days)', , 
+dlps_axes(xlabel = r'Observed Time Since Identification (days)', 
             ylabel = r'0.3 - 10 keV X-ray Flux (erg s$^{-1}$ cm$^{-2}$)', 
             add_minoryticks = [10.**i for i in np.arange(2, 16)], 
             ylim = [1e-17, 3e-2]) #can specify new y-limit and label since default is for dlps + new minor tick positions
