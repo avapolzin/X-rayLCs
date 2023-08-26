@@ -143,18 +143,18 @@ To use a pre-trained model:
 ```python
 from xraydlps.classify import lc_class, sum_class, dtw_dist
 
-lc_class(time, lum) #to classify a light curve
+labels, probabilities = lc_class(time, lum) #to classify a light curve
 
-sum_class(time, lum) #to classify light curve summary statistics
+labels, probabilities = sum_class(time, lum) #to classify light curve summary statistics
 ```
 You will have to import `dtw_dist` so that the classifier can access it.
 
 If you are starting from a light curve that is not in the 0.3-10 keV band or does not use default units, you can specify arguments in `lc_class` or in converting to the summary statistics with `xraydlps.tools.convert` (see below) to easily rectify this:
 
 ```python
-lc_class(time, lum, tunits = u.s, k = 2.132)
+labels, probabilities = lc_class(time, lum, tunits = u.s, k = 2.132)
 
-sum_class(time, lum, tunits = u.s, k = 2.132)
+labels, probabilities = sum_class(time, lum, tunits = u.s, k = 2.132)
 ```
 
 There are some other arguments that are meant to allow further customization of the pre-trained models -- `verbose = True` (the default) has the classifier output all possible classes + assigned probabilities (`skip_zero = True` to only show classes with non-zero probabilities) and `full = True` will use the classifier trained on **all** of the available light curves rather than a subset.
