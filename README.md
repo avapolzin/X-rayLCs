@@ -27,6 +27,11 @@ git clone git@github.com/avapolzin/X-rayLCs.git
 cd X-rayLCs/xraydlps
 sudo python3 setup.py install
 ```
+OR
+```bash
+pip install xraydlps
+```
+
 The above includes download of all of the raw lightcurves in this repository, as well. If you are interested only in the plotting/classification functionality, you can just download the *xraydlps* directory above. Once you have a local copy, you can install the package with:
 ```bash
 cd ~/xraydlps
