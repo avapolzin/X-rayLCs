@@ -53,6 +53,7 @@ If you would like to list the subclasses, too, the command becomes:
 ```python
 plot.list_classes(subs = True)
 ```
+Similarly, `colors = True` will return the default colors for the (sub)classes.
 
 To directly recreate figures from Polzin et al. (2023), you can use our built in style functions + our general DLPS plotting function:
 ```python
