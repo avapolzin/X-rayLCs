@@ -141,12 +141,13 @@ We ensure that classes with only one observation (i.e., SBOs, FRBs, magnetar fla
 
 To use a pre-trained model:
 ```python
-from xraydlps.classify import lc_class, sum_class
+from xraydlps.classify import lc_class, sum_class, dtw_dist
 
 lc_class(time, lum) #to classify a light curve
 
 sum_class(time, lum) #to classify light curve summary statistics
 ```
+You will have to import `dtw_dist` so that the classifier can access it.
 
 If you are starting from a light curve that is not in the 0.3-10 keV band or does not use default units, you can specify arguments in `lc_class` or in converting to the summary statistics with `xraydlps.tools.convert` (see below) to easily rectify this:
 
