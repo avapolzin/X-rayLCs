@@ -73,15 +73,15 @@ def n_obs(lpk, rate, sens, fov,
 	outconv = (1/u.yr).to(1/perunits)
 
 
-	frac = fov*fovconv/sky.value
-	depth = np.sqrt(lpk*lconv/(4*np.pi*sens*fconv))*u.cm.to(u.Mpc)
+	frac = (fov*fovconv)/sky.value
+	depth = np.sqrt((lpk*lconv)/(4*np.pi*sens*fconv))*u.cm.to(u.Mpc)
 	if depth < 6701.2: #condition on z <= 1
 		inst_depth = depth 
 	else:
 		inst_depth = 6701.2 #set z = 1 (Mpc, luminosity distance)
 
 	inst_depth_com = get_dcom(inst_depth)
-	inst_vol = 4/3*np.pi*(inst_depth*u.Mpc.to(u.Gpc))**3 * frac
+	inst_vol = 4/3*np.pi*(inst_depth_com*u.Mpc.to(u.Gpc))**3 * frac
 
 	nobs = rate*rconv*inst_vol*outconv
 

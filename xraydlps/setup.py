@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
 	name = "xraydlps",
-	version = "1.0.0",
+	version = "1.0.1",
 	author = "Ava Polzin",
 	author_email = "apolzin@uchicago.edu",
 	description = "Tools to help plot the X-ray duration-luminosity phase space and use it for classification.",
