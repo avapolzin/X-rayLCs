@@ -1,1 +1,8 @@
 sphinx
+sphinx-rtd-theme
+numpy
+matplotlib
+pandas
+scikit-learn
+astropy
+scipy
