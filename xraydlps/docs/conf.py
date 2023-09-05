@@ -34,7 +34,8 @@ release = '1.0'
 # ones.
 extensions = [
 	'sphinx.ext.autodoc',
-	'sphinx.ext.napoleon'
+	'sphinx.ext.napoleon',
+	'sphinx-rtd-theme'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
