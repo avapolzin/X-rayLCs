@@ -18,6 +18,6 @@ setuptools.setup(
 		"Topic :: Scientific/Engineering :: Physics"
 		],
 	python_requires = ">3",
-	install_requires = ["numpy", "matplotlib", "pandas", "scikit-learn", "astropy", "scipy", "sphinx-rtd-theme"],
+	install_requires = ["numpy", "matplotlib", "pandas", "scikit-learn", "astropy", "scipy"],
 	package_data={'xraydlps': ['data/*']}
 	)
