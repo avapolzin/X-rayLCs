@@ -1,9 +1,9 @@
 # X-ray light curves (0.3 - 10 keV)
-[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232) [![PyPI downloads](https://img.shields.io/pypi/dm/xraydlps)](https://pypi.org/project/xraydlps/)
+[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232)
 
 Light curves from [Polzin et al., submitted](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
 
-Each folder has its own README file that lists details of the included files (as a rule, unless it is specifically stated otherwise, included light curves are not corrected for absorption or corrected to the rest frame) and will have a copy of the table that offers citations (_including references therein_) for these data.
+Data are organized into folders by class of transient. Each folder has its own README file that lists details of the included files (as a rule, unless it is specifically stated otherwise, included light curves are not corrected for absorption or corrected to the rest frame) and will have a copy of the table that offers citations (_including references therein_) for these data.
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
@@ -12,6 +12,8 @@ If you are going to use data found here, please cite both the original source(s)
 Interactive plots facilitating exploration of the data/DLPS are available [here](https://avapolzin.github.io/projects/xraydlps/).
 
 (Within _/xraydlps/xraydlps/tools_ there is a .pkl file (lcs.pkl), which stores light curves for the major classes of transient in a dataframe. Pre-made plotting functions for this dataframe are in `xraydlps` and are used for our [interactive plots](https://avapolzin.github.io/projects/xraydlps/), but we urge people interested in using the data for further analysis to look at the more complete data stored in the broader repository and consult the original sources for additional details and considerations.)
+
+We also include some additional versions of figures in the paper that may be edifying in *extra_figures*.
 
 ***
 ***
