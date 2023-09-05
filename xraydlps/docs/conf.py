@@ -14,6 +14,8 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../'))
 
+autodoc_mock_imports = ['numpy', 'matplotlib', 'pandas', 'scikit-learn', 'astropy', 'scipy']
+
 autodoc_preserve_defaults = True
 
 # -- Project information -----------------------------------------------------
