@@ -6,7 +6,7 @@
 Welcome to xraydlps's documentation!
 ====================================
 
-To install xraydlps, use pip or conda install from the distribution on GitHub.
+To install xraydlps, ``pip install xraydlps`` or conda install from the distribution on `GitHub <https://github.com/avapolzin/X-rayLCs>`_.
 
 .. toctree::
    :maxdepth: 2
