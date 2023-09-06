@@ -1,5 +1,5 @@
 # X-ray light curves (0.3 - 10 keV)
-[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232) [![DOI](https://zenodo.org/badge/426833310.svg)](https://zenodo.org/badge/latestdoi/426833310) [![Documentation Status](https://readthedocs.org/projects/xraydlps/badge/?version=latest)](https://xraydlps.readthedocs.io/en/latest/?badge=latest)
+[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232) [![DOI](https://zenodo.org/badge/332685529.svg)](https://zenodo.org/badge/latestdoi/332685529) [![Documentation Status](https://readthedocs.org/projects/xraydlps/badge/?version=latest)](https://xraydlps.readthedocs.io/en/latest/?badge=latest)
 
 Light curves from [Polzin et al., in press](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
 
