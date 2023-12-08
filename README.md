@@ -1,7 +1,7 @@
 # X-ray light curves (0.3 - 10 keV)
-[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232) [![DOI](https://zenodo.org/badge/332685529.svg)](https://zenodo.org/badge/latestdoi/332685529) [![Documentation Status](https://readthedocs.org/projects/xraydlps/badge/?version=latest)](https://xraydlps.readthedocs.io/en/latest/?badge=latest)
+[![arXiv](https://img.shields.io/badge/arXiv-2211.01232-b31b1b)](https://arxiv.org/abs/2211.01232) [![DOI](https://zenodo.org/badge/332685529.svg)](https://zenodo.org/badge/latestdoi/332685529) [![Documentation Status](https://readthedocs.org/projects/xraydlps/badge/?version=latest)](https://xraydlps.readthedocs.io/en/latest/?badge=latest) [![Downloads](https://static.pepy.tech/badge/xraydlps)](https://pepy.tech/project/xraydlps)
 
-Light curves from [Polzin et al., in press](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
+Light curves from [Polzin et al. (2023)](https://ui.adsabs.harvard.edu/abs/2022arXiv221101232P/abstract). The tables in the appendix list the original provenance of these data.
 
 Data are organized into folders by class of transient. Each folder has its own README file that lists details of the included files (as a rule, unless it is specifically stated otherwise, included light curves are not corrected for absorption or corrected to the rest frame) and will have a copy of the table that offers citations (_including references therein_) for these data.
 
@@ -18,7 +18,7 @@ We also include some additional versions of figures in the paper that may be edi
 ***
 ***
 # How to use `xraydlps`
-Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al., in press and the package itself (via Zenodo above).
+Additionally, we offer `xraydlps`, a small python package to help with plotting/classification of X-ray light curves in the DLPS. If you use this package, please cite Polzin et al. (2023) and the package itself (via Zenodo above).
 
 Full code documentation: [xraydlps.readthedocs.io](https://xraydlps.readthedocs.io)
 
