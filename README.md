@@ -5,7 +5,7 @@ Light curves from [Polzin et al. (2023)](https://ui.adsabs.harvard.edu/abs/2022a
 
 Data are organized into folders by class of transient. Each folder has its own README file that lists details of the included files (as a rule, unless it is specifically stated otherwise, included light curves are not corrected for absorption or corrected to the rest frame) and will have a copy of the table that offers citations (_including references therein_) for these data.
 
-If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al., submitted. There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
+If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al. (2023). There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
 (If for some reason any of the data that should be here are not or do not open, feel free to reach out via email or open an issue. Please note that a handful of light curves from the paper -- namely the superluminous SN 2018bsz, LMXRB PSR J1023+0038, and the two FXTs XRT 110103 and XRT 120830 -- are not available here.)
 
