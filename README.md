@@ -8,13 +8,23 @@ Data are organized into folders by class of transient. Each folder has its own R
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al. (2023). There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
 <details>
-  <summary>Click for BibTeX</summary>
+  <summary><em>Click for BibTeX</em></summary>
   
   ```tex
 @ARTICLE{2023ApJ...959...75P,
-       author = {{Polzin}, Ava and {Margutti}, Raffaella and {Coppejans}, Deanne L. and {Auchettl}, Katie and {Page}, Kim L. and {Vasilopoulos}, Georgios and {Bright}, Joe S. and {Esposito}, Paolo and {Williams}, Peter K.~G. and {Mukai}, Koji and {Berger}, Edo},
+       author = {{Polzin}, Ava and
+                 {Margutti}, Raffaella and
+                 {Coppejans}, Deanne L. and
+                 {Auchettl}, Katie and
+                 {Page}, Kim L. and
+                 {Vasilopoulos}, Georgios and
+                 {Bright}, Joe S. and
+                 {Esposito}, Paolo and
+                 {Williams}, Peter K.~G. and
+                 {Mukai}, Koji and
+                 {Berger}, Edo},
         title = {The Luminosity Phase Space of Galactic and Extragalactic X-Ray Transients Out to Intermediate Redshifts},
-      journal = {\apj},
+      journal = {ApJ},
      keywords = {X-ray astronomy, X-ray telescopes, X-ray transient sources, High energy astrophysics, Transient sources, Time domain astronomy, 1810, 1825, 1852, 739, 1851, 2109, Astrophysics - High Energy Astrophysical Phenomena},
          year = 2023,
         month = dec,
