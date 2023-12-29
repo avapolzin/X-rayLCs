@@ -13,7 +13,7 @@ If you are going to use data found here, please cite both the original source(s)
   ```tex
 @ARTICLE{2023ApJ...959...75P,
        author = {{Polzin}, Ava and {Margutti}, Raffaella and {Coppejans}, Deanne L. and {Auchettl}, Katie and {Page}, Kim L. and {Vasilopoulos}, Georgios and {Bright}, Joe S. and {Esposito}, Paolo and {Williams}, Peter K.~G. and {Mukai}, Koji and {Berger}, Edo},
-        title = "{The Luminosity Phase Space of Galactic and Extragalactic X-Ray Transients Out to Intermediate Redshifts}",
+        title = ``{The Luminosity Phase Space of Galactic and Extragalactic X-Ray Transients Out to Intermediate Redshifts}'',
       journal = {\apj},
      keywords = {X-ray astronomy, X-ray telescopes, X-ray transient sources, High energy astrophysics, Transient sources, Time domain astronomy, 1810, 1825, 1852, 739, 1851, 2109, Astrophysics - High Energy Astrophysical Phenomena},
          year = 2023,
