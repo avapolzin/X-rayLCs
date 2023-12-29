@@ -7,6 +7,29 @@ Data are organized into folders by class of transient. Each folder has its own R
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al. (2023). There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
+```tex
+@misc{polzin_2023_8319602,
+  author       = {Polzin, Ava and
+                  Margutti, Rafaella and
+                  Coppejans, Deanne L. and
+                  Auchettl, Katie and
+                  Page, Kim L. and
+                  Vasilopoulos, Georgios and
+                  Bright, Joe S. and
+                  Esposito, Paolo and
+                  Williams, Peter K. G. and
+                  Mukai, Koji and
+                  Berger, Edo},
+  title        = {X-rayLCs: Data and code from Polzin et al. (2023)},
+  month        = sep,
+  year         = 2023,
+  publisher    = {Zenodo},
+  version      = {v1.0},
+  doi          = {10.5281/zenodo.8319602},
+  url          = {https://doi.org/10.5281/zenodo.8319602}
+}
+```
+
 (If for some reason any of the data that should be here are not or do not open, feel free to reach out via email or open an issue. Please note that a handful of light curves from the paper -- namely the superluminous SN 2018bsz, LMXRB PSR J1023+0038, and the two FXTs XRT 110103 and XRT 120830 -- are not available here.)
 
 Interactive plots facilitating exploration of the data/DLPS are available [here](https://avapolzin.github.io/projects/xraydlps/).
