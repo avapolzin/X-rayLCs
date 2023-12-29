@@ -33,7 +33,7 @@ import pandas as pd
 GX339 = pd.read_csv('GX3394.txt', header = 0, sep = '\s+', comment = '#')
 GX339_time_ = GX339['MJD']
 GX339_flux_ = GX339['Flux(cgs)']
-
+ 
 refs339 = [(50750, 52300), (52300, 53150), (53150, 53700), (53700, 54000), (54000, 54200), (54200, 54600), (54600, 54850), (54850, 55150), (55150, 56000)]
 
 for i in refs339:
@@ -41,6 +41,7 @@ for i in refs339:
     GX339_flux = GX339_flux_[(GX339_time_ > i[0]) & (GX339_time_ <= i[1])]
     GX339_lum = GX339_flux * 4 * np.pi* (8*u.kpc.to(u.cm))**2
 ```
+Note that these data are 3-9 keV -- given the large range in spectral index noted in the Corbel+2013 (Γ = 1.5-2 ±0.3), we do not k-correct these data in our paper. This amounts to a factor of order unity (roughly 2-3 depending upon choice of Γ), which one may wish to take into consideration in other analysis.
 
 The data for Aql X-1 are stored between six files. The final times (in days) are tob1, tob2, and tob3; and the final luminosities (0.3-10 keV; cgs) are lob1, lob2, and lob3. Flux is given by ob1, ob2, and ob3:
 ```python
