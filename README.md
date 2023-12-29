@@ -7,7 +7,30 @@ Data are organized into folders by class of transient. Each folder has its own R
 
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al. (2023). There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
-```tex
+<details>
+  <summary>Expand for BibTeX</summary>
+  
+  ```tex
+@ARTICLE{2023ApJ...959...75P,
+       author = {{Polzin}, Ava and {Margutti}, Raffaella and {Coppejans}, Deanne L. and {Auchettl}, Katie and {Page}, Kim L. and {Vasilopoulos}, Georgios and {Bright}, Joe S. and {Esposito}, Paolo and {Williams}, Peter K.~G. and {Mukai}, Koji and {Berger}, Edo},
+        title = "{The Luminosity Phase Space of Galactic and Extragalactic X-Ray Transients Out to Intermediate Redshifts}",
+      journal = {\apj},
+     keywords = {X-ray astronomy, X-ray telescopes, X-ray transient sources, High energy astrophysics, Transient sources, Time domain astronomy, 1810, 1825, 1852, 739, 1851, 2109, Astrophysics - High Energy Astrophysical Phenomena},
+         year = 2023,
+        month = dec,
+       volume = {959},
+       number = {2},
+          eid = {75},
+        pages = {75},
+          doi = {10.3847/1538-4357/acf765},
+archivePrefix = {arXiv},
+       eprint = {2211.01232},
+ primaryClass = {astro-ph.HE},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJ...959...75P},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+
 @misc{polzin_2023_8319602,
   author       = {Polzin, Ava and
                   Margutti, Rafaella and
@@ -29,6 +52,8 @@ If you are going to use data found here, please cite both the original source(s)
   url          = {https://doi.org/10.5281/zenodo.8319602}
 }
 ```
+</details>
+
 
 (If for some reason any of the data that should be here are not or do not open, feel free to reach out via email or open an issue. Please note that a handful of light curves from the paper -- namely the superluminous SN 2018bsz, LMXRB PSR J1023+0038, and the two FXTs XRT 110103 and XRT 120830 -- are not available here.)
 
