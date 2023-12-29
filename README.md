@@ -8,7 +8,7 @@ Data are organized into folders by class of transient. Each folder has its own R
 If you are going to use data found here, please cite both the original source(s) of the data listed in the relevant table and Polzin et al. (2023). There is also a Zenodo reference to the dataset and package (link above) that we appreciate you citing.
 
 <details>
-  <summary>*Click for BibTeX*</summary>
+  <summary>Click for BibTeX</summary>
   
   ```tex
 @ARTICLE{2023ApJ...959...75P,
